@@ -87,3 +87,8 @@ The constants come from a larger project on the 3n+1 map, where the same
 project's kernel-certified descent certificates. Development followed a
 preregistration-and-public-retraction discipline; the notes retain grade
 labels throughout.
+
+## License
+
+Dedicated to the public domain under [CC0 1.0 Universal](LICENSE). Use
+freely, no attribution required.
