@@ -17,7 +17,7 @@ of total streaming overhead across 210 tensors.
 mathematics only; it does not claim new end-to-end model quality or
 fused-kernel performance.
 
-## The two notes
+## The notes
 
 - [`TERNARY_PACKING_LADDER.md`](TERNARY_PACKING_LADDER.md) — the main note:
   the ladder, the three laws, measured decode Paretos, the training
@@ -25,6 +25,24 @@ fused-kernel performance.
 - [`METHOD_COMPARISON.md`](METHOD_COMPARISON.md) — companion: an honest
   side-by-side with the vendor-class approach (engines, ~1.6–1.7 bpw block
   formats), framing the two as complements.
+- [`EXTENSIONS.md`](EXTENSIONS.md) — Kronecker / tax-graph / multi-linear
+  extensions (Phase 1–2): hierarchical D3 decode, Law B frame catalog,
+  tensor-axis tax forms, measured verdicts.
+- [`SCALE_PROBE.md`](SCALE_PROBE.md) — targeted LLM-shape probes (axis
+  choice, Kronecker factors, tax-0 tiling grammar) and creative connections.
+  Not a blind larger flat stream.
+
+## Extensions at a glance
+
+| Phase | Claim tested | Headline result |
+|-------|--------------|-----------------|
+| 1-D Law C hierarchical (D3) | ÷`3^41`→C2 vs flat ÷243 | ~1.5× D2 (0.36 vs 0.24 Gtrit/s); 486-frame still Pareto |
+| 1-D Law B tax graph | Enumerate tax 0/1 assemblies | 665 + 65 novel tax-0 frames; catalog JSON |
+| Multi-linear tax form | `tax_rows` / `tax_cols` on modes | 1-D tax graph = rank-1 slice; axis choice is free |
+| Scale probe (LLM shapes) | Axis choice on 7B–34B rectangles | e.g. 11008×4096 saves 7936 bits by packing cols |
+| Kronecker-factor pack | Pack `A`,`B` vs flatten `A⊗B` | ~100× when structure exists (toy→scale cases) |
+
+Hard rule unchanged: size/tax/pack/unpack verdicts are **exact integers**.
 
 ## What is certified, what is measured, what is not claimed
 
@@ -39,11 +57,14 @@ reported):
 - Every packing format on every tensor of the BitNet payload
   (2,084,044,800 weights), and every benchmark's decoded output against a
   reference dot product.
+- Extension selftests (tax graph, frames, hierarchical digits, mode pack,
+  scale-probe unit checks).
 
 **Measured** (with harness stated in context):
-- Decode throughputs (single-file Rust, Apple M5 Max, core counts quoted
+- Decode throughputs (single-file Rust, Apple Silicon, core counts quoted
   per row); the training experiment (MLX, enwik8, preregistered thresholds);
-  the BitNet alphabet census and per-module decomposition.
+  the BitNet alphabet census and per-module decomposition; extension and
+  scale-probe ledgers in `EXTENSIONS.md` / `SCALE_PROBE.md`.
 
 **Not claimed:**
 - Engine-level speed, fused-GPU-kernel performance, product-scale capability
@@ -53,14 +74,28 @@ reported):
 ## Contents
 
 ```
-lean/Certificates.lean      standalone kernel certificates (Lean 4, no deps)
-bench/ternary_pack_bench.rs block-format decode Pareto (std-only Rust)
-bench/stream_codec_bench2.rs concurrent-dimension benchmarks (frame/interleave)
-repack/pack_ladder.py       all container formats + exact round-trip selftests
-repack/adaptive_entropy.py  per-tensor static range coder (exact integers)
-repack/repack_bitnet.py     the BitNet b1.58 2B repack (downloads not included)
-repack/train_arms.py        the preregistered training experiment (MLX)
-repack/analyze_verdicts.py  verdict computation for the training experiment
+lean/Certificates.lean         standalone kernel certificates (Lean 4, no deps)
+bench/ternary_pack_bench.rs    block-format decode Pareto (+ D3 hierarchical)
+bench/stream_codec_bench*.rs   stream / frame-parallel benches
+repack/pack_ladder.py          container formats + exact round-trip selftests
+repack/adaptive_entropy.py     per-tensor static range coder
+repack/repack_bitnet.py        BitNet b1.58 2B repack (checkpoint not included)
+repack/train_arms.py           preregistered training experiment (MLX)
+repack/tax_graph.py            Law B tax-graph enumerator
+repack/frame_formats.py        486- and 665-frame pack/unpack
+repack/hierarchical_digits.py  Law C nested / Kronecker digit unpack
+repack/recursive_pack.py       recursive P_n blocked composition
+repack/collatz_schedule.py     Collatz-adaptive frame schedule
+repack/pre_transform_probe.py  structured Hadamard→ternary probe
+repack/tax_tensor.py           multi-linear tax form on mode sizes
+repack/mode_pack.py            mode-wise pack + phase offsets
+repack/kronecker_tensor_pack.py Kronecker-factor pack ledgers
+repack/tensor_hierarchical.py  per-row hierarchical decode
+repack/mode_schedule.py        per-mode phase + axis choice
+repack/scale_probe.py          targeted LLM-shape axis/Kronecker/tax0 probe
+repack/*_catalog.json          generated catalogs (regenerable)
+repack/scale_probe_results.json last scale-probe run
+EXTENSIONS.md / SCALE_PROBE.md evaluation notes
 ```
 
 ## Reproducing
@@ -68,10 +103,15 @@ repack/analyze_verdicts.py  verdict computation for the training experiment
 - **Certificates**: `lean Certificates.lean` under any recent Lean 4
   toolchain (seconds; no packages).
 - **Benchmarks**: `rustc -O -C target-cpu=native bench/<file>.rs && ./<bin>`
-  (std only).
-- **Formats**: `python3 repack/pack_ladder.py selftest` (numpy only; 187
-  exact round-trip cases + the streaming coder's preregistered property
-  checks).
+  (std only). Look for the **D3** row in `ternary_pack_bench`.
+- **Formats**: `python3 repack/pack_ladder.py selftest` (numpy only).
+- **Extensions**: from `repack/`,
+  `python3 tax_graph.py catalog && python3 tax_graph.py selftest` and
+  likewise `hierarchical_digits.py`, `frame_formats.py`, `tax_tensor.py`,
+  `mode_pack.py`, `kronecker_tensor_pack.py`, `tensor_hierarchical.py`,
+  `mode_schedule.py`, `recursive_pack.py`, `collatz_schedule.py`,
+  `pre_transform_probe.py`.
+- **Scale probe**: `python3 repack/scale_probe.py run`
 - **BitNet repack**: download `microsoft/bitnet-b1.58-2B-4T`'s
   `model.safetensors` (~1.18 GB) into `repack/data/bitnet/`, then
   `python3 repack/repack_bitnet.py`. Every tensor is round-tripped exactly

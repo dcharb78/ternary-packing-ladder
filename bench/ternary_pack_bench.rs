@@ -6,6 +6,7 @@
 //   C2 rung (41,65)    digit decode    1.5854 bpw  8 div-243 + LUT      (nested alphabet)
 //   D  rung (306,485)  trit-serial     1.5850 bpw  306 multi-limb div-3 (naive)
 //   D2 rung (306,485)  digit decode    1.5850 bpw  61 multi-limb div-243 + LUT
+//   D3 rung (306,485)  hierarchical    1.5850 bpw  7x div-3^41 → C2 + 19-trit rem (Law C tower)
 //   E  486-frame       7x(41,65)+(19,31) 1.5882 bpw all-u128 digit decode (1-bit split tax)
 use std::time::Instant;
 
@@ -89,6 +90,66 @@ fn main() {
         } else { for k in 0..306 { let idx = base+k; if idx >= NT { break; }
             let r = divmod(&mut l, 3); dot += (r as i64 - 1) * acts[idx] as i64; } } }
     let d = t0.elapsed().as_secs_f64(); assert_eq!(dot, reference); report("D2 rung(306,485) digit ", 485, 306, d);
+
+    // D3: hierarchical Law C — same 485-bit packing as D2; extract 7 base-3^41
+    // digits (LE: digit0 = trits[0..41], …, rem = [287..306]), each via C2.
+    // 3^41 does not fit in u64 and rem<<64 overflows u128, so factor as 3^20 * 3^21.
+    const POW3_20: u64 = 3486784401; // 3^20
+    const POW3_21: u64 = 10460353203; // 3^21
+    let divmod_u64 = |l: &mut [u64; 8], m: u64| -> u64 {
+        let mut rem = 0u64;
+        for x in l.iter_mut().rev() {
+            let v = ((rem as u128) << 64) | (*x as u128);
+            *x = (v / m as u128) as u64;
+            rem = (v % m as u128) as u64;
+        }
+        rem
+    };
+    let divmod_3_41 = |l: &mut [u64; 8]| -> u128 {
+        let r20 = divmod_u64(l, POW3_20); // n = q1*3^20 + r20
+        let r21 = divmod_u64(l, POW3_21); // q1 = q2*3^21 + r21; limbs now hold q2
+        (r21 as u128) * (POW3_20 as u128) + (r20 as u128)
+    };
+    let t0 = Instant::now(); let mut dot = 0i64;
+    for (i, blk) in pd.iter().enumerate() {
+        let mut l = *blk;
+        let base = i * 306;
+        if base + 306 <= NT {
+            for j in 0..7 {
+                let mut x = divmod_3_41(&mut l);
+                let o0 = base + j * 41;
+                for dg in 0..8 {
+                    let ws = &lut[(x % 243) as usize];
+                    x /= 243;
+                    let o = o0 + dg * 5;
+                    for k in 0..5 { dot += (ws[k] as i64) * (acts[o + k] as i64); }
+                }
+                dot += (x as i64 - 1) * acts[o0 + 40] as i64;
+            }
+            // rem = last 19 trits (fits in u64 after 7×÷3^41)
+            let mut rem_limbs = l;
+            let o0 = base + 287;
+            for dg in 0..3 {
+                let r = divmod(&mut rem_limbs, 243);
+                let ws = &lut[r as usize];
+                let o = o0 + dg * 5;
+                for k in 0..5 { dot += (ws[k] as i64) * (acts[o + k] as i64); }
+            }
+            let mut x = rem_limbs[0];
+            for k in 15..19 {
+                dot += ((x % 3) as i64 - 1) * acts[o0 + k] as i64;
+                x /= 3;
+            }
+        } else {
+            for k in 0..306 {
+                let idx = base + k;
+                if idx >= NT { break; }
+                let r = divmod(&mut l, 3);
+                dot += (r as i64 - 1) * acts[idx] as i64;
+            }
+        }
+    }
+    let d = t0.elapsed().as_secs_f64(); assert_eq!(dot, reference); report("D3 rung(306,485) hier  ", 485, 306, d);
 
     // E: 486-frame = 7x(41,65) + (19,31); all-u128 digit decode; 1-bit split tax over 306 trits
     let nfr = NT / 306; // full frames only; tail handled scalar from trits directly in timing-neutral way

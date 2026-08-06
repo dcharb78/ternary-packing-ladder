@@ -1,0 +1,891 @@
+{
+  "hypothesis": "Larger models help only as targeted probes of axis choice and structure exploitation \u2014 not as bigger unstructured flat streams.",
+  "n_shapes": 11,
+  "shapes": [
+    {
+      "name": "llama7b_attn_q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "area": 16777216,
+      "axis_bits": {
+        "m": 4096,
+        "n": 4096,
+        "row_bits": 26595328,
+        "col_bits": 26595328,
+        "delta_bits": 0,
+        "best_axis": "rows",
+        "bits_saved_vs_worse": 0
+      },
+      "layout_bytes": {
+        "flat_5_8": 3355444,
+        "flat_41_65": 3682804,
+        "flat_306_485": 3344478,
+        "flat_486": 3673443,
+        "row_5_8": 3358720,
+        "col_5_8": 3358720,
+        "row_41_65": 3682304,
+        "col_41_65": 3682304,
+        "row_306": 3346432,
+        "col_306": 3346432
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "row_41_65",
+      "bytes_saved_5_8_axis": 0,
+      "bytes_saved_41_65_axis": 0,
+      "vs_flat_5_8_row_delta": 3276,
+      "vs_flat_41_row_delta": -500,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 16384,
+        "slack_per_col_streams": 16384,
+        "slack_penalty_rows_vs_flat": 16380,
+        "slack_penalty_cols_vs_flat": 16380
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 3.1948089599609375e-05
+    },
+    {
+      "name": "llama7b_mlp_up",
+      "shape": [
+        11008,
+        4096
+      ],
+      "area": 45088768,
+      "axis_bits": {
+        "m": 11008,
+        "n": 4096,
+        "row_bits": 71474944,
+        "col_bits": 71467008,
+        "delta_bits": 7936,
+        "best_axis": "cols",
+        "bits_saved_vs_worse": 7936
+      },
+      "layout_bytes": {
+        "flat_5_8": 9017754,
+        "flat_41_65": 9897535,
+        "flat_306_485": 8988284,
+        "flat_486": 9872377,
+        "row_5_8": 9026560,
+        "col_5_8": 9019392,
+        "row_41_65": 9896192,
+        "col_41_65": 9895936,
+        "row_306": 8993536,
+        "col_306": 8990720
+      },
+      "best_5_8_axis": "col_5_8",
+      "best_41_65_axis": "col_41_65",
+      "bytes_saved_5_8_axis": 7168,
+      "bytes_saved_41_65_axis": 256,
+      "vs_flat_5_8_row_delta": 8806,
+      "vs_flat_41_row_delta": -1343,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 44032,
+        "slack_per_col_streams": 16384,
+        "slack_penalty_rows_vs_flat": 44028,
+        "slack_penalty_cols_vs_flat": 16380
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 4.8160552978515625e-05
+    },
+    {
+      "name": "llama7b_mlp_down",
+      "shape": [
+        4096,
+        11008
+      ],
+      "area": 45088768,
+      "axis_bits": {
+        "m": 4096,
+        "n": 11008,
+        "row_bits": 71467008,
+        "col_bits": 71474944,
+        "delta_bits": -7936,
+        "best_axis": "rows",
+        "bits_saved_vs_worse": 7936
+      },
+      "layout_bytes": {
+        "flat_5_8": 9017754,
+        "flat_41_65": 9897535,
+        "flat_306_485": 8988284,
+        "flat_486": 9872377,
+        "row_5_8": 9019392,
+        "col_5_8": 9026560,
+        "row_41_65": 9895936,
+        "col_41_65": 9896192,
+        "row_306": 8990720,
+        "col_306": 8993536
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "row_41_65",
+      "bytes_saved_5_8_axis": 7168,
+      "bytes_saved_41_65_axis": 256,
+      "vs_flat_5_8_row_delta": 1638,
+      "vs_flat_41_row_delta": -1599,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 16384,
+        "slack_per_col_streams": 44032,
+        "slack_penalty_rows_vs_flat": 16380,
+        "slack_penalty_cols_vs_flat": 44028
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 4.315376281738281e-05
+    },
+    {
+      "name": "llama13b_attn_q",
+      "shape": [
+        5120,
+        5120
+      ],
+      "area": 26214400,
+      "axis_bits": {
+        "m": 5120,
+        "n": 5120,
+        "row_bits": 41553920,
+        "col_bits": 41553920,
+        "delta_bits": 0,
+        "best_axis": "rows",
+        "bits_saved_vs_worse": 0
+      },
+      "layout_bytes": {
+        "flat_5_8": 5242880,
+        "flat_41_65": 5754380,
+        "flat_306_485": 5225747,
+        "flat_486": 5739755,
+        "row_5_8": 5242880,
+        "col_5_8": 5242880,
+        "row_41_65": 5754880,
+        "col_41_65": 5754880,
+        "row_306": 5227520,
+        "col_306": 5227520
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "row_41_65",
+      "bytes_saved_5_8_axis": 0,
+      "bytes_saved_41_65_axis": 0,
+      "vs_flat_5_8_row_delta": 0,
+      "vs_flat_41_row_delta": 500,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 20480,
+        "slack_per_col_streams": 20480,
+        "slack_penalty_rows_vs_flat": 20476,
+        "slack_penalty_cols_vs_flat": 20476
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 2.574920654296875e-05
+    },
+    {
+      "name": "llama13b_mlp_up",
+      "shape": [
+        13824,
+        5120
+      ],
+      "area": 70778880,
+      "axis_bits": {
+        "m": 13824,
+        "n": 5120,
+        "row_bits": 112195584,
+        "col_bits": 112184320,
+        "delta_bits": 11264,
+        "best_axis": "cols",
+        "bits_saved_vs_worse": 11264
+      },
+      "layout_bytes": {
+        "flat_5_8": 14155776,
+        "flat_41_65": 15536828,
+        "flat_306_485": 14109516,
+        "flat_486": 15497336,
+        "row_5_8": 14155776,
+        "col_5_8": 14156800,
+        "row_41_65": 15538176,
+        "col_41_65": 15539200,
+        "row_306": 14114304,
+        "col_306": 14110720
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "row_41_65",
+      "bytes_saved_5_8_axis": 1024,
+      "bytes_saved_41_65_axis": 1024,
+      "vs_flat_5_8_row_delta": 0,
+      "vs_flat_41_row_delta": 1348,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 55296,
+        "slack_per_col_streams": 20480,
+        "slack_penalty_rows_vs_flat": 55292,
+        "slack_penalty_cols_vs_flat": 20476
+      },
+      "novel_tax0_exact_tilers": [
+        {
+          "parts": [
+            19,
+            5
+          ],
+          "frame_q": 24,
+          "mode": "rows_m",
+          "length": 13824,
+          "n_tiles": 576,
+          "packed_bits_per_tile": 39,
+          "flat_bits_per_tile": 39,
+          "tax": 0
+        }
+      ],
+      "n_novel_tilers": 1,
+      "secs": 6.031990051269531e-05
+    },
+    {
+      "name": "llama34b_attn_q",
+      "shape": [
+        8192,
+        8192
+      ],
+      "area": 67108864,
+      "axis_bits": {
+        "m": 8192,
+        "n": 8192,
+        "row_bits": 106373120,
+        "col_bits": 106373120,
+        "delta_bits": 0,
+        "best_axis": "rows",
+        "bits_saved_vs_worse": 0
+      },
+      "layout_bytes": {
+        "flat_5_8": 13421773,
+        "flat_41_65": 14731214,
+        "flat_306_485": 13377911,
+        "flat_486": 14693771,
+        "row_5_8": 13426688,
+        "col_5_8": 13426688,
+        "row_41_65": 14729216,
+        "col_41_65": 14729216,
+        "row_306": 13377536,
+        "col_306": 13377536
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "row_41_65",
+      "bytes_saved_5_8_axis": 0,
+      "bytes_saved_41_65_axis": 0,
+      "vs_flat_5_8_row_delta": 4915,
+      "vs_flat_41_row_delta": -1998,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 32768,
+        "slack_per_col_streams": 32768,
+        "slack_penalty_rows_vs_flat": 32764,
+        "slack_penalty_cols_vs_flat": 32764
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 4.57763671875e-05
+    },
+    {
+      "name": "llama34b_mlp_up",
+      "shape": [
+        22016,
+        8192
+      ],
+      "area": 180355072,
+      "axis_bits": {
+        "m": 22016,
+        "n": 8192,
+        "row_bits": 285877760,
+        "col_bits": 285859840,
+        "delta_bits": 17920,
+        "best_axis": "cols",
+        "bits_saved_vs_worse": 17920
+      },
+      "layout_bytes": {
+        "flat_5_8": 36071015,
+        "flat_41_65": 39590138,
+        "flat_306_485": 35953136,
+        "flat_486": 39489509,
+        "row_5_8": 36084224,
+        "col_5_8": 36077568,
+        "row_41_65": 39584768,
+        "col_41_65": 39583744,
+        "row_306": 35952128,
+        "col_306": 35954688
+      },
+      "best_5_8_axis": "col_5_8",
+      "best_41_65_axis": "col_41_65",
+      "bytes_saved_5_8_axis": 6656,
+      "bytes_saved_41_65_axis": 1024,
+      "vs_flat_5_8_row_delta": 13209,
+      "vs_flat_41_row_delta": -5370,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 88064,
+        "slack_per_col_streams": 32768,
+        "slack_penalty_rows_vs_flat": 88060,
+        "slack_penalty_cols_vs_flat": 32764
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 0.00011706352233886719
+    },
+    {
+      "name": "bitnet2b_like_q",
+      "shape": [
+        2560,
+        2560
+      ],
+      "area": 6553600,
+      "axis_bits": {
+        "m": 2560,
+        "n": 2560,
+        "row_bits": 10388480,
+        "col_bits": 10388480,
+        "delta_bits": 0,
+        "best_axis": "rows",
+        "bits_saved_vs_worse": 0
+      },
+      "layout_bytes": {
+        "flat_5_8": 1310720,
+        "flat_41_65": 1438595,
+        "flat_306_485": 1306437,
+        "flat_486": 1434939,
+        "row_5_8": 1310720,
+        "col_5_8": 1310720,
+        "row_41_65": 1438720,
+        "col_41_65": 1438720,
+        "row_306": 1308160,
+        "col_306": 1308160
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "row_41_65",
+      "bytes_saved_5_8_axis": 0,
+      "bytes_saved_41_65_axis": 0,
+      "vs_flat_5_8_row_delta": 0,
+      "vs_flat_41_row_delta": 125,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 10240,
+        "slack_per_col_streams": 10240,
+        "slack_penalty_rows_vs_flat": 10236,
+        "slack_penalty_cols_vs_flat": 10236
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 1.2159347534179688e-05
+    },
+    {
+      "name": "bitnet2b_like_mlp",
+      "shape": [
+        6912,
+        2560
+      ],
+      "area": 17694720,
+      "axis_bits": {
+        "m": 6912,
+        "n": 2560,
+        "row_bits": 28048896,
+        "col_bits": 28047360,
+        "delta_bits": 1536,
+        "best_axis": "cols",
+        "bits_saved_vs_worse": 1536
+      },
+      "layout_bytes": {
+        "flat_5_8": 3538944,
+        "flat_41_65": 3884207,
+        "flat_306_485": 3527379,
+        "flat_486": 3874334,
+        "row_5_8": 3538944,
+        "col_5_8": 3540480,
+        "row_41_65": 3884544,
+        "col_41_65": 3883520,
+        "row_306": 3532032,
+        "col_306": 3527680
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "col_41_65",
+      "bytes_saved_5_8_axis": 1536,
+      "bytes_saved_41_65_axis": 1024,
+      "vs_flat_5_8_row_delta": 0,
+      "vs_flat_41_row_delta": 337,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 27648,
+        "slack_per_col_streams": 10240,
+        "slack_penalty_rows_vs_flat": 27644,
+        "slack_penalty_cols_vs_flat": 10236
+      },
+      "novel_tax0_exact_tilers": [
+        {
+          "parts": [
+            19,
+            5
+          ],
+          "frame_q": 24,
+          "mode": "rows_m",
+          "length": 6912,
+          "n_tiles": 288,
+          "packed_bits_per_tile": 39,
+          "flat_bits_per_tile": 39,
+          "tax": 0
+        }
+      ],
+      "n_novel_tilers": 1,
+      "secs": 2.5987625122070312e-05
+    },
+    {
+      "name": "head_proj_slice",
+      "shape": [
+        128,
+        4096
+      ],
+      "area": 524288,
+      "axis_bits": {
+        "m": 128,
+        "n": 4096,
+        "row_bits": 831104,
+        "col_bits": 831488,
+        "delta_bits": -384,
+        "best_axis": "rows",
+        "bits_saved_vs_worse": 384
+      },
+      "layout_bytes": {
+        "flat_5_8": 104858,
+        "flat_41_65": 115088,
+        "flat_306_485": 104515,
+        "flat_486": 114795,
+        "row_5_8": 104960,
+        "col_5_8": 106496,
+        "row_41_65": 115072,
+        "col_41_65": 114688,
+        "row_306": 104576,
+        "col_306": 106496
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "col_41_65",
+      "bytes_saved_5_8_axis": 1536,
+      "bytes_saved_41_65_axis": 384,
+      "vs_flat_5_8_row_delta": 102,
+      "vs_flat_41_row_delta": -16,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 512,
+        "slack_per_col_streams": 16384,
+        "slack_penalty_rows_vs_flat": 508,
+        "slack_penalty_cols_vs_flat": 16380
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 1.5020370483398438e-05
+    },
+    {
+      "name": "kv_group_rect",
+      "shape": [
+        1024,
+        4096
+      ],
+      "area": 4194304,
+      "axis_bits": {
+        "m": 1024,
+        "n": 4096,
+        "row_bits": 6648832,
+        "col_bits": 6651904,
+        "delta_bits": -3072,
+        "best_axis": "rows",
+        "bits_saved_vs_worse": 3072
+      },
+      "layout_bytes": {
+        "flat_5_8": 838861,
+        "flat_41_65": 920701,
+        "flat_306_485": 836120,
+        "flat_486": 918361,
+        "row_5_8": 839680,
+        "col_5_8": 839680,
+        "row_41_65": 920576,
+        "col_41_65": 917504,
+        "row_306": 836608,
+        "col_306": 839680
+      },
+      "best_5_8_axis": "row_5_8",
+      "best_41_65_axis": "col_41_65",
+      "bytes_saved_5_8_axis": 0,
+      "bytes_saved_41_65_axis": 3072,
+      "vs_flat_5_8_row_delta": 819,
+      "vs_flat_41_row_delta": -125,
+      "stream_slack": {
+        "slack_one_flat_stream": 4,
+        "slack_per_row_streams": 4096,
+        "slack_per_col_streams": 16384,
+        "slack_penalty_rows_vs_flat": 4092,
+        "slack_penalty_cols_vs_flat": 16380
+      },
+      "novel_tax0_exact_tilers": [],
+      "n_novel_tilers": 0,
+      "secs": 1.5020370483398438e-05
+    }
+  ],
+  "total_axis_bytes_saved_41_65_if_pick_best": 7040,
+  "gemm_frame_alignments": [
+    {
+      "parts": [
+        41,
+        41,
+        41,
+        41,
+        41,
+        19
+      ],
+      "frame_q": 224,
+      "gemm_tile": 16,
+      "relation": "frame_multiple_of_tile",
+      "register_max_bits": 65
+    },
+    {
+      "parts": [
+        41,
+        41,
+        41,
+        41,
+        41,
+        19
+      ],
+      "frame_q": 224,
+      "gemm_tile": 32,
+      "relation": "frame_multiple_of_tile",
+      "register_max_bits": 65
+    },
+    {
+      "parts": [
+        306,
+        41,
+        41,
+        41,
+        19
+      ],
+      "frame_q": 448,
+      "gemm_tile": 16,
+      "relation": "frame_multiple_of_tile",
+      "register_max_bits": 485
+    },
+    {
+      "parts": [
+        306,
+        41,
+        41,
+        41,
+        19
+      ],
+      "frame_q": 448,
+      "gemm_tile": 32,
+      "relation": "frame_multiple_of_tile",
+      "register_max_bits": 485
+    },
+    {
+      "parts": [
+        306,
+        41,
+        41,
+        41,
+        19
+      ],
+      "frame_q": 448,
+      "gemm_tile": 64,
+      "relation": "frame_multiple_of_tile",
+      "register_max_bits": 485
+    },
+    {
+      "parts": [
+        306,
+        306,
+        41,
+        19
+      ],
+      "frame_q": 672,
+      "gemm_tile": 16,
+      "relation": "frame_multiple_of_tile",
+      "register_max_bits": 485
+    },
+    {
+      "parts": [
+        306,
+        306,
+        41,
+        19
+      ],
+      "frame_q": 672,
+      "gemm_tile": 32,
+      "relation": "frame_multiple_of_tile",
+      "register_max_bits": 485
+    }
+  ],
+  "n_gemm_alignments": 7,
+  "kronecker_scale": [
+    {
+      "a_shape": [
+        8,
+        8
+      ],
+      "b_shape": [
+        8,
+        8
+      ],
+      "w_shape": [
+        64,
+        64
+      ],
+      "fmt": "fmt_5_8",
+      "factor_bytes": 26,
+      "flat_bytes": 820,
+      "delta": -794,
+      "factor_wins": true,
+      "a_nbytes": 13,
+      "b_nbytes": 13
+    },
+    {
+      "a_shape": [
+        8,
+        8
+      ],
+      "b_shape": [
+        8,
+        8
+      ],
+      "w_shape": [
+        64,
+        64
+      ],
+      "fmt": "fmt_41_65",
+      "factor_bytes": 28,
+      "flat_bytes": 899,
+      "delta": -871,
+      "factor_wins": true,
+      "a_nbytes": 14,
+      "b_nbytes": 14
+    },
+    {
+      "a_shape": [
+        16,
+        16
+      ],
+      "b_shape": [
+        16,
+        16
+      ],
+      "w_shape": [
+        256,
+        256
+      ],
+      "fmt": "fmt_5_8",
+      "factor_bytes": 104,
+      "flat_bytes": 13108,
+      "delta": -13004,
+      "factor_wins": true,
+      "a_nbytes": 52,
+      "b_nbytes": 52
+    },
+    {
+      "a_shape": [
+        16,
+        16
+      ],
+      "b_shape": [
+        16,
+        16
+      ],
+      "w_shape": [
+        256,
+        256
+      ],
+      "fmt": "fmt_41_65",
+      "factor_bytes": 112,
+      "flat_bytes": 14386,
+      "delta": -14274,
+      "factor_wins": true,
+      "a_nbytes": 56,
+      "b_nbytes": 56
+    },
+    {
+      "a_shape": [
+        32,
+        32
+      ],
+      "b_shape": [
+        16,
+        16
+      ],
+      "w_shape": [
+        512,
+        512
+      ],
+      "fmt": "fmt_5_8",
+      "factor_bytes": 257,
+      "flat_bytes": 52429,
+      "delta": -52172,
+      "factor_wins": true,
+      "a_nbytes": 205,
+      "b_nbytes": 52
+    },
+    {
+      "a_shape": [
+        32,
+        32
+      ],
+      "b_shape": [
+        16,
+        16
+      ],
+      "w_shape": [
+        512,
+        512
+      ],
+      "fmt": "fmt_41_65",
+      "factor_bytes": 280,
+      "flat_bytes": 57544,
+      "delta": -57264,
+      "factor_wins": true,
+      "a_nbytes": 224,
+      "b_nbytes": 56
+    },
+    {
+      "a_shape": [
+        64,
+        8
+      ],
+      "b_shape": [
+        8,
+        64
+      ],
+      "w_shape": [
+        512,
+        512
+      ],
+      "fmt": "fmt_5_8",
+      "factor_bytes": 206,
+      "flat_bytes": 52429,
+      "delta": -52223,
+      "factor_wins": true,
+      "a_nbytes": 103,
+      "b_nbytes": 103
+    },
+    {
+      "a_shape": [
+        64,
+        8
+      ],
+      "b_shape": [
+        8,
+        64
+      ],
+      "w_shape": [
+        512,
+        512
+      ],
+      "fmt": "fmt_41_65",
+      "factor_bytes": 224,
+      "flat_bytes": 57544,
+      "delta": -57320,
+      "factor_wins": true,
+      "a_nbytes": 112,
+      "b_nbytes": 112
+    },
+    {
+      "kind": "block_shared_core",
+      "core_shape": [
+        16,
+        16
+      ],
+      "n_groups": 64,
+      "pack_core_5_8": 52,
+      "pack_expanded_5_8": 3277,
+      "delta": -3225,
+      "factor_wins": true,
+      "note": "shared core once vs expand; real models need valid factorisation"
+    }
+  ],
+  "holonomy": [
+    {
+      "name": "llama7b_attn_q",
+      "holonomy_bits": 0,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "llama7b_mlp_up",
+      "holonomy_bits": 7936,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "llama7b_mlp_down",
+      "holonomy_bits": -7936,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "llama13b_attn_q",
+      "holonomy_bits": 0,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "llama13b_mlp_up",
+      "holonomy_bits": 11264,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "llama34b_attn_q",
+      "holonomy_bits": 0,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "llama34b_mlp_up",
+      "holonomy_bits": 17920,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "bitnet2b_like_q",
+      "holonomy_bits": 0,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "bitnet2b_like_mlp",
+      "holonomy_bits": 1536,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "head_proj_slice",
+      "holonomy_bits": -384,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    },
+    {
+      "name": "kv_group_rect",
+      "holonomy_bits": -3072,
+      "interpretation": "row-then-flat vs col-then-flat path difference on mode torus; equals tax_rows - tax_cols"
+    }
+  ],
+  "creative_connections": [
+    {
+      "id": "torus_holonomy",
+      "claim": "m*bits(n)-n*bits(m) is the exact holonomy of packing around the mode torus (row path vs col path). Axis choice is Law B chirality between orientations."
+    },
+    {
+      "id": "stream_vs_block_tension",
+      "claim": "Block formats: prefer low-tax axis. Stream formats: prefer ONE stream (flatten) because slack \u2248 constant per stream (BitNet: ~4 B/tensor). Opposite layout advice by format family."
+    },
+    {
+      "id": "tax0_tile_grammar",
+      "claim": "Novel tax-0 assemblies are a tiling grammar for rectangular modes: prefer mode lengths divisible by frame_q from the catalog."
+    },
+    {
+      "id": "factor_tree_equals_decode_tree",
+      "claim": "Kronecker-factor packing and hierarchical digit decode share the same tree; a fused kernel can contract packed factors without materialising A\u2297B."
+    },
+    {
+      "id": "gemm_microtile_resonance",
+      "claim": "Search catalog for frames that resonate with GEMM tiles (16/32/64/128/256) so packing blocks = compute blocks."
+    },
+    {
+      "id": "bitnet_module_phase",
+      "claim": "BitNet p0 varies by module type (q_proj vs v_proj). Combine per-module adaptive coding with per-tensor axis choice \u2014 two orthogonal levers METHOD_COMPARISON noted as unmeasured."
+    }
+  ],
+  "wall_secs": 0.06388401985168457
+}
