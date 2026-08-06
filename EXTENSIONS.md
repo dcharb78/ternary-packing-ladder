@@ -275,3 +275,13 @@ Ran exact ledgers on LLM-class rectangles (7B–34B shapes). Headline:
 
 Creative links: torus holonomy = `m·bits(n)−n·bits(m)`; factor tree = decode
 tree; BitNet module-p₀ × axis as joint unmeasured experiment.
+
+---
+
+## Real BitNet checkpoint (ran)
+
+See [`CHECKPOINT_PROBE.md`](CHECKPOINT_PROBE.md). On microsoft/bitnet-b1.58-2B-4T
+(210 tensors): axis choice saves **169 KB** within fiber-41; pad-to-tax0 ~**26 MB**
+vs fiber-41 but still does not beat flat `fmt_5_8`; **0** identical-tile /
+Kronecker structure hits. Free levers confirmed; 5-per-byte remains the
+unstructured density knee on this artifact.

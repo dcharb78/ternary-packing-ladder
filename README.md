@@ -31,6 +31,8 @@ fused-kernel performance.
 - [`SCALE_PROBE.md`](SCALE_PROBE.md) — targeted LLM-shape probes (axis
   choice, Kronecker factors, tax-0 tiling grammar) and creative connections.
   Not a blind larger flat stream.
+- [`CHECKPOINT_PROBE.md`](CHECKPOINT_PROBE.md) — same levers on the real
+  BitNet b1.58 2B-4T payload (axis, pad-to-tax0, structure scan).
 
 ## Extensions at a glance
 
@@ -94,9 +96,12 @@ repack/tensor_hierarchical.py  per-row hierarchical decode
 repack/mode_schedule.py        per-mode phase + axis choice
 repack/scale_probe.py          targeted LLM-shape axis/Kronecker/tax0 probe
 repack/pad_to_tax0.py          pad mode length to tax-0 frame multiples
+repack/checkpoint_axis_probe.py real BitNet axis/pad/structure probe
 repack/*_catalog.json          generated catalogs (regenerable)
 repack/scale_probe_results.json last scale-probe run
 repack/pad_to_tax0_results.json pad-to-tax0 ledgers
+repack/checkpoint_axis_results.json BitNet probe ledgers (no weights)
+CHECKPOINT_PROBE.md            real-checkpoint evaluation
 EXTENSIONS.md / SCALE_PROBE.md evaluation notes
 ```
 
@@ -115,6 +120,9 @@ EXTENSIONS.md / SCALE_PROBE.md evaluation notes
   `pre_transform_probe.py`.
 - **Scale probe**: `python3 repack/scale_probe.py run`
 - **Pad-to-tax0**: `python3 repack/pad_to_tax0.py run`
+- **Checkpoint probe**: download BitNet `model.safetensors` into
+  `repack/data/bitnet/`, then
+  `python3 repack/checkpoint_axis_probe.py --rt-sample 5`
 - **BitNet repack**: download `microsoft/bitnet-b1.58-2B-4T`'s
   `model.safetensors` (~1.18 GB) into `repack/data/bitnet/`, then
   `python3 repack/repack_bitnet.py`. Every tensor is round-tripped exactly
