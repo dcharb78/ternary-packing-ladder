@@ -93,8 +93,10 @@ repack/kronecker_tensor_pack.py Kronecker-factor pack ledgers
 repack/tensor_hierarchical.py  per-row hierarchical decode
 repack/mode_schedule.py        per-mode phase + axis choice
 repack/scale_probe.py          targeted LLM-shape axis/Kronecker/tax0 probe
+repack/pad_to_tax0.py          pad mode length to tax-0 frame multiples
 repack/*_catalog.json          generated catalogs (regenerable)
 repack/scale_probe_results.json last scale-probe run
+repack/pad_to_tax0_results.json pad-to-tax0 ledgers
 EXTENSIONS.md / SCALE_PROBE.md evaluation notes
 ```
 
@@ -112,6 +114,7 @@ EXTENSIONS.md / SCALE_PROBE.md evaluation notes
   `mode_schedule.py`, `recursive_pack.py`, `collatz_schedule.py`,
   `pre_transform_probe.py`.
 - **Scale probe**: `python3 repack/scale_probe.py run`
+- **Pad-to-tax0**: `python3 repack/pad_to_tax0.py run`
 - **BitNet repack**: download `microsoft/bitnet-b1.58-2B-4T`'s
   `model.safetensors` (~1.18 GB) into `repack/data/bitnet/`, then
   `python3 repack/repack_bitnet.py`. Every tensor is round-tripped exactly

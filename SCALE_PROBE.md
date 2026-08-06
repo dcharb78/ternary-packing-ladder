@@ -112,3 +112,30 @@ would pay ~16 KB slack vs ~4 B for one flat stream. So:
 2. Any layer with real Kronecker / low-rank / grouped structure → factor pack.
 3. Pad-to-tax0 and GEMM-aligned frame search on those tensors.
 4. Only then full-model memory / load-time if per-tensor gains look material.
+
+---
+
+## Pad-to-tax0 (ran)
+
+```bash
+python3 repack/pad_to_tax0.py run
+```
+
+**Hypothesis:** pad mode length `L → L'` (multiple of a tax-0 `frame_q`) to
+unlock the tiling grammar; compare framed bytes on `L'` vs `fmt_41_65` on `L`.
+
+**Result:** **9/10** probed LLM mode lengths have a candidate that beats
+`fmt_41_65` on the unpadded length, often with tiny pads:
+
+| L | pad | frame | Δ bytes vs 41_65 |
+|---|-----|-------|------------------|
+| 1024 | 8 | (19,5) q=24 | −9 |
+| 4096 | 8 | (19,5) q=24 | −44 |
+| 11008 | 1 | (41,41,19) q=101 | −18 |
+| 13824 | 0 | (19,5) q=24 | −155 |
+| 22016 | 2 | (41,41,19) q=101 | −36 |
+
+So the “stock dims miss the grammar” problem is often fixable with **1–11
+pad trits** (or already exact). Caveat: wins are vs fixed `fmt_41_65` fiber
+packing; validate on real tensors before claiming checkpoint-level savings.
+Full JSON: `repack/pad_to_tax0_results.json`.

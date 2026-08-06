@@ -1,0 +1,1407 @@
+{
+  "hypothesis": "Padding a mode length to a tax-0 frame multiple can unlock denser tiling; measure pad cost vs fmt_41_65 on the unpadded length.",
+  "n_tax0_frames": 30,
+  "n_lengths": 10,
+  "n_lengths_with_win_vs_41_65": 9,
+  "per_length": {
+    "128": {
+      "L": 128,
+      "bytes_5_8": 26,
+      "bytes_41_65": 28,
+      "n_candidates": 22,
+      "n_beat_41_65": 0,
+      "best": {
+        "parts": [
+          41,
+          19,
+          5
+        ],
+        "frame_q": 65,
+        "L_prime": 130,
+        "pad_trits": 2,
+        "bytes_framed_Lp": 28,
+        "bytes_5_8_L": 26,
+        "bytes_41_65_L": 28,
+        "delta_vs_5_8": 2,
+        "delta_vs_41_65": 0,
+        "tax": 0
+      },
+      "top_wins": []
+    },
+    "1024": {
+      "L": 1024,
+      "bytes_5_8": 205,
+      "bytes_41_65": 224,
+      "n_candidates": 29,
+      "n_beat_41_65": 4,
+      "best": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 1032,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 215,
+        "bytes_5_8_L": 205,
+        "bytes_41_65_L": 224,
+        "delta_vs_5_8": 10,
+        "delta_vs_41_65": -9,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            19,
+            5
+          ],
+          "frame_q": 24,
+          "L_prime": 1032,
+          "pad_trits": 8,
+          "bytes_framed_Lp": 215,
+          "bytes_5_8_L": 205,
+          "bytes_41_65_L": 224,
+          "delta_vs_5_8": 10,
+          "delta_vs_41_65": -9,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            53
+          ],
+          "frame_q": 359,
+          "L_prime": 1077,
+          "pad_trits": 53,
+          "bytes_framed_Lp": 216,
+          "bytes_5_8_L": 205,
+          "bytes_41_65_L": 224,
+          "delta_vs_5_8": 11,
+          "delta_vs_41_65": -8,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            41,
+            41,
+            41,
+            41,
+            41,
+            19
+          ],
+          "frame_q": 530,
+          "L_prime": 1060,
+          "pad_trits": 36,
+          "bytes_framed_Lp": 220,
+          "bytes_5_8_L": 205,
+          "bytes_41_65_L": 224,
+          "delta_vs_5_8": 15,
+          "delta_vs_41_65": -4,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            41,
+            19
+          ],
+          "frame_q": 366,
+          "L_prime": 1098,
+          "pad_trits": 74,
+          "bytes_framed_Lp": 222,
+          "bytes_5_8_L": 205,
+          "bytes_41_65_L": 224,
+          "delta_vs_5_8": 17,
+          "delta_vs_41_65": -2,
+          "tax": 0
+        }
+      ]
+    },
+    "2560": {
+      "L": 2560,
+      "bytes_5_8": 512,
+      "bytes_41_65": 562,
+      "n_candidates": 27,
+      "n_beat_41_65": 14,
+      "best": {
+        "parts": [
+          306,
+          41,
+          19
+        ],
+        "frame_q": 366,
+        "L_prime": 2562,
+        "pad_trits": 2,
+        "bytes_framed_Lp": 518,
+        "bytes_5_8_L": 512,
+        "bytes_41_65_L": 562,
+        "delta_vs_5_8": 6,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            306,
+            41,
+            19
+          ],
+          "frame_q": 366,
+          "L_prime": 2562,
+          "pad_trits": 2,
+          "bytes_framed_Lp": 518,
+          "bytes_5_8_L": 512,
+          "bytes_41_65_L": 562,
+          "delta_vs_5_8": 6,
+          "delta_vs_41_65": -44,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19
+          ],
+          "frame_q": 325,
+          "L_prime": 2600,
+          "pad_trits": 40,
+          "bytes_framed_Lp": 520,
+          "bytes_5_8_L": 512,
+          "bytes_41_65_L": 562,
+          "delta_vs_5_8": 8,
+          "delta_vs_41_65": -42,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            41,
+            19,
+            5
+          ],
+          "frame_q": 371,
+          "L_prime": 2597,
+          "pad_trits": 37,
+          "bytes_framed_Lp": 525,
+          "bytes_5_8_L": 512,
+          "bytes_41_65_L": 562,
+          "delta_vs_5_8": 13,
+          "delta_vs_41_65": -37,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19,
+            5
+          ],
+          "frame_q": 330,
+          "L_prime": 2640,
+          "pad_trits": 80,
+          "bytes_framed_Lp": 528,
+          "bytes_5_8_L": 512,
+          "bytes_41_65_L": 562,
+          "delta_vs_5_8": 16,
+          "delta_vs_41_65": -34,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            53
+          ],
+          "frame_q": 665,
+          "L_prime": 2660,
+          "pad_trits": 100,
+          "bytes_framed_Lp": 532,
+          "bytes_5_8_L": 512,
+          "bytes_41_65_L": 562,
+          "delta_vs_5_8": 20,
+          "delta_vs_41_65": -30,
+          "tax": 0
+        }
+      ]
+    },
+    "4096": {
+      "L": 4096,
+      "bytes_5_8": 820,
+      "bytes_41_65": 899,
+      "n_candidates": 25,
+      "n_beat_41_65": 14,
+      "best": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 4104,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 855,
+        "bytes_5_8_L": 820,
+        "bytes_41_65_L": 899,
+        "delta_vs_5_8": 35,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            306,
+            41,
+            41,
+            19,
+            5
+          ],
+          "frame_q": 412,
+          "L_prime": 4120,
+          "pad_trits": 24,
+          "bytes_framed_Lp": 840,
+          "bytes_5_8_L": 820,
+          "bytes_41_65_L": 899,
+          "delta_vs_5_8": 20,
+          "delta_vs_41_65": -59,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19
+          ],
+          "frame_q": 325,
+          "L_prime": 4225,
+          "pad_trits": 129,
+          "bytes_framed_Lp": 845,
+          "bytes_5_8_L": 820,
+          "bytes_41_65_L": 899,
+          "delta_vs_5_8": 25,
+          "delta_vs_41_65": -54,
+          "tax": 0
+        },
+        {
+          "parts": [
+            19,
+            5
+          ],
+          "frame_q": 24,
+          "L_prime": 4104,
+          "pad_trits": 8,
+          "bytes_framed_Lp": 855,
+          "bytes_5_8_L": 820,
+          "bytes_41_65_L": 899,
+          "delta_vs_5_8": 35,
+          "delta_vs_41_65": -44,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19,
+            5
+          ],
+          "frame_q": 330,
+          "L_prime": 4290,
+          "pad_trits": 194,
+          "bytes_framed_Lp": 858,
+          "bytes_5_8_L": 820,
+          "bytes_41_65_L": 899,
+          "delta_vs_5_8": 38,
+          "delta_vs_41_65": -41,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            53
+          ],
+          "frame_q": 359,
+          "L_prime": 4308,
+          "pad_trits": 212,
+          "bytes_framed_Lp": 864,
+          "bytes_5_8_L": 820,
+          "bytes_41_65_L": 899,
+          "delta_vs_5_8": 44,
+          "delta_vs_41_65": -35,
+          "tax": 0
+        }
+      ]
+    },
+    "5120": {
+      "L": 5120,
+      "bytes_5_8": 1024,
+      "bytes_41_65": 1124,
+      "n_candidates": 26,
+      "n_beat_41_65": 21,
+      "best": {
+        "parts": [
+          306,
+          41,
+          19
+        ],
+        "frame_q": 366,
+        "L_prime": 5124,
+        "pad_trits": 4,
+        "bytes_framed_Lp": 1036,
+        "bytes_5_8_L": 1024,
+        "bytes_41_65_L": 1124,
+        "delta_vs_5_8": 12,
+        "delta_vs_41_65": -88,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            306,
+            41,
+            19
+          ],
+          "frame_q": 366,
+          "L_prime": 5124,
+          "pad_trits": 4,
+          "bytes_framed_Lp": 1036,
+          "bytes_5_8_L": 1024,
+          "bytes_41_65_L": 1124,
+          "delta_vs_5_8": 12,
+          "delta_vs_41_65": -88,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19
+          ],
+          "frame_q": 325,
+          "L_prime": 5200,
+          "pad_trits": 80,
+          "bytes_framed_Lp": 1040,
+          "bytes_5_8_L": 1024,
+          "bytes_41_65_L": 1124,
+          "delta_vs_5_8": 16,
+          "delta_vs_41_65": -84,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            41,
+            19,
+            5
+          ],
+          "frame_q": 371,
+          "L_prime": 5194,
+          "pad_trits": 74,
+          "bytes_framed_Lp": 1050,
+          "bytes_5_8_L": 1024,
+          "bytes_41_65_L": 1124,
+          "delta_vs_5_8": 26,
+          "delta_vs_41_65": -74,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19,
+            5
+          ],
+          "frame_q": 330,
+          "L_prime": 5280,
+          "pad_trits": 160,
+          "bytes_framed_Lp": 1056,
+          "bytes_5_8_L": 1024,
+          "bytes_41_65_L": 1124,
+          "delta_vs_5_8": 32,
+          "delta_vs_41_65": -68,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            53
+          ],
+          "frame_q": 665,
+          "L_prime": 5320,
+          "pad_trits": 200,
+          "bytes_framed_Lp": 1064,
+          "bytes_5_8_L": 1024,
+          "bytes_41_65_L": 1124,
+          "delta_vs_5_8": 40,
+          "delta_vs_41_65": -60,
+          "tax": 0
+        }
+      ]
+    },
+    "6912": {
+      "L": 6912,
+      "bytes_5_8": 1383,
+      "bytes_41_65": 1517,
+      "n_candidates": 28,
+      "n_beat_41_65": 20,
+      "best": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 6912,
+        "pad_trits": 0,
+        "bytes_framed_Lp": 1440,
+        "bytes_5_8_L": 1383,
+        "bytes_41_65_L": 1517,
+        "delta_vs_5_8": 57,
+        "delta_vs_41_65": -77,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            306,
+            19,
+            5
+          ],
+          "frame_q": 330,
+          "L_prime": 6930,
+          "pad_trits": 18,
+          "bytes_framed_Lp": 1386,
+          "bytes_5_8_L": 1383,
+          "bytes_41_65_L": 1517,
+          "delta_vs_5_8": 3,
+          "delta_vs_41_65": -131,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            19
+          ],
+          "frame_q": 631,
+          "L_prime": 6941,
+          "pad_trits": 29,
+          "bytes_framed_Lp": 1386,
+          "bytes_5_8_L": 1383,
+          "bytes_41_65_L": 1517,
+          "delta_vs_5_8": 3,
+          "delta_vs_41_65": -131,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            19,
+            5
+          ],
+          "frame_q": 636,
+          "L_prime": 6996,
+          "pad_trits": 84,
+          "bytes_framed_Lp": 1397,
+          "bytes_5_8_L": 1383,
+          "bytes_41_65_L": 1517,
+          "delta_vs_5_8": 14,
+          "delta_vs_41_65": -120,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            41,
+            19
+          ],
+          "frame_q": 366,
+          "L_prime": 6954,
+          "pad_trits": 42,
+          "bytes_framed_Lp": 1406,
+          "bytes_5_8_L": 1383,
+          "bytes_41_65_L": 1517,
+          "delta_vs_5_8": 23,
+          "delta_vs_41_65": -111,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            41,
+            41,
+            19
+          ],
+          "frame_q": 407,
+          "L_prime": 6919,
+          "pad_trits": 7,
+          "bytes_framed_Lp": 1411,
+          "bytes_5_8_L": 1383,
+          "bytes_41_65_L": 1517,
+          "delta_vs_5_8": 28,
+          "delta_vs_41_65": -106,
+          "tax": 0
+        }
+      ]
+    },
+    "8192": {
+      "L": 8192,
+      "bytes_5_8": 1639,
+      "bytes_41_65": 1798,
+      "n_candidates": 27,
+      "n_beat_41_65": 22,
+      "best": {
+        "parts": [
+          306,
+          306,
+          19
+        ],
+        "frame_q": 631,
+        "L_prime": 8203,
+        "pad_trits": 11,
+        "bytes_framed_Lp": 1638,
+        "bytes_5_8_L": 1639,
+        "bytes_41_65_L": 1798,
+        "delta_vs_5_8": -1,
+        "delta_vs_41_65": -160,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            306,
+            306,
+            19
+          ],
+          "frame_q": 631,
+          "L_prime": 8203,
+          "pad_trits": 11,
+          "bytes_framed_Lp": 1638,
+          "bytes_5_8_L": 1639,
+          "bytes_41_65_L": 1798,
+          "delta_vs_5_8": -1,
+          "delta_vs_41_65": -160,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19,
+            5
+          ],
+          "frame_q": 330,
+          "L_prime": 8250,
+          "pad_trits": 58,
+          "bytes_framed_Lp": 1650,
+          "bytes_5_8_L": 1639,
+          "bytes_41_65_L": 1798,
+          "delta_vs_5_8": 11,
+          "delta_vs_41_65": -148,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            19,
+            5
+          ],
+          "frame_q": 636,
+          "L_prime": 8268,
+          "pad_trits": 76,
+          "bytes_framed_Lp": 1651,
+          "bytes_5_8_L": 1639,
+          "bytes_41_65_L": 1798,
+          "delta_vs_5_8": 12,
+          "delta_vs_41_65": -147,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            53
+          ],
+          "frame_q": 359,
+          "L_prime": 8257,
+          "pad_trits": 65,
+          "bytes_framed_Lp": 1656,
+          "bytes_5_8_L": 1639,
+          "bytes_41_65_L": 1798,
+          "delta_vs_5_8": 17,
+          "delta_vs_41_65": -142,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            41,
+            41,
+            19,
+            5
+          ],
+          "frame_q": 412,
+          "L_prime": 8240,
+          "pad_trits": 48,
+          "bytes_framed_Lp": 1680,
+          "bytes_5_8_L": 1639,
+          "bytes_41_65_L": 1798,
+          "delta_vs_5_8": 41,
+          "delta_vs_41_65": -118,
+          "tax": 0
+        }
+      ]
+    },
+    "11008": {
+      "L": 11008,
+      "bytes_5_8": 2202,
+      "bytes_41_65": 2416,
+      "n_candidates": 30,
+      "n_beat_41_65": 26,
+      "best": {
+        "parts": [
+          41,
+          41,
+          19
+        ],
+        "frame_q": 101,
+        "L_prime": 11009,
+        "pad_trits": 1,
+        "bytes_framed_Lp": 2398,
+        "bytes_5_8_L": 2202,
+        "bytes_41_65_L": 2416,
+        "delta_vs_5_8": 196,
+        "delta_vs_41_65": -18,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            306,
+            19
+          ],
+          "frame_q": 325,
+          "L_prime": 11050,
+          "pad_trits": 42,
+          "bytes_framed_Lp": 2210,
+          "bytes_5_8_L": 2202,
+          "bytes_41_65_L": 2416,
+          "delta_vs_5_8": 8,
+          "delta_vs_41_65": -206,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            53
+          ],
+          "frame_q": 359,
+          "L_prime": 11129,
+          "pad_trits": 121,
+          "bytes_framed_Lp": 2232,
+          "bytes_5_8_L": 2202,
+          "bytes_41_65_L": 2416,
+          "delta_vs_5_8": 30,
+          "delta_vs_41_65": -184,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19,
+            5
+          ],
+          "frame_q": 330,
+          "L_prime": 11220,
+          "pad_trits": 212,
+          "bytes_framed_Lp": 2244,
+          "bytes_5_8_L": 2202,
+          "bytes_41_65_L": 2416,
+          "delta_vs_5_8": 42,
+          "delta_vs_41_65": -172,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            41,
+            19,
+            5
+          ],
+          "frame_q": 371,
+          "L_prime": 11130,
+          "pad_trits": 122,
+          "bytes_framed_Lp": 2250,
+          "bytes_5_8_L": 2202,
+          "bytes_41_65_L": 2416,
+          "delta_vs_5_8": 48,
+          "delta_vs_41_65": -166,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            53
+          ],
+          "frame_q": 665,
+          "L_prime": 11305,
+          "pad_trits": 297,
+          "bytes_framed_Lp": 2261,
+          "bytes_5_8_L": 2202,
+          "bytes_41_65_L": 2416,
+          "delta_vs_5_8": 59,
+          "delta_vs_41_65": -155,
+          "tax": 0
+        }
+      ]
+    },
+    "13824": {
+      "L": 13824,
+      "bytes_5_8": 2765,
+      "bytes_41_65": 3035,
+      "n_candidates": 29,
+      "n_beat_41_65": 25,
+      "best": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 13824,
+        "pad_trits": 0,
+        "bytes_framed_Lp": 2880,
+        "bytes_5_8_L": 2765,
+        "bytes_41_65_L": 3035,
+        "delta_vs_5_8": 115,
+        "delta_vs_41_65": -155,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            306,
+            19,
+            5
+          ],
+          "frame_q": 330,
+          "L_prime": 13860,
+          "pad_trits": 36,
+          "bytes_framed_Lp": 2772,
+          "bytes_5_8_L": 2765,
+          "bytes_41_65_L": 3035,
+          "delta_vs_5_8": 7,
+          "delta_vs_41_65": -263,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            19
+          ],
+          "frame_q": 631,
+          "L_prime": 13882,
+          "pad_trits": 58,
+          "bytes_framed_Lp": 2772,
+          "bytes_5_8_L": 2765,
+          "bytes_41_65_L": 3035,
+          "delta_vs_5_8": 7,
+          "delta_vs_41_65": -263,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            53
+          ],
+          "frame_q": 665,
+          "L_prime": 13965,
+          "pad_trits": 141,
+          "bytes_framed_Lp": 2793,
+          "bytes_5_8_L": 2765,
+          "bytes_41_65_L": 3035,
+          "delta_vs_5_8": 28,
+          "delta_vs_41_65": -242,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            53
+          ],
+          "frame_q": 665,
+          "L_prime": 13965,
+          "pad_trits": 141,
+          "bytes_framed_Lp": 2793,
+          "bytes_5_8_L": 2765,
+          "bytes_41_65_L": 3035,
+          "delta_vs_5_8": 28,
+          "delta_vs_41_65": -242,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            19,
+            5
+          ],
+          "frame_q": 636,
+          "L_prime": 13992,
+          "pad_trits": 168,
+          "bytes_framed_Lp": 2794,
+          "bytes_5_8_L": 2765,
+          "bytes_41_65_L": 3035,
+          "delta_vs_5_8": 29,
+          "delta_vs_41_65": -241,
+          "tax": 0
+        }
+      ]
+    },
+    "22016": {
+      "L": 22016,
+      "bytes_5_8": 4404,
+      "bytes_41_65": 4832,
+      "n_candidates": 27,
+      "n_beat_41_65": 23,
+      "best": {
+        "parts": [
+          41,
+          41,
+          19
+        ],
+        "frame_q": 101,
+        "L_prime": 22018,
+        "pad_trits": 2,
+        "bytes_framed_Lp": 4796,
+        "bytes_5_8_L": 4404,
+        "bytes_41_65_L": 4832,
+        "delta_vs_5_8": 392,
+        "delta_vs_41_65": -36,
+        "tax": 0
+      },
+      "top_wins": [
+        {
+          "parts": [
+            306,
+            306,
+            19
+          ],
+          "frame_q": 631,
+          "L_prime": 22085,
+          "pad_trits": 69,
+          "bytes_framed_Lp": 4410,
+          "bytes_5_8_L": 4404,
+          "bytes_41_65_L": 4832,
+          "delta_vs_5_8": 6,
+          "delta_vs_41_65": -422,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19
+          ],
+          "frame_q": 325,
+          "L_prime": 22100,
+          "pad_trits": 84,
+          "bytes_framed_Lp": 4420,
+          "bytes_5_8_L": 4404,
+          "bytes_41_65_L": 4832,
+          "delta_vs_5_8": 16,
+          "delta_vs_41_65": -412,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            19,
+            5
+          ],
+          "frame_q": 330,
+          "L_prime": 22110,
+          "pad_trits": 94,
+          "bytes_framed_Lp": 4422,
+          "bytes_5_8_L": 4404,
+          "bytes_41_65_L": 4832,
+          "delta_vs_5_8": 18,
+          "delta_vs_41_65": -410,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            19,
+            5
+          ],
+          "frame_q": 636,
+          "L_prime": 22260,
+          "pad_trits": 244,
+          "bytes_framed_Lp": 4445,
+          "bytes_5_8_L": 4404,
+          "bytes_41_65_L": 4832,
+          "delta_vs_5_8": 41,
+          "delta_vs_41_65": -387,
+          "tax": 0
+        },
+        {
+          "parts": [
+            306,
+            306,
+            41,
+            19
+          ],
+          "frame_q": 672,
+          "L_prime": 22176,
+          "pad_trits": 160,
+          "bytes_framed_Lp": 4455,
+          "bytes_5_8_L": 4404,
+          "bytes_41_65_L": 4832,
+          "delta_vs_5_8": 51,
+          "delta_vs_41_65": -377,
+          "tax": 0
+        }
+      ]
+    }
+  },
+  "matrices": [
+    {
+      "name": "llama7b_attn_q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 4104,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 855,
+        "bytes_5_8_L": 820,
+        "bytes_41_65_L": 899,
+        "delta_vs_5_8": 35,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 4104,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 855,
+        "bytes_5_8_L": 820,
+        "bytes_41_65_L": 899,
+        "delta_vs_5_8": 35,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 14,
+      "n_beat_41_on_m": 14
+    },
+    {
+      "name": "llama7b_mlp_up",
+      "shape": [
+        11008,
+        4096
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 4104,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 855,
+        "bytes_5_8_L": 820,
+        "bytes_41_65_L": 899,
+        "delta_vs_5_8": 35,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          41,
+          41,
+          19
+        ],
+        "frame_q": 101,
+        "L_prime": 11009,
+        "pad_trits": 1,
+        "bytes_framed_Lp": 2398,
+        "bytes_5_8_L": 2202,
+        "bytes_41_65_L": 2416,
+        "delta_vs_5_8": 196,
+        "delta_vs_41_65": -18,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 14,
+      "n_beat_41_on_m": 26
+    },
+    {
+      "name": "llama7b_mlp_down",
+      "shape": [
+        4096,
+        11008
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          41,
+          41,
+          19
+        ],
+        "frame_q": 101,
+        "L_prime": 11009,
+        "pad_trits": 1,
+        "bytes_framed_Lp": 2398,
+        "bytes_5_8_L": 2202,
+        "bytes_41_65_L": 2416,
+        "delta_vs_5_8": 196,
+        "delta_vs_41_65": -18,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 4104,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 855,
+        "bytes_5_8_L": 820,
+        "bytes_41_65_L": 899,
+        "delta_vs_5_8": 35,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 26,
+      "n_beat_41_on_m": 14
+    },
+    {
+      "name": "llama13b_attn_q",
+      "shape": [
+        5120,
+        5120
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          306,
+          41,
+          19
+        ],
+        "frame_q": 366,
+        "L_prime": 5124,
+        "pad_trits": 4,
+        "bytes_framed_Lp": 1036,
+        "bytes_5_8_L": 1024,
+        "bytes_41_65_L": 1124,
+        "delta_vs_5_8": 12,
+        "delta_vs_41_65": -88,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          306,
+          41,
+          19
+        ],
+        "frame_q": 366,
+        "L_prime": 5124,
+        "pad_trits": 4,
+        "bytes_framed_Lp": 1036,
+        "bytes_5_8_L": 1024,
+        "bytes_41_65_L": 1124,
+        "delta_vs_5_8": 12,
+        "delta_vs_41_65": -88,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 21,
+      "n_beat_41_on_m": 21
+    },
+    {
+      "name": "llama13b_mlp_up",
+      "shape": [
+        13824,
+        5120
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          306,
+          41,
+          19
+        ],
+        "frame_q": 366,
+        "L_prime": 5124,
+        "pad_trits": 4,
+        "bytes_framed_Lp": 1036,
+        "bytes_5_8_L": 1024,
+        "bytes_41_65_L": 1124,
+        "delta_vs_5_8": 12,
+        "delta_vs_41_65": -88,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 13824,
+        "pad_trits": 0,
+        "bytes_framed_Lp": 2880,
+        "bytes_5_8_L": 2765,
+        "bytes_41_65_L": 3035,
+        "delta_vs_5_8": 115,
+        "delta_vs_41_65": -155,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 21,
+      "n_beat_41_on_m": 25
+    },
+    {
+      "name": "llama34b_attn_q",
+      "shape": [
+        8192,
+        8192
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          306,
+          306,
+          19
+        ],
+        "frame_q": 631,
+        "L_prime": 8203,
+        "pad_trits": 11,
+        "bytes_framed_Lp": 1638,
+        "bytes_5_8_L": 1639,
+        "bytes_41_65_L": 1798,
+        "delta_vs_5_8": -1,
+        "delta_vs_41_65": -160,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          306,
+          306,
+          19
+        ],
+        "frame_q": 631,
+        "L_prime": 8203,
+        "pad_trits": 11,
+        "bytes_framed_Lp": 1638,
+        "bytes_5_8_L": 1639,
+        "bytes_41_65_L": 1798,
+        "delta_vs_5_8": -1,
+        "delta_vs_41_65": -160,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 22,
+      "n_beat_41_on_m": 22
+    },
+    {
+      "name": "llama34b_mlp_up",
+      "shape": [
+        22016,
+        8192
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          306,
+          306,
+          19
+        ],
+        "frame_q": 631,
+        "L_prime": 8203,
+        "pad_trits": 11,
+        "bytes_framed_Lp": 1638,
+        "bytes_5_8_L": 1639,
+        "bytes_41_65_L": 1798,
+        "delta_vs_5_8": -1,
+        "delta_vs_41_65": -160,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          41,
+          41,
+          19
+        ],
+        "frame_q": 101,
+        "L_prime": 22018,
+        "pad_trits": 2,
+        "bytes_framed_Lp": 4796,
+        "bytes_5_8_L": 4404,
+        "bytes_41_65_L": 4832,
+        "delta_vs_5_8": 392,
+        "delta_vs_41_65": -36,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 22,
+      "n_beat_41_on_m": 23
+    },
+    {
+      "name": "bitnet2b_like_q",
+      "shape": [
+        2560,
+        2560
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          306,
+          41,
+          19
+        ],
+        "frame_q": 366,
+        "L_prime": 2562,
+        "pad_trits": 2,
+        "bytes_framed_Lp": 518,
+        "bytes_5_8_L": 512,
+        "bytes_41_65_L": 562,
+        "delta_vs_5_8": 6,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          306,
+          41,
+          19
+        ],
+        "frame_q": 366,
+        "L_prime": 2562,
+        "pad_trits": 2,
+        "bytes_framed_Lp": 518,
+        "bytes_5_8_L": 512,
+        "bytes_41_65_L": 562,
+        "delta_vs_5_8": 6,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 14,
+      "n_beat_41_on_m": 14
+    },
+    {
+      "name": "bitnet2b_like_mlp",
+      "shape": [
+        6912,
+        2560
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          306,
+          41,
+          19
+        ],
+        "frame_q": 366,
+        "L_prime": 2562,
+        "pad_trits": 2,
+        "bytes_framed_Lp": 518,
+        "bytes_5_8_L": 512,
+        "bytes_41_65_L": 562,
+        "delta_vs_5_8": 6,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 6912,
+        "pad_trits": 0,
+        "bytes_framed_Lp": 1440,
+        "bytes_5_8_L": 1383,
+        "bytes_41_65_L": 1517,
+        "delta_vs_5_8": 57,
+        "delta_vs_41_65": -77,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 14,
+      "n_beat_41_on_m": 20
+    },
+    {
+      "name": "head_proj_slice",
+      "shape": [
+        128,
+        4096
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 4104,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 855,
+        "bytes_5_8_L": 820,
+        "bytes_41_65_L": 899,
+        "delta_vs_5_8": 35,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          41,
+          19,
+          5
+        ],
+        "frame_q": 65,
+        "L_prime": 130,
+        "pad_trits": 2,
+        "bytes_framed_Lp": 28,
+        "bytes_5_8_L": 26,
+        "bytes_41_65_L": 28,
+        "delta_vs_5_8": 2,
+        "delta_vs_41_65": 0,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 14,
+      "n_beat_41_on_m": 0
+    },
+    {
+      "name": "kv_group_rect",
+      "shape": [
+        1024,
+        4096
+      ],
+      "pad_col_fiber_n": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 4104,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 855,
+        "bytes_5_8_L": 820,
+        "bytes_41_65_L": 899,
+        "delta_vs_5_8": 35,
+        "delta_vs_41_65": -44,
+        "tax": 0
+      },
+      "pad_row_fiber_m": {
+        "parts": [
+          19,
+          5
+        ],
+        "frame_q": 24,
+        "L_prime": 1032,
+        "pad_trits": 8,
+        "bytes_framed_Lp": 215,
+        "bytes_5_8_L": 205,
+        "bytes_41_65_L": 224,
+        "delta_vs_5_8": 10,
+        "delta_vs_41_65": -9,
+        "tax": 0
+      },
+      "n_beat_41_on_n": 14,
+      "n_beat_41_on_m": 4
+    }
+  ]
+}
