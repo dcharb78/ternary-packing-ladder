@@ -1,0 +1,1209 @@
+{
+  "stance": "Test 0\u21921 packet / prime-context framing against packing metrics. Tag claims; do not reopen theory without a metric win.",
+  "pattern": {
+    "n_events": 114,
+    "universe": 800,
+    "base_rate": 0.1425,
+    "cf_surplus_band_ge_0.9": {
+      "precision": 1.0,
+      "recall": 0.6929824561403509,
+      "f1": 0.8186528497409327,
+      "n_pred": 79,
+      "tp": 79
+    },
+    "seam_any_context": {
+      "precision": 0.1560798548094374,
+      "recall": 0.7543859649122807,
+      "f1": 0.2586466165413534,
+      "n_pred": 551,
+      "tp": 86
+    },
+    "twin_sheets_any_context": {
+      "precision": 0.1449468085106383,
+      "recall": 0.956140350877193,
+      "f1": 0.2517321016166282,
+      "n_pred": 752,
+      "tp": 109
+    },
+    "contexts_used": [
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      41,
+      53,
+      306,
+      665
+    ],
+    "per_context_seam_vs_rung": [
+      {
+        "p": 3,
+        "n_seams": 266,
+        "rung_hits_on_seam": 1,
+        "precision_rung": 0.0037593984962406013,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 5,
+        "n_seams": 160,
+        "rung_hits_on_seam": 2,
+        "precision_rung": 0.0125,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 7,
+        "n_seams": 114,
+        "rung_hits_on_seam": 1,
+        "precision_rung": 0.008771929824561403,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 11,
+        "n_seams": 72,
+        "rung_hits_on_seam": 0,
+        "precision_rung": 0.0,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 13,
+        "n_seams": 61,
+        "rung_hits_on_seam": 0,
+        "precision_rung": 0.0,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 17,
+        "n_seams": 47,
+        "rung_hits_on_seam": 1,
+        "precision_rung": 0.02127659574468085,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 19,
+        "n_seams": 42,
+        "rung_hits_on_seam": 2,
+        "precision_rung": 0.047619047619047616,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 23,
+        "n_seams": 34,
+        "rung_hits_on_seam": 0,
+        "precision_rung": 0.0,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 29,
+        "n_seams": 27,
+        "rung_hits_on_seam": 0,
+        "precision_rung": 0.0,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 31,
+        "n_seams": 25,
+        "rung_hits_on_seam": 0,
+        "precision_rung": 0.0,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 41,
+        "n_seams": 19,
+        "rung_hits_on_seam": 1,
+        "precision_rung": 0.05263157894736842,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 53,
+        "n_seams": 15,
+        "rung_hits_on_seam": 1,
+        "precision_rung": 0.06666666666666667,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 306,
+        "n_seams": 2,
+        "rung_hits_on_seam": 1,
+        "precision_rung": 0.5,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      },
+      {
+        "p": 665,
+        "n_seams": 1,
+        "rung_hits_on_seam": 1,
+        "precision_rung": 1.0,
+        "note": "seam\u22610 only predicts rung when p itself is a rung quantum"
+      }
+    ],
+    "winner": [
+      "cf_surplus_band",
+      0.8186528497409327
+    ]
+  },
+  "recursion": {
+    "cf_ladder": [
+      5,
+      41,
+      306,
+      15601
+    ],
+    "transport_rows": [
+      {
+        "parent": 5,
+        "cf_child": 41,
+        "naive_2p": 10,
+        "naive_p2": 25,
+        "err_2p": 31,
+        "err_p2": 16,
+        "phi_parent": "0.92481250360578090726869471973908254379907203846240530227876327270549113897179281261140237459044121045490331237529583670",
+        "phi_child": "0.9834625295674034396032967018604768591523907153917234786858588361850273395687010634134994716416179257302071614774258609",
+        "bits_parent": 8,
+        "bits_child": 65,
+        "ratio_child_parent": "8.2"
+      },
+      {
+        "parent": 41,
+        "cf_child": 306,
+        "naive_2p": 82,
+        "naive_p2": 1681,
+        "err_2p": 224,
+        "err_p2": 1375,
+        "phi_parent": "0.9834625295674034396032967018604768591523907153917234786858588361850273395687010634134994716416179257302071614774258609",
+        "phi_child": "0.998525220673791524844116848031851680503208753899204499460312289576057705073720131817825324935002079840082717368105206",
+        "bits_parent": 65,
+        "bits_child": 485,
+        "ratio_child_parent": "7.46341463414634146341463414634146341463414634146341463414634146341463414634146341463414634146341463414634146341463414634"
+      },
+      {
+        "parent": 306,
+        "cf_child": 15601,
+        "naive_2p": 612,
+        "naive_p2": 93636,
+        "err_2p": 14989,
+        "err_p2": 78035,
+        "phi_parent": "0.998525220673791524844116848031851680503208753899204499460312289576057705073720131817825324935002079840082717368105206",
+        "phi_child": "0.9999737507575868597812645298853531618645744103970241701971634956734518197879339100976891970946648613893152733980697",
+        "bits_parent": 485,
+        "bits_child": null,
+        "ratio_child_parent": "50.9836601307189542483660130718954248366013071895424836601307189542483660130718954248366013071895424836601307189542483660"
+      }
+    ],
+    "verdict": "next_child_needs_alpha_CF_not_2p_or_p2",
+    "k_cycle_seams_of_5": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50,
+      55
+    ],
+    "rung_41_is_seam_of_5": true,
+    "rung_41_chart_in_p5": {
+      "n": 41,
+      "p": 5,
+      "cycle": 8,
+      "local": 1,
+      "at_seam": false,
+      "typed_rechart": false,
+      "last_interior": false,
+      "first_interior": true
+    },
+    "rung_306_chart_in_p41": {
+      "n": 306,
+      "p": 41,
+      "cycle": 7,
+      "local": 19,
+      "at_seam": false,
+      "typed_rechart": false,
+      "last_interior": false,
+      "first_interior": false
+    },
+    "odd_sheet_vs_even_306": {
+      "typed_center_explains_odd": true,
+      "seam_rechart_alone_explains_306": false,
+      "note": "Recursive rechart at kp gives twins kp\u00b11 (odd when p odd) \u2014 same parity fact as typed sheets. Even 306 is CF surplus rung, not a typed sheet; k-cycle of odd p never yields even sheet."
+    }
+  },
+  "nesting": {
+    "claim_under_test": "UFRF 'preserve every 0\u21921 step' \u2261 Law-C hierarchical digit nesting",
+    "rows": [
+      {
+        "n": 306,
+        "flat_5_8": 62,
+        "fiber_41": 67,
+        "rung_306": 61,
+        "best_flat_family": 61,
+        "306_beats_5_8": true,
+        "nest_strawman": "would_force_hierarchy_always"
+      },
+      {
+        "n": 612,
+        "flat_5_8": 123,
+        "fiber_41": 134,
+        "rung_306": 122,
+        "best_flat_family": 122,
+        "306_beats_5_8": true,
+        "nest_strawman": "would_force_hierarchy_always"
+      },
+      {
+        "n": 1224,
+        "flat_5_8": 245,
+        "fiber_41": 268,
+        "rung_306": 244,
+        "best_flat_family": 244,
+        "306_beats_5_8": true,
+        "nest_strawman": "would_force_hierarchy_always"
+      },
+      {
+        "n": 665,
+        "flat_5_8": 133,
+        "fiber_41": 146,
+        "rung_306": 133,
+        "best_flat_family": 133,
+        "306_beats_5_8": false,
+        "nest_strawman": "would_force_hierarchy_always"
+      },
+      {
+        "n": 1330,
+        "flat_5_8": 266,
+        "fiber_41": 292,
+        "rung_306": 266,
+        "best_flat_family": 266,
+        "306_beats_5_8": false,
+        "nest_strawman": "would_force_hierarchy_always"
+      }
+    ],
+    "prior_pipeline": {
+      "associator_flat_wins_pct": "~92-98",
+      "nest_decode_vs_5_8": "~8x slower",
+      "recommendation": "keep_never_nested_rule"
+    },
+    "verdict_tag": "false_identification",
+    "correct_reading": "Preserving 0\u21921 steps is a *typed chart* discipline (retain cycle+local). Digit nesting is a *container composition* choice. Same language of hierarchy; different object. Only keep digit nesting when bytes+speed win."
+  },
+  "hierarchy": {
+    "layers": [
+      {
+        "layer": "C0",
+        "context": 0,
+        "ufrf": "signed source/mirror; sheets \u00b11; div/mod chart not appropriate",
+        "packing_owner": null,
+        "operator": "none \u2014 not a trit length",
+        "flatten_risk": "calling seed 'completion' would erase source typing"
+      },
+      {
+        "layer": "C1",
+        "context": 1,
+        "ufrf": "seed/completion grammar 1\u2192{1,3}; center 2",
+        "packing_owner": "fmt_5_8 atom (rung 5 appears later as C\u22653 sheet)",
+        "operator": "smallest practical block; not identified with context 1",
+        "flatten_risk": "equating C1 with fmt_5_8 conflates seed grammar with CF rung 5"
+      },
+      {
+        "layer": "C_odd_prime",
+        "context": "3,5,7,\u2026",
+        "ufrf": "field-like interior; sheets 2mc\u00b11; twin seam kp\u00b11",
+        "packing_owner": "odd rungs 5,19,41,53,665 as design-time sheets / complements",
+        "operator": "sheet/complement tools OK; fiber-41 when length aligns",
+        "flatten_risk": "treating every odd length as sheet without (c,m) typing"
+      },
+      {
+        "layer": "even_CF_rung",
+        "context": "306 (composite)",
+        "ufrf": "not a typed sheet (sheets always odd)",
+        "packing_owner": "fmt_306_485 rung-block ledger",
+        "operator": "frame_only \u2014 never typed-sheet search",
+        "flatten_risk": "forcing 306 into twin-sheet language (0=1 style collapse)"
+      }
+    ],
+    "typed_rechart": {
+      "at_n_equals_p": {
+        "parent_chart": "completion cycle=1",
+        "child_chart": "local seed=0",
+        "not": "0=1",
+        "packing_analogue": "exact block boundary: remainder 0 in fmt_p; next block starts fresh. Two ledgers meet; they are not the same symbol."
+      }
+    }
+  },
+  "twin_vs_interior": {
+    "twins": {
+      "n": 320,
+      "mean_phi": "0.469915734796028626331754216055063458681743571180241454388341653882205181691091144017202306278934858351805861827758227512",
+      "mean_dist_to_1": "0.530084265203971373668245783944936541318256428819758545611658346117794818308908855982797693721065141648194138172241772491",
+      "mean_max_m_zt": 4.05625,
+      "rung_hit_rate": 0.025,
+      "rung_hits": 8
+    },
+    "interiors_sampled": {
+      "n": 520,
+      "mean_phi": "0.502661657396834848985868909547584213926314622513799509010283948931892337777289080597641401875476234081733872809758059763",
+      "mean_dist_to_1": "0.497338342603165151014131090452415786073685377486200490989716051068107662222710919402358598124523765918266127190241940237",
+      "mean_max_m_zt": 6.559615384615385,
+      "rung_hit_rate": 0.026923076923076925,
+      "rung_hits": 14
+    },
+    "twins_higher_rung_rate": false,
+    "twins_closer_to_1": false,
+    "note": "Twins are always odd when p odd \u2014 necessary for typed sheets / odd rungs, not sufficient for surplus or byte wins."
+  },
+  "synthetic_multiples": {
+    "rows": [
+      {
+        "shape": [
+          1,
+          306
+        ],
+        "path": "frame",
+        "ledger": "fmt_306_485",
+        "bytes": 61,
+        "flat_5_8": 62,
+        "delta_vs_5_8": -1,
+        "reason": "frame:flat_stream:Q=306:frame_only_even_quantum"
+      },
+      {
+        "shape": [
+          2,
+          306
+        ],
+        "path": "frame",
+        "ledger": "fmt_306_485",
+        "bytes": 122,
+        "flat_5_8": 123,
+        "delta_vs_5_8": -1,
+        "reason": "frame:flat_stream:Q=306:frame_only_even_quantum"
+      },
+      {
+        "shape": [
+          4,
+          306
+        ],
+        "path": "frame",
+        "ledger": "fmt_306_485",
+        "bytes": 244,
+        "flat_5_8": 245,
+        "delta_vs_5_8": -1,
+        "reason": "frame:flat_stream:Q=306:frame_only_even_quantum"
+      },
+      {
+        "shape": [
+          1,
+          612
+        ],
+        "path": "frame",
+        "ledger": "fmt_306_485",
+        "bytes": 122,
+        "flat_5_8": 123,
+        "delta_vs_5_8": -1,
+        "reason": "frame:flat_stream:Q=306:frame_only_even_quantum"
+      },
+      {
+        "shape": [
+          41,
+          306
+        ],
+        "path": "frame",
+        "ledger": "fmt_306_485",
+        "bytes": 2501,
+        "flat_5_8": 2510,
+        "delta_vs_5_8": -9,
+        "reason": "frame:flat_stream:Q=306:frame_only_even_quantum"
+      },
+      {
+        "shape": [
+          306,
+          306
+        ],
+        "path": "frame",
+        "ledger": "fmt_306_485",
+        "bytes": 18666,
+        "flat_5_8": 18728,
+        "delta_vs_5_8": -62,
+        "reason": "frame:flat_stream:Q=306:frame_only_even_quantum"
+      },
+      {
+        "shape": [
+          1,
+          665
+        ],
+        "path": "flat58",
+        "ledger": "fmt_5_8",
+        "bytes": 133,
+        "flat_5_8": 133,
+        "delta_vs_5_8": 0,
+        "reason": "flat58_default_frame_lost"
+      },
+      {
+        "shape": [
+          2,
+          665
+        ],
+        "path": "flat58",
+        "ledger": "fmt_5_8",
+        "bytes": 266,
+        "flat_5_8": 266,
+        "delta_vs_5_8": 0,
+        "reason": "flat58_beats_frame_and_fiber41"
+      },
+      {
+        "shape": [
+          5,
+          665
+        ],
+        "path": "flat58",
+        "ledger": "fmt_5_8",
+        "bytes": 665,
+        "flat_5_8": 665,
+        "delta_vs_5_8": 0,
+        "reason": "flat58_beats_frame_and_fiber41"
+      },
+      {
+        "shape": [
+          2560,
+          2560
+        ],
+        "path": "flat58",
+        "ledger": "fmt_5_8",
+        "bytes": 1310720,
+        "flat_5_8": 1310720,
+        "delta_vs_5_8": 0,
+        "reason": "flat58_pareto_knee"
+      }
+    ]
+  },
+  "bitnet_306_redesign": {
+    "skipped": false,
+    "quantum": 306,
+    "redesign_mode": "nearest",
+    "n_tensors": 210,
+    "n_unique_shapes": 4,
+    "mode_map": {
+      "640": 612,
+      "2560": 2448,
+      "6912": 7038
+    },
+    "mode_map_sample": {
+      "640": 612,
+      "2560": 2448,
+      "6912": 7038
+    },
+    "totals": {
+      "selected_before": 416808960,
+      "selected_after": 398705760,
+      "delta_selected": -18103200,
+      "flat58_before": 416808960,
+      "flat58_after": 400013070,
+      "trits_before": 2084044800,
+      "trits_after": 2000064960,
+      "trit_delta": -83979840,
+      "bytes_per_trit_before": 0.2,
+      "bytes_per_trit_after": 0.19934640522875818,
+      "density_delta": -0.0006535947712418277,
+      "density_delta_pct_of_before": -0.32679738562091387
+    },
+    "path_counts_before": {
+      "flat58": 210
+    },
+    "path_counts_after": {
+      "frame": 210
+    },
+    "frame_path_after": 210,
+    "per_unique": [
+      {
+        "shape": [
+          2560,
+          6912
+        ],
+        "redesign": [
+          2448,
+          7038
+        ],
+        "delta_mode": [
+          -112,
+          126
+        ],
+        "before": {
+          "selected": 3538944,
+          "flat_5_8": 3538944,
+          "path": "flat58",
+          "ledger": "fmt_5_8"
+        },
+        "after": {
+          "selected": 3434544,
+          "flat_5_8": 3445805,
+          "path": "frame",
+          "ledger": "fmt_306_485"
+        },
+        "delta_selected": -104400,
+        "trit_delta": -465696
+      },
+      {
+        "shape": [
+          6912,
+          2560
+        ],
+        "redesign": [
+          7038,
+          2448
+        ],
+        "delta_mode": [
+          126,
+          -112
+        ],
+        "before": {
+          "selected": 3538944,
+          "flat_5_8": 3538944,
+          "path": "flat58",
+          "ledger": "fmt_5_8"
+        },
+        "after": {
+          "selected": 3434544,
+          "flat_5_8": 3445805,
+          "path": "frame",
+          "ledger": "fmt_306_485"
+        },
+        "delta_selected": -104400,
+        "trit_delta": -465696
+      },
+      {
+        "shape": [
+          640,
+          2560
+        ],
+        "redesign": [
+          612,
+          2448
+        ],
+        "delta_mode": [
+          -28,
+          -112
+        ],
+        "before": {
+          "selected": 327680,
+          "flat_5_8": 327680,
+          "path": "flat58",
+          "ledger": "fmt_5_8"
+        },
+        "after": {
+          "selected": 298656,
+          "flat_5_8": 299636,
+          "path": "frame",
+          "ledger": "fmt_306_485"
+        },
+        "delta_selected": -29024,
+        "trit_delta": -140224
+      },
+      {
+        "shape": [
+          2560,
+          2560
+        ],
+        "redesign": [
+          2448,
+          2448
+        ],
+        "delta_mode": [
+          -112,
+          -112
+        ],
+        "before": {
+          "selected": 1310720,
+          "flat_5_8": 1310720,
+          "path": "flat58",
+          "ledger": "fmt_5_8"
+        },
+        "after": {
+          "selected": 1194624,
+          "flat_5_8": 1198541,
+          "path": "frame",
+          "ledger": "fmt_306_485"
+        },
+        "delta_selected": -116096,
+        "trit_delta": -560896
+      }
+    ],
+    "verdict": "density_improved"
+  },
+  "density_signal": {
+    "theory": {
+      "block": 306,
+      "fmt_306_485_bytes": 61,
+      "fmt_5_8_ceil_bytes": 62,
+      "B_per_trit": {
+        "fmt_306_485": 0.19934640522875818,
+        "fmt_5_8_on_exact_306_block": 0.20261437908496732,
+        "fmt_5_8_exact_multiple_of_5": 0.2,
+        "ratio_61_over_306": 0.19934640522875818,
+        "ratio_62_over_306": 0.20261437908496732
+      },
+      "delta_vs_0p2": {
+        "absolute_B_per_trit": 0.0006535947712418277,
+        "pct_of_0p2": 0.32679738562091387,
+        "bytes_saved_per_306_trits_vs_0p2": 0.20000000000000284,
+        "bytes_saved_per_306_trits_vs_ceil5_8": 1,
+        "pct_vs_ceil_5_8_block": 1.6129032258064515
+      },
+      "why_reported_0p199346": {
+        "value": 0.19934640522875818,
+        "matches_reported": true,
+        "explanation": "After nearest\u00d7306 redesign every mode is \u00f7306, packer takes fmt_306_485 everywhere \u2192 density collapses exactly to 61/306. Baseline 0.200 is flat 5_8 on BitNet lengths that are \u00f75 (exact n/5), not the 62/306 ceil-on-block figure."
+      },
+      "cross_check_5x306": {
+        "n": 1530,
+        "bytes_5_8": 306,
+        "bytes_306": 305,
+        "B_per_trit_5_8": 0.2,
+        "B_per_trit_306": 0.19934640522875818,
+        "saved_bytes": 1
+      }
+    },
+    "confounder_split_nearest": {
+      "absolute_byte_delta": -18103200,
+      "byte_drop_from_fewer_trits": 16795968.0,
+      "byte_drop_from_true_density": 1307232.0,
+      "frac_drop_from_trits": 0.9277900039771974,
+      "frac_drop_from_density": 0.07220999602280259,
+      "note": "Most absolute byte drop is fewer trits (e.g. 2560\u21922448). True packing signal is density_delta \u2192 exactly 61/306 \u2212 0.2."
+    },
+    "A_redesign_down": {
+      "skipped": false,
+      "redesign_mode": "down",
+      "mode_map": {
+        "640": 612,
+        "2560": 2448,
+        "6912": 6732
+      },
+      "totals": {
+        "selected_before": 416808960,
+        "selected_after": 385266240,
+        "delta_selected": -31542720,
+        "flat58_before": 416808960,
+        "flat58_after": 386529540,
+        "trits_before": 2084044800,
+        "trits_after": 1932647040,
+        "trit_delta": -151397760,
+        "bytes_per_trit_before": 0.2,
+        "bytes_per_trit_after": 0.19934640522875818,
+        "density_delta": -0.0006535947712418277,
+        "density_delta_pct_of_before": -0.32679738562091387
+      },
+      "frame_path_after": 210,
+      "verdict": "density_improved",
+      "n_tensors": 210
+    },
+    "B_redesign_up": {
+      "skipped": false,
+      "redesign_mode": "up",
+      "mode_map": {
+        "640": 918,
+        "2560": 2754,
+        "6912": 7038
+      },
+      "totals": {
+        "selected_before": 416808960,
+        "selected_after": 468703260,
+        "delta_selected": 51894300,
+        "flat58_before": 416808960,
+        "flat58_after": 470240130,
+        "trits_before": 2084044800,
+        "trits_after": 2351199960,
+        "trit_delta": 267155160,
+        "bytes_per_trit_before": 0.2,
+        "bytes_per_trit_after": 0.19934640522875818,
+        "density_delta": -0.0006535947712418277,
+        "density_delta_pct_of_before": -0.32679738562091387
+      },
+      "frame_path_after": 210,
+      "verdict": "density_improved",
+      "n_tensors": 210
+    },
+    "nearest_for_ref": {
+      "skipped": false,
+      "redesign_mode": "nearest",
+      "mode_map": {
+        "640": 612,
+        "2560": 2448,
+        "6912": 7038
+      },
+      "totals": {
+        "selected_before": 416808960,
+        "selected_after": 398705760,
+        "delta_selected": -18103200,
+        "flat58_before": 416808960,
+        "flat58_after": 400013070,
+        "trits_before": 2084044800,
+        "trits_after": 2000064960,
+        "trit_delta": -83979840,
+        "bytes_per_trit_before": 0.2,
+        "bytes_per_trit_after": 0.19934640522875818,
+        "density_delta": -0.0006535947712418277,
+        "density_delta_pct_of_before": -0.32679738562091387
+      },
+      "frame_path_after": 210,
+      "verdict": "density_improved",
+      "n_tensors": 210
+    },
+    "C_pad_up": {
+      "skipped": false,
+      "counterfactual": "C_pad_up",
+      "mode_map": {
+        "640": 918,
+        "2560": 2754,
+        "6912": 7038
+      },
+      "totals": {
+        "selected_before": 416808960,
+        "selected_after_pad": 468703260,
+        "delta_selected": 51894300,
+        "flat58_before": 416808960,
+        "trits_original": 2084044800,
+        "trits_padded": 2351199960,
+        "trit_pad_delta": 267155160,
+        "bytes_per_trit_before": 0.2,
+        "bytes_per_padded_trit": 0.19934640522875818,
+        "bytes_per_useful_trit_after_pad": 0.22490076029075767,
+        "useful_density_delta": 0.024900760290757662
+      },
+      "frame_path_after": 210,
+      "verdict": "pad_hurts_useful_density",
+      "n_tensors": 210
+    },
+    "D_hybrid": {
+      "skipped": false,
+      "counterfactual": "D_hybrid_306_prefix_5_8_rem",
+      "totals": {
+        "flat_5_8": 416808960,
+        "hybrid_306_58": 415446930,
+        "theory_306_bigint_rem": 415446930,
+        "packer_selected": 416808960,
+        "trits": 2084044800,
+        "bytes_per_trit_flat_5_8": 0.2,
+        "bytes_per_trit_hybrid": 0.1993464487903523,
+        "bytes_per_trit_306_bigint_rem": 0.1993464487903523,
+        "hybrid_minus_flat": -1362030,
+        "hybrid_density_delta": -0.0006535512096477181
+      },
+      "layout_counts": {
+        "flat_stream": 210
+      },
+      "verdict": "hybrid_beats_flat",
+      "n_tensors": 210,
+      "per_unique": [
+        {
+          "shape": [
+            2560,
+            6912
+          ],
+          "flat_5_8": 3538944,
+          "hybrid_best": {
+            "layout": "flat_stream",
+            "bytes": 3527379
+          },
+          "hybrid_all": [
+            {
+              "layout": "flat_stream",
+              "bytes": 3527379
+            },
+            {
+              "layout": "row_fibers",
+              "bytes": 3527680
+            },
+            {
+              "layout": "col_fibers",
+              "bytes": 3532032
+            }
+          ],
+          "theory_306_with_bigint_rem": 3527379,
+          "packer_selected": {
+            "selected": 3538944,
+            "flat_5_8": 3538944,
+            "path": "flat58",
+            "ledger": "fmt_5_8"
+          },
+          "hybrid_minus_flat": -11565
+        },
+        {
+          "shape": [
+            6912,
+            2560
+          ],
+          "flat_5_8": 3538944,
+          "hybrid_best": {
+            "layout": "flat_stream",
+            "bytes": 3527379
+          },
+          "hybrid_all": [
+            {
+              "layout": "flat_stream",
+              "bytes": 3527379
+            },
+            {
+              "layout": "row_fibers",
+              "bytes": 3532032
+            },
+            {
+              "layout": "col_fibers",
+              "bytes": 3527680
+            }
+          ],
+          "theory_306_with_bigint_rem": 3527379,
+          "packer_selected": {
+            "selected": 3538944,
+            "flat_5_8": 3538944,
+            "path": "flat58",
+            "ledger": "fmt_5_8"
+          },
+          "hybrid_minus_flat": -11565
+        },
+        {
+          "shape": [
+            640,
+            2560
+          ],
+          "flat_5_8": 327680,
+          "hybrid_best": {
+            "layout": "flat_stream",
+            "bytes": 326610
+          },
+          "hybrid_all": [
+            {
+              "layout": "flat_stream",
+              "bytes": 326610
+            },
+            {
+              "layout": "row_fibers",
+              "bytes": 327040
+            },
+            {
+              "layout": "col_fibers",
+              "bytes": 327680
+            }
+          ],
+          "theory_306_with_bigint_rem": 326610,
+          "packer_selected": {
+            "selected": 327680,
+            "flat_5_8": 327680,
+            "path": "flat58",
+            "ledger": "fmt_5_8"
+          },
+          "hybrid_minus_flat": -1070
+        },
+        {
+          "shape": [
+            2560,
+            2560
+          ],
+          "flat_5_8": 1310720,
+          "hybrid_best": {
+            "layout": "flat_stream",
+            "bytes": 1306437
+          },
+          "hybrid_all": [
+            {
+              "layout": "flat_stream",
+              "bytes": 1306437
+            },
+            {
+              "layout": "row_fibers",
+              "bytes": 1308160
+            },
+            {
+              "layout": "col_fibers",
+              "bytes": 1308160
+            }
+          ],
+          "theory_306_with_bigint_rem": 1306437,
+          "packer_selected": {
+            "selected": 1310720,
+            "flat_5_8": 1310720,
+            "path": "flat58",
+            "ledger": "fmt_5_8"
+          },
+          "hybrid_minus_flat": -4283
+        }
+      ]
+    },
+    "mode_proximity": {
+      "skipped": false,
+      "quantum": 306,
+      "n_unique_modes": 3,
+      "modes": [
+        {
+          "x": 640,
+          "down": 612,
+          "up": 918,
+          "nearest": 612,
+          "abs_dist": 28,
+          "signed_dist": -28,
+          "residue": 28,
+          "n_tensors_as_row": 60,
+          "n_tensors_as_col": 0
+        },
+        {
+          "x": 2560,
+          "down": 2448,
+          "up": 2754,
+          "nearest": 2448,
+          "abs_dist": 112,
+          "signed_dist": -112,
+          "residue": 112,
+          "n_tensors_as_row": 90,
+          "n_tensors_as_col": 180
+        },
+        {
+          "x": 6912,
+          "down": 6732,
+          "up": 7038,
+          "nearest": 7038,
+          "abs_dist": 126,
+          "signed_dist": 126,
+          "residue": 180,
+          "n_tensors_as_row": 60,
+          "n_tensors_as_col": 30
+        }
+      ],
+      "stats": {
+        "mean_abs_dist": 88.66666666666667,
+        "mean_abs_dist_trit_weighted": 115.71875,
+        "min_abs_dist": 28,
+        "max_abs_dist": 126,
+        "median_abs_dist": 112,
+        "n_exact_multiples": 0,
+        "null_uniform_E_abs_dist": 76.5,
+        "n_modes_closer_than_null_E": 1,
+        "frac_modes_closer_than_null_E": 0.3333333333333333,
+        "max_possible_abs_dist": 153
+      },
+      "verdict": "no_systematic_seam_proximity",
+      "note": "Only 3 unique BitNet modes (640, 2560, 6912). Small-N proximity test \u2014 treat as descriptive, not a geometric discovery."
+    },
+    "scale_projection": {
+      "theory": {
+        "B_per_trit_306": 0.19934640522875818,
+        "B_per_trit_5_8_exact": 0.2,
+        "pct_of_5_8_size": 0.32679738562091387,
+        "pct_vs_ceil_62": 1.6129032258064515
+      },
+      "projections": [
+        {
+          "label": "BitNet_2B_measured_trits",
+          "trits": 2084044800,
+          "bytes_fmt_306_485": 415446839,
+          "bytes_5_8_at_0p2": 416808960,
+          "bytes_5_8_ceil_per_306": 422257443,
+          "saved_vs_0p2_bytes": 1362121,
+          "saved_vs_0p2_MB": 1.2990198135375977,
+          "saved_vs_0p2_pct": 0.3267974373679491,
+          "saved_vs_ceil_block_bytes": 6810604,
+          "saved_vs_ceil_block_MB": 6.495098114013672,
+          "saved_vs_ceil_block_pct": 1.6129032449050282,
+          "formula": "save_vs_0p2 \u2248 trit_count/1530 B (= trit_count\u00d70.2/306); save_vs_ceil \u2248 trit_count/306 B (= 1 B per 306-block)"
+        },
+        {
+          "label": "class_2B_approx",
+          "trits": 2000000000,
+          "bytes_fmt_306_485": 398692810,
+          "bytes_5_8_at_0p2": 400000000,
+          "bytes_5_8_ceil_per_306": 405228758,
+          "saved_vs_0p2_bytes": 1307190,
+          "saved_vs_0p2_MB": 1.246633529663086,
+          "saved_vs_0p2_pct": 0.3267975,
+          "saved_vs_ceil_block_bytes": 6535948,
+          "saved_vs_ceil_block_MB": 6.233165740966797,
+          "saved_vs_ceil_block_pct": 1.6129032974505724,
+          "formula": "save_vs_0p2 \u2248 trit_count/1530 B (= trit_count\u00d70.2/306); save_vs_ceil \u2248 trit_count/306 B (= 1 B per 306-block)"
+        },
+        {
+          "label": "class_7B_approx",
+          "trits": 7000000000,
+          "bytes_fmt_306_485": 1395424836,
+          "bytes_5_8_at_0p2": 1400000000,
+          "bytes_5_8_ceil_per_306": 1418300653,
+          "saved_vs_0p2_bytes": 4575164,
+          "saved_vs_0p2_MB": 4.363216400146484,
+          "saved_vs_0p2_pct": 0.32679742857142857,
+          "saved_vs_ceil_block_bytes": 22875817,
+          "saved_vs_ceil_block_MB": 21.816079139709473,
+          "saved_vs_ceil_block_pct": 1.6129032269436598,
+          "formula": "save_vs_0p2 \u2248 trit_count/1530 B (= trit_count\u00d70.2/306); save_vs_ceil \u2248 trit_count/306 B (= 1 B per 306-block)"
+        },
+        {
+          "label": "class_70B_approx",
+          "trits": 70000000000,
+          "bytes_fmt_306_485": 13954248366,
+          "bytes_5_8_at_0p2": 14000000000,
+          "bytes_5_8_ceil_per_306": 14183006535,
+          "saved_vs_0p2_bytes": 45751634,
+          "saved_vs_0p2_MB": 43.632158279418945,
+          "saved_vs_0p2_pct": 0.32679738571428574,
+          "saved_vs_ceil_block_bytes": 228758169,
+          "saved_vs_ceil_block_MB": 218.1607904434204,
+          "saved_vs_ceil_block_pct": 1.6129032193243644,
+          "formula": "save_vs_0p2 \u2248 trit_count/1530 B (= trit_count\u00d70.2/306); save_vs_ceil \u2248 trit_count/306 B (= 1 B per 306-block)"
+        }
+      ]
+    },
+    "verdict": {
+      "signal_class": "known_rung_block_density",
+      "is_new_geometry": false,
+      "matches_61_over_306": true,
+      "train_time_align_worth_it": "optional_greenfield_prior_only \u2014 ~0.33% vs 5_8 (or ~1.61% vs ceil-on-306-blocks); capacity/accuracy tradeoff dominates; no evidence BitNet modes sit systematically on 306 seams",
+      "summary": "The 0.200\u21920.199346 figure is exactly 0.2\u219261/306. Redesign enables the already-measured \u22121 B/306 rung-block win; it does not reveal a new packet/seam geometric effect. Mode distances to \u00d7306 are not closer than a uniform-residue null (descriptive, N=3 modes)."
+    }
+  },
+  "elapsed_s": 0.7461838722229004,
+  "claims": [
+    {
+      "id": "P1_seam_predicts_events",
+      "claim": "(\u230an/p\u230b, n mod p) seam/twin chart predicts packing events better than CF phase",
+      "evidence": {
+        "winner": [
+          "cf_surplus_band",
+          0.8186528497409327
+        ],
+        "cf_f1": 0.8186528497409327,
+        "seam_f1": 0.2586466165413534,
+        "twin_f1": 0.2517321016166282
+      },
+      "tag": "does_not_apply",
+      "note": "CF surplus band wins event prediction; seam is the *definition* of ledger quantum, not an independent predictor."
+    },
+    {
+      "id": "P1_seam_is_ledger_quantum",
+      "claim": "local=0 for p\u2208{306,665} is exactly when frame ledger may fire",
+      "evidence": "by construction in ledger_packer FRAME_SPECS",
+      "tag": "applies_operationally",
+      "note": "Already in packer. Packet chart language restates the divisibility gate."
+    },
+    {
+      "id": "P2_local_bound_not_global",
+      "claim": "p bounds one cycle only; next scale needs \u03b1/CF transport",
+      "evidence": "next_child_needs_alpha_CF_not_2p_or_p2",
+      "tag": "applies_as_language",
+      "note": "Falsifies 2p/p\u00b2 as child law. Does not change packer; protects against wrong rung extrapolation."
+    },
+    {
+      "id": "P2_recursion_explains_odd_even",
+      "claim": "Recursive rechart explains odd-sheet vs even-306 better than typed center",
+      "evidence": {
+        "typed_center_explains_odd": true,
+        "seam_rechart_alone_explains_306": false,
+        "note": "Recursive rechart at kp gives twins kp\u00b11 (odd when p odd) \u2014 same parity fact as typed sheets. Even 306 is CF surplus rung, not a typed sheet; k-cycle of odd p never yields even sheet."
+      },
+      "tag": "does_not_apply",
+      "note": "Rechart gives same parity fact (odd p \u2192 odd twins). Typed center already owns odd sheets; 306 needs CF."
+    },
+    {
+      "id": "P3_nesting_eq_preserve_01",
+      "claim": "Law-C digit nesting \u2261 preserve every 0\u21921 step",
+      "evidence": "false_identification",
+      "tag": "false_identification",
+      "note": "Preserving 0\u21921 steps is a *typed chart* discipline (retain cycle+local). Digit nesting is a *container composition* choice. Same language of hierarchy; different object. Only keep digit nesting when bytes+speed win."
+    },
+    {
+      "id": "P4_hierarchy_no_flatten",
+      "claim": "Keep C0/C1/odd-prime/even-CF as separate owners of operators",
+      "evidence": "hierarchy_map layers",
+      "tag": "applies_as_language",
+      "note": "Clarifies odd/even packer rule; no new byte path."
+    },
+    {
+      "id": "P4_typed_rechart_not_0eq1",
+      "claim": "At n=p, completion\u2229seed is typed rechart not 0=1",
+      "evidence": "block boundary = remainder 0; two ledgers meet",
+      "tag": "applies_as_language",
+      "note": "Prevents collapsing fmt_5_8 into fmt_306_485 at seams."
+    },
+    {
+      "id": "M_twin_vs_interior",
+      "claim": "Twin sheets kp\u00b11 beat interiors on rung/surplus metrics",
+      "evidence": {
+        "twins": {
+          "n": 320,
+          "mean_phi": "0.469915734796028626331754216055063458681743571180241454388341653882205181691091144017202306278934858351805861827758227512",
+          "mean_dist_to_1": "0.530084265203971373668245783944936541318256428819758545611658346117794818308908855982797693721065141648194138172241772491",
+          "mean_max_m_zt": 4.05625,
+          "rung_hit_rate": 0.025,
+          "rung_hits": 8
+        },
+        "interiors": {
+          "n": 520,
+          "mean_phi": "0.502661657396834848985868909547584213926314622513799509010283948931892337777289080597641401875476234081733872809758059763",
+          "mean_dist_to_1": "0.497338342603165151014131090452415786073685377486200490989716051068107662222710919402358598124523765918266127190241940237",
+          "mean_max_m_zt": 6.559615384615385,
+          "rung_hit_rate": 0.026923076923076925,
+          "rung_hits": 14
+        },
+        "twins_higher_rung": false,
+        "twins_closer_to_1": false
+      },
+      "tag": "does_not_apply",
+      "note": "Necessary for odd-rung incidence language; not a byte selector."
+    },
+    {
+      "id": "M_bitnet_306_redesign",
+      "claim": "Redesign BitNet modes to nearest \u00d7306 improves packing density",
+      "evidence": {
+        "selected_before": 416808960,
+        "selected_after": 398705760,
+        "delta_selected": -18103200,
+        "flat58_before": 416808960,
+        "flat58_after": 400013070,
+        "trits_before": 2084044800,
+        "trits_after": 2000064960,
+        "trit_delta": -83979840,
+        "bytes_per_trit_before": 0.2,
+        "bytes_per_trit_after": 0.19934640522875818,
+        "density_delta": -0.0006535947712418277,
+        "density_delta_pct_of_before": -0.32679738562091387
+      },
+      "tag": "applies_operationally",
+      "note": "Greenfield only: nearest\u00d7306 can shrink widths (e.g. 2560\u21922448) and cuts trit count. Density gain is the known fmt_306_485 gap (~0.33% vs 5_8), not a new geometric miracle. Prefer picking 2448/2754 at design time; never post-hoc pad."
+    },
+    {
+      "id": "M_density_signal_61_306",
+      "claim": "0.200\u21920.199346 is a new geometric seam signal beyond known \u22121 B/306",
+      "evidence": {
+        "signal_class": "known_rung_block_density",
+        "is_new_geometry": false,
+        "matches_61_over_306": true,
+        "train_time_align_worth_it": "optional_greenfield_prior_only \u2014 ~0.33% vs 5_8 (or ~1.61% vs ceil-on-306-blocks); capacity/accuracy tradeoff dominates; no evidence BitNet modes sit systematically on 306 seams",
+        "summary": "The 0.200\u21920.199346 figure is exactly 0.2\u219261/306. Redesign enables the already-measured \u22121 B/306 rung-block win; it does not reveal a new packet/seam geometric effect. Mode distances to \u00d7306 are not closer than a uniform-residue null (descriptive, N=3 modes)."
+      },
+      "tag": "does_not_apply",
+      "note": "Exact restatement of 61/306 vs 0.2. Confounder split: absolute byte drop is mostly fewer trits; density delta matches nesting/rung test. Mode proximity to \u00d7306 is not above uniform null (N=3 modes)."
+    }
+  ],
+  "tag_counts": {
+    "does_not_apply": 4,
+    "applies_operationally": 2,
+    "applies_as_language": 3,
+    "false_identification": 1
+  },
+  "overall_verdict": {
+    "summary": "packet_language_clarifies_gates_nesting_is_false_id_306_redesign_is_tiny_density_win",
+    "pattern_winner": [
+      "cf_surplus_band",
+      0.8186528497409327
+    ],
+    "nesting": "false_identification",
+    "bitnet_306_redesign_density_delta": -0.0006535947712418277,
+    "density_signal_class": "known_rung_block_density",
+    "density_signal_is_new_geometry": false,
+    "operational_moves": [
+      "P1_seam_is_ledger_quantum",
+      "M_bitnet_306_redesign"
+    ],
+    "do_not_reopen_theory": true
+  }
+}

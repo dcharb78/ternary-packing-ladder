@@ -113,11 +113,43 @@ the multi-D analogue of surplus-phase pad.
 
 ### Still open
 
-- Global phase budget / simultaneous surplus limits across a full net
+- Global phase budget on a *real* full net (suite-level answer in
+  [`ARCHITECTURE_PHASE.md`](ARCHITECTURE_PHASE.md): cheap simultaneous
+  surplus at pad≤64 for LLM_SHAPES modes — not yet BitNet-full inventory)
 - Dynamic phases under MoE / sparsity
 - Multi-D Beatty partitions as tilings
 - Character/cohomology obstruction for impossible zero-tax tuples
+  (**exploratory** algebraic probe — not a certified next step)
 - Coupled hierarchical decode contraction orders
+- Architecture-level phase design — **first tests done**:
+  [`ARCHITECTURE_PHASE.md`](ARCHITECTURE_PHASE.md);
+  `python3 repack/architecture_phase_design.py run`
+  (surplus pad dominates; BitNet ½ ≠ low tax)
+- Geometry lab (reshape / fiber-pad / associator) —
+  [`GEOMETRY_LAB.md`](GEOMETRY_LAB.md);
+  `python3 repack/geometry_lab.py run`
+- Packing stack measurement + failure analysis —
+  [`PACKING_STACK.md`](PACKING_STACK.md);
+  `python3 repack/packing_stack.py all`
+- Change-at-41 probe (CF rung vs twin midpoint) —
+  [`CHANGE_AT_41.md`](CHANGE_AT_41.md);
+  `python3 repack/change_at_41.py run`
+- Organizing principles (operators validated on bytes/tax) —
+  [`ORGANIZING_PRINCIPLES.md`](ORGANIZING_PRINCIPLES.md);
+  `python3 repack/organizing_principles.py run`
+- Practical three-ledger packer + BitNet measurement —
+  [`PACKING_PIPELINE.md`](PACKING_PIPELINE.md);
+  `python3 repack/ledger_packer.py all`
+  (`--hybrid` for 306-prefix without exact ÷306)
+- Packet/seam framing applicability (pattern/recursion/nesting/hierarchy) —
+  [`PACKET_SEAM.md`](PACKET_SEAM.md);
+  `python3 repack/packet_seam_probe.py run`
+- Better density / hybrid vs flat —
+  [`BETTER_DENSITY.md`](BETTER_DENSITY.md);
+  `python3 repack/better_density.py run`
+- Large-scale synthetic 7B–70B —
+  [`LARGE_SCALE.md`](LARGE_SCALE.md);
+  `PYTHONPATH=repack python3 repack/large_scale_probe.py run`
 
 ## Unseen connections (checklist)
 
@@ -131,8 +163,11 @@ the multi-D analogue of surplus-phase pad.
    per-fiber slack — orthogonal to the chart vs geometry question.
 5. **Beatty sequence** `⌊(n+1)α⌋−⌊n·α⌋` is the per-trit bit increment; rungs
    are where the Beatty discrepancy is minimal (phase near 1).
-6. **Characters (open):** tax as nontriviality of a map `⟨2,3⟩→S¹` — next
-   algebraic probe; energy/MRA are the concrete stand-ins shipped here.
+6. **Characters (open, exploratory):** tax as nontriviality of a map
+   `⟨2,3⟩→S¹` — not a theorem; energy/MRA are the concrete stand-ins shipped
+   here. Process-language probes
+   (`repack/process_language_probes.py`) test whether seed/amplify/harmonize
+   is faithful renaming of the circle dictionary (hypothesis, not claim).
 7. **Factor tree = decode tree** still the structure win when Kronecker exists;
    harmonic chart does not create factors in dense BitNet.
 

@@ -1,0 +1,862 @@
+{
+  "stance": "Exploratory operators. Validate by bytes/tax; nulls are progress.",
+  "O1_O2_twin_operator": {
+    "operator": "center(c,m)=2mc, sheets=2mc\u00b11 (typed by c)",
+    "typed_contexts": {
+      "C0": "signed \u00b11 (not classical-prime census)",
+      "C1": "center 2 \u2192 sheets 1,3",
+      "C_ge_3": "classical-prime incidence on both sheets"
+    },
+    "exemplars": [
+      {
+        "c": 1,
+        "m": 1,
+        "mid": 2,
+        "lo": {
+          "Q": 1,
+          "phi": "0.58496250072115618145373894394781650875981440769248106045575265454109822779435856252228047491808824209098066247505916734",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 2
+        },
+        "hi": {
+          "Q": 3,
+          "phi": "0.75488750216346854436121683184344952627944322307744318136725796362329468338307568756684142475426472627294198742517750202",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 4
+        },
+        "mid_tag": {
+          "Q": 2,
+          "phi": "0.16992500144231236290747788789563301751962881538496212091150530908219645558871712504456094983617648418196132495011833468",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 1
+        },
+        "context": "seed_plus_classical_3",
+        "any_rung": false,
+        "lo_rung": false,
+        "hi_rung": false
+      },
+      {
+        "c": 3,
+        "m": 1,
+        "mid": 6,
+        "lo": {
+          "Q": 5,
+          "phi": "0.92481250360578090726869471973908254379907203846240530227876327270549113897179281261140237459044121045490331237529583670",
+          "surplus": true,
+          "rung_surplus": true,
+          "rung_deficit": false,
+          "max_m_zt": 13
+        },
+        "hi": {
+          "Q": 7,
+          "phi": "0.0947375050480932701761726076347155613187008538473674231902685817876875945605099376559633244266176946368646373254141714",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 1
+        },
+        "mid_tag": {
+          "Q": 6,
+          "phi": "0.50977500432693708872243366368689905255888644615488636273451592724658936676615137513368284950852945254588397485035500404",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 2
+        },
+        "context": "classical_prime_incidence",
+        "any_rung": true,
+        "lo_rung": true,
+        "hi_rung": false
+      },
+      {
+        "c": 5,
+        "m": 3,
+        "mid": 30,
+        "lo": {
+          "Q": 29,
+          "phi": "0.9639125209135292621584293744866787540346178230819507532168269816918486060363983131461337726245590206384392117767158529",
+          "surplus": true,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 27
+        },
+        "hi": {
+          "Q": 31,
+          "phi": "0.1338375223558416250659072623823117715542466384669128741283322907740450616251154381906947224607355048204005367268341875",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 1
+        },
+        "mid_tag": {
+          "Q": 30,
+          "phi": "0.5488750216346854436121683184344952627944322307744318136725796362329468338307568756684142475426472627294198742517750202",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 2
+        },
+        "context": "classical_prime_incidence",
+        "any_rung": false,
+        "lo_rung": false,
+        "hi_rung": false
+      },
+      {
+        "c": 7,
+        "m": 3,
+        "mid": 42,
+        "lo": {
+          "Q": 41,
+          "phi": "0.9834625295674034396032967018604768591523907153917234786858588361850273395687010634134994716416179257302071614774258609",
+          "surplus": true,
+          "rung_surplus": true,
+          "rung_deficit": false,
+          "max_m_zt": 60
+        },
+        "hi": {
+          "Q": 43,
+          "phi": "0.1533875310097158025107745897561098766720195307766855995973641452672237951574181884580604214777944099121684864275441956",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 1
+        },
+        "mid_tag": {
+          "Q": 42,
+          "phi": "0.5684250302885596210570356458082933679122051230842045391416114907261255673630596259357799465597061678211878239524850283",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 2
+        },
+        "context": "classical_prime_incidence",
+        "any_rung": true,
+        "lo_rung": true,
+        "hi_rung": false
+      },
+      {
+        "c": 13,
+        "m": 12,
+        "mid": 312,
+        "lo": {
+          "Q": 311,
+          "phi": "0.923337724279572432112811567770934224302280792361609801739075562281548844045512944429227699525443290294986029743401043",
+          "surplus": true,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 13
+        },
+        "hi": {
+          "Q": 313,
+          "phi": "0.093262725721884795020289455666567241821909607746571922650580871363745299634230069473788649361619774476947354693519377",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 1
+        },
+        "mid_tag": {
+          "Q": 312,
+          "phi": "0.508300225000728613566550511718750733062095200054090862194828216822647071839871506951508174443531532385966692218460210",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 2
+        },
+        "context": "classical_prime_incidence",
+        "any_rung": false,
+        "lo_rung": false,
+        "hi_rung": false
+      }
+    ],
+    "exemplar_rung_hits": [
+      {
+        "c": 3,
+        "m": 1,
+        "mid": 6,
+        "lo": {
+          "Q": 5,
+          "phi": "0.92481250360578090726869471973908254379907203846240530227876327270549113897179281261140237459044121045490331237529583670",
+          "surplus": true,
+          "rung_surplus": true,
+          "rung_deficit": false,
+          "max_m_zt": 13
+        },
+        "hi": {
+          "Q": 7,
+          "phi": "0.0947375050480932701761726076347155613187008538473674231902685817876875945605099376559633244266176946368646373254141714",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 1
+        },
+        "mid_tag": {
+          "Q": 6,
+          "phi": "0.50977500432693708872243366368689905255888644615488636273451592724658936676615137513368284950852945254588397485035500404",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 2
+        },
+        "context": "classical_prime_incidence",
+        "any_rung": true,
+        "lo_rung": true,
+        "hi_rung": false
+      },
+      {
+        "c": 7,
+        "m": 3,
+        "mid": 42,
+        "lo": {
+          "Q": 41,
+          "phi": "0.9834625295674034396032967018604768591523907153917234786858588361850273395687010634134994716416179257302071614774258609",
+          "surplus": true,
+          "rung_surplus": true,
+          "rung_deficit": false,
+          "max_m_zt": 60
+        },
+        "hi": {
+          "Q": 43,
+          "phi": "0.1533875310097158025107745897561098766720195307766855995973641452672237951574181884580604214777944099121684864275441956",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 1
+        },
+        "mid_tag": {
+          "Q": 42,
+          "phi": "0.5684250302885596210570356458082933679122051230842045391416114907261255673630596259357799465597061678211878239524850283",
+          "surplus": false,
+          "rung_surplus": false,
+          "rung_deficit": false,
+          "max_m_zt": 2
+        },
+        "context": "classical_prime_incidence",
+        "any_rung": true,
+        "lo_rung": true,
+        "hi_rung": false
+      }
+    ],
+    "sweep_n_mids": 279,
+    "sweep_rung_hits": [
+      {
+        "c": 1,
+        "m": 2,
+        "mid": 4,
+        "lo": 3,
+        "hi": 5,
+        "which": "hi",
+        "rung": 5
+      },
+      {
+        "c": 1,
+        "m": 3,
+        "mid": 6,
+        "lo": 5,
+        "hi": 7,
+        "which": "lo",
+        "rung": 5
+      },
+      {
+        "c": 1,
+        "m": 9,
+        "mid": 18,
+        "lo": 17,
+        "hi": 19,
+        "which": "hi",
+        "rung": 19
+      },
+      {
+        "c": 1,
+        "m": 10,
+        "mid": 20,
+        "lo": 19,
+        "hi": 21,
+        "which": "lo",
+        "rung": 19
+      },
+      {
+        "c": 1,
+        "m": 20,
+        "mid": 40,
+        "lo": 39,
+        "hi": 41,
+        "which": "hi",
+        "rung": 41
+      },
+      {
+        "c": 3,
+        "m": 7,
+        "mid": 42,
+        "lo": 41,
+        "hi": 43,
+        "which": "lo",
+        "rung": 41
+      },
+      {
+        "c": 3,
+        "m": 9,
+        "mid": 54,
+        "lo": 53,
+        "hi": 55,
+        "which": "lo",
+        "rung": 53
+      },
+      {
+        "c": 13,
+        "m": 2,
+        "mid": 52,
+        "lo": 51,
+        "hi": 53,
+        "which": "hi",
+        "rung": 53
+      },
+      {
+        "c": 37,
+        "m": 9,
+        "mid": 666,
+        "lo": 665,
+        "hi": 667,
+        "which": "lo",
+        "rung": 665
+      }
+    ],
+    "n_sweep_rung_hits": 9,
+    "naive_p_pm1_hits": 3,
+    "naive_note": "p(p-1) is NOT the screenshot rule (5\u219220 not 30); ablation only",
+    "rung_hit_random_control": 0,
+    "rungs_as_typed_sheets": [
+      {
+        "rung": 5,
+        "family": "surplus",
+        "parity": "odd",
+        "n_ways": 3,
+        "ways_head": [
+          {
+            "c": 1,
+            "m": 3,
+            "mid": 6,
+            "as": "lo"
+          },
+          {
+            "c": 3,
+            "m": 1,
+            "mid": 6,
+            "as": "lo"
+          },
+          {
+            "c": 1,
+            "m": 2,
+            "mid": 4,
+            "as": "hi"
+          }
+        ],
+        "representable": true
+      },
+      {
+        "rung": 19,
+        "family": "deficit",
+        "parity": "odd",
+        "n_ways": 4,
+        "ways_head": [
+          {
+            "c": 1,
+            "m": 10,
+            "mid": 20,
+            "as": "lo"
+          },
+          {
+            "c": 5,
+            "m": 2,
+            "mid": 20,
+            "as": "lo"
+          },
+          {
+            "c": 1,
+            "m": 9,
+            "mid": 18,
+            "as": "hi"
+          },
+          {
+            "c": 3,
+            "m": 3,
+            "mid": 18,
+            "as": "hi"
+          }
+        ],
+        "representable": true
+      },
+      {
+        "rung": 41,
+        "family": "surplus",
+        "parity": "odd",
+        "n_ways": 5,
+        "ways_head": [
+          {
+            "c": 1,
+            "m": 21,
+            "mid": 42,
+            "as": "lo"
+          },
+          {
+            "c": 3,
+            "m": 7,
+            "mid": 42,
+            "as": "lo"
+          },
+          {
+            "c": 7,
+            "m": 3,
+            "mid": 42,
+            "as": "lo"
+          },
+          {
+            "c": 1,
+            "m": 20,
+            "mid": 40,
+            "as": "hi"
+          },
+          {
+            "c": 5,
+            "m": 4,
+            "mid": 40,
+            "as": "hi"
+          }
+        ],
+        "representable": true
+      },
+      {
+        "rung": 53,
+        "family": "deficit",
+        "parity": "odd",
+        "n_ways": 4,
+        "ways_head": [
+          {
+            "c": 1,
+            "m": 27,
+            "mid": 54,
+            "as": "lo"
+          },
+          {
+            "c": 3,
+            "m": 9,
+            "mid": 54,
+            "as": "lo"
+          },
+          {
+            "c": 1,
+            "m": 26,
+            "mid": 52,
+            "as": "hi"
+          },
+          {
+            "c": 13,
+            "m": 2,
+            "mid": 52,
+            "as": "hi"
+          }
+        ],
+        "representable": true
+      },
+      {
+        "rung": 306,
+        "family": "surplus",
+        "parity": "even",
+        "n_ways": 0,
+        "ways_head": [],
+        "representable": false
+      },
+      {
+        "rung": 665,
+        "family": "deficit",
+        "parity": "odd",
+        "n_ways": 4,
+        "ways_head": [
+          {
+            "c": 1,
+            "m": 333,
+            "mid": 666,
+            "as": "lo"
+          },
+          {
+            "c": 3,
+            "m": 111,
+            "mid": 666,
+            "as": "lo"
+          },
+          {
+            "c": 37,
+            "m": 9,
+            "mid": 666,
+            "as": "lo"
+          },
+          {
+            "c": 1,
+            "m": 332,
+            "mid": 664,
+            "as": "hi"
+          }
+        ],
+        "representable": true
+      },
+      {
+        "rung": 15601,
+        "family": "surplus",
+        "parity": "odd",
+        "n_ways": 6,
+        "ways_head": [
+          {
+            "c": 1,
+            "m": 7801,
+            "mid": 15602,
+            "as": "lo"
+          },
+          {
+            "c": 29,
+            "m": 269,
+            "mid": 15602,
+            "as": "lo"
+          },
+          {
+            "c": 1,
+            "m": 7800,
+            "mid": 15600,
+            "as": "hi"
+          },
+          {
+            "c": 3,
+            "m": 2600,
+            "mid": 15600,
+            "as": "hi"
+          },
+          {
+            "c": 5,
+            "m": 1560,
+            "mid": 15600,
+            "as": "hi"
+          },
+          {
+            "c": 13,
+            "m": 600,
+            "mid": 15600,
+            "as": "hi"
+          }
+        ],
+        "representable": true
+      }
+    ],
+    "odd_rungs_all_representable": true,
+    "even_rungs_impossible_as_sheets": [
+      306
+    ],
+    "structural_fact": "2mc is always even \u21d2 sheets 2mc\u00b11 are always odd. Even packing rung 306 can never be a typed sheet \u2014 it lives in Law B / CF composition, not the twin-center operator.",
+    "verdict": "typed_center_covers_odd_rungs_misses_even_306",
+    "note": "Correction: census omitting C0/C1 is a typing filter, not a missing start. Odd packing rungs 5,19,41,53,665,15601 are typed sheets for some (c,m). Even rung 306 is a different operator (CF / Law B)."
+  },
+  "O3_complement": {
+    "operator": "complement \u03c6+\u03c8\u22481 on typed sheets \u00d7 rungs",
+    "n_rungs_pairs": 19,
+    "n_twin_internal_pairs": 129,
+    "best_cross_twin_rung": [
+      {
+        "a": 7,
+        "b": 5,
+        "complement_dist": "0.01955000865387417744486732737379810511777289230977272546903185449317873353230275026736569901705890509176794970071000810",
+        "best_tax": 0,
+        "best_fiber_41": 7
+      },
+      {
+        "a": 41,
+        "b": 53,
+        "complement_dist": "0.0135249322113189433485392689052481765774456769067803171592504731367665873302951229056353576997052434478177273444382701",
+        "best_tax": 0,
+        "best_fiber_41": 477
+      },
+      {
+        "a": 53,
+        "b": 41,
+        "complement_dist": "0.0135249322113189433485392689052481765774456769067803171592504731367665873302951229056353576997052434478177273444382701",
+        "best_tax": 0,
+        "best_fiber_41": 477
+      },
+      {
+        "a": 53,
+        "b": 306,
+        "complement_dist": "0.0015377588950691418922808772661266447733723616007007036152029802542637781747239454986904955936789106620578285462410750",
+        "best_tax": 0,
+        "best_fiber_41": 3551
+      },
+      {
+        "a": 53,
+        "b": 15601,
+        "complement_dist": "0.0029862889788644768294285591196281261347380180985203743520541863516578928889377237785543677533416922112903845762055690",
+        "best_tax": 0,
+        "best_fiber_41": 181525
+      },
+      {
+        "a": 65,
+        "b": 41,
+        "complement_dist": "0.0060250764425552340963280584685499285403272154029924083097813813564121462020076273617303413173536616439502223562717379",
+        "best_tax": 1,
+        "best_fiber_41": 574
+      },
+      {
+        "a": 181,
+        "b": 19,
+        "complement_dist": "0.0074998557687637092522112104366982480371184615037879088494690917803544411282874955439050163823515818038675049881665315",
+        "best_tax": 2,
+        "best_fiber_41": 724
+      },
+      {
+        "a": 287,
+        "b": 19,
+        "complement_dist": "0.0014747793262084751558831519681483194967912461007955005396877104239422949262798681821746750649979201599172826318947935",
+        "best_tax": 2,
+        "best_fiber_41": 1148
+      },
+      {
+        "a": 89,
+        "b": 5,
+        "complement_dist": "0.01352493221131894334853926890524817657744567690678031715925047313676658733029512290563535769970524344781772734443827030",
+        "best_tax": 4,
+        "best_fiber_41": 89
+      },
+      {
+        "a": 101,
+        "b": 5,
+        "complement_dist": "0.00602507644255523409632805846854992854032721540299240830978138135641214620200762736173034131735366164395022235627173770",
+        "best_tax": 4,
+        "best_fiber_41": 101
+      },
+      {
+        "a": 207,
+        "b": 5,
+        "complement_dist": "0.01205015288511046819265611693709985708065443080598481661956276271282429240401525472346068263470732328790044471254347570",
+        "best_tax": 4,
+        "best_fiber_41": 207
+      },
+      {
+        "a": 313,
+        "b": 5,
+        "complement_dist": "0.01807522932766570228898417540564978562098164620897722492934414406923643860602288208519102395206098493185066706881521370",
+        "best_tax": 4,
+        "best_fiber_41": 313
+      }
+    ],
+    "verdict": "complement_links_twin_to_rungs"
+  },
+  "O4_counterfactual_snap": {
+    "operator": "design-time snap to surplus grid (|\u0394|\u2264128, no post-hoc pad)",
+    "rows": [
+      {
+        "original": 640,
+        "snap": {
+          "Q": 576,
+          "delta": -64,
+          "phi": "0.938400415385960517353631713942309045653098830869090822513529015672579209550532012833553552818827444404861585634080388"
+        },
+        "mult_approx": 60,
+        "before_f41": 89600,
+        "after_f41": 72576,
+        "before_58": 81920,
+        "after_58": 66356,
+        "reshape": {
+          "m": 192,
+          "n": 1728,
+          "d": 3,
+          "kind": "div_m",
+          "best_tax": 35,
+          "best_fiber_41": 72576,
+          "delta_tax": 0,
+          "delta_fiber41": -576,
+          "aspect": 9.0,
+          "legal": true
+        }
+      },
+      {
+        "original": 2560,
+        "snap": {
+          "Q": 2624,
+          "delta": 64,
+          "phi": "0.94160189231382013461098891907051898575300578507030263589496551584174973239686805846396618506354724673325833455525510"
+        },
+        "mult_approx": 60,
+        "before_f41": 1438720,
+        "after_f41": 1511424,
+        "before_58": 1310720,
+        "after_58": 1377076,
+        "reshape": {
+          "m": 2624,
+          "n": 2624,
+          "d": 1,
+          "kind": "identity",
+          "best_tax": 153,
+          "best_fiber_41": 1511424,
+          "delta_tax": 0,
+          "delta_fiber41": 0,
+          "aspect": 1.0,
+          "legal": true
+        }
+      },
+      {
+        "original": 6912,
+        "snap": null,
+        "mult_approx": 90,
+        "before_f41": 10485504,
+        "after_f41": 10485504,
+        "before_58": 9555149,
+        "after_58": 9555149,
+        "reshape": {
+          "m": 6912,
+          "n": 6912,
+          "d": 1,
+          "kind": "identity",
+          "best_tax": 5109,
+          "best_fiber_41": 10485504,
+          "delta_tax": 0,
+          "delta_fiber41": 0,
+          "aspect": 1.0,
+          "legal": true
+        }
+      }
+    ],
+    "aggregate_delta_f41": 3340800,
+    "aggregate_delta_58": 3047520,
+    "verdict": "design_snap_null",
+    "note": "Counterfactual width choice only; does not rewrite BitNet weights"
+  },
+  "O5_rung_native": {
+    "operator": "rung-native Law B frames vs flat on rung lengths",
+    "cases": [
+      {
+        "Q_rung": 41,
+        "pair_shape": [
+          41,
+          65
+        ],
+        "flat_5_8": 533,
+        "best_fiber_41": 574,
+        "best_tax": 1,
+        "note": "canonical rung pair (41,65)"
+      },
+      {
+        "Q_rung": 306,
+        "frame_486_at_306": 67,
+        "flat_5_8_at_306": 18728,
+        "frame_vs_flat_delta": -18661,
+        "tax_486": 1
+      },
+      {
+        "Q_rung": 665,
+        "frame_665_at_665": 133,
+        "flat_5_8_at_665": 88445,
+        "frame_vs_flat_delta": -88312,
+        "tax_665": 0
+      }
+    ],
+    "verdict": "frames_win_some_rung_lengths",
+    "note": "486/665 are chiral assemblies; flat 5_8 still density knee unstructured"
+  },
+  "O6_chiral_twin": {
+    "operator": "chiral rectangle tax on twin pairs vs Law B",
+    "splits": [
+      {
+        "mid": 42,
+        "pair": [
+          41,
+          43
+        ],
+        "best_tax": 0,
+        "complement_dist": "0.1368500605771192421140712916165867358244102461684090782832229814522511347261192518715598931194123356423756479049700565",
+        "best_fiber_41": 387
+      },
+      {
+        "mid": 6,
+        "pair": [
+          5,
+          7
+        ],
+        "best_tax": 0,
+        "complement_dist": "0.01955000865387417744486732737379810511777289230977272546903185449317873353230275026736569901705890509176794970071000810",
+        "best_fiber_41": 7
+      },
+      {
+        "mid": "306=7*41+19",
+        "pair": [
+          41,
+          306
+        ],
+        "best_tax": 0,
+        "complement_dist": "0.9819877502411949644474135498923285396555994692909279781461711257610850446424211952313247965766200055702898788455310669",
+        "best_fiber_41": 2747,
+        "reference": "Law_B_chiral"
+      },
+      {
+        "mid": 30,
+        "pair": [
+          29,
+          31
+        ],
+        "best_tax": 1,
+        "complement_dist": "0.0977500432693708872243366368689905255888644615488636273451592724658936676615137513368284950852945254588397485035500404",
+        "best_fiber_41": 186
+      },
+      {
+        "mid": 312,
+        "pair": [
+          311,
+          313
+        ],
+        "best_tax": 23,
+        "complement_dist": "0.016600450001457227133101023437501466124190400108181724389656433645294143679743013903016348887063064771933384436920420",
+        "best_fiber_41": 21284
+      }
+    ],
+    "verdict": "twin_pairs_low_tax"
+  },
+  "survivors": [
+    {
+      "id": "O1_O2",
+      "verdict": "typed_center_covers_odd_rungs_misses_even_306",
+      "operator": "center(c,m)=2mc, sheets=2mc\u00b11 (typed by c)"
+    },
+    {
+      "id": "O3",
+      "verdict": "complement_links_twin_to_rungs",
+      "operator": "complement \u03c6+\u03c8\u22481 on typed sheets \u00d7 rungs"
+    },
+    {
+      "id": "O5",
+      "verdict": "frames_win_some_rung_lengths",
+      "operator": "rung-native Law B frames vs flat on rung lengths"
+    },
+    {
+      "id": "O6",
+      "verdict": "twin_pairs_low_tax",
+      "operator": "chiral rectangle tax on twin pairs vs Law B"
+    }
+  ],
+  "kills": [
+    {
+      "id": "O4",
+      "verdict": "design_snap_null",
+      "operator": "design-time snap to surplus grid (|\u0394|\u2264128, no post-hoc pad)"
+    }
+  ],
+  "synthesis": {
+    "usable_operators": [
+      "center(c,m)=2mc, sheets=2mc\u00b11 (typed by c)",
+      "complement \u03c6+\u03c8\u22481 on typed sheets \u00d7 rungs",
+      "rung-native Law B frames vs flat on rung lengths",
+      "chiral rectangle tax on twin pairs vs Law B"
+    ],
+    "deferred": [
+      "design-time snap to surplus grid (|\u0394|\u2264128, no post-hoc pad)"
+    ]
+  }
+}

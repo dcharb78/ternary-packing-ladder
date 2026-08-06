@@ -36,6 +36,21 @@ fused-kernel performance.
 - [`HARMONIC.md`](HARMONIC.md) — log-domain / fractional-part geometry of the
   tax (`{Q log₂ 3}`); additive ledgers as the flat chart. Primary tax path
   uses the circle; energy + Law-C MRA probes included.
+- [`COLLATZ_BRIDGE.md`](COLLATZ_BRIDGE.md) — exploratory Collatz↔packing map;
+  process language as hypothesis; falsified imports; probe entrypoint.
+- [`ARCHITECTURE_PHASE.md`](ARCHITECTURE_PHASE.md) — Phase 5 size-design prior
+  tests (surplus pad vs harmonize; global budget; ½ ≠ low tax).
+- [`GEOMETRY_LAB.md`](GEOMETRY_LAB.md) — deeper geometry kept only if it
+  yields cheap moves (reshape, fiber-pad, flat-vs-nested).
+- [`PACKING_STACK.md`](PACKING_STACK.md) — stack measurement + failure analysis;
+  [`ORGANIZING_PRINCIPLES.md`](ORGANIZING_PRINCIPLES.md) — tested operators
+  (twin, complement, frame ledger);
+  [`PACKING_PIPELINE.md`](PACKING_PIPELINE.md) — three-ledger packer + BitNet
+  byte measurement + nesting test;
+  [`PACKET_SEAM.md`](PACKET_SEAM.md) — 0→1 packet/seam applicability probe;
+  [`BETTER_DENSITY.md`](BETTER_DENSITY.md) — hybrid vs flat (BitNet −1.36 MB);
+  [`LARGE_SCALE.md`](LARGE_SCALE.md) — synthetic 7B–70B: same 61/306 law.
+- [`CHANGE_AT_41.md`](CHANGE_AT_41.md) — twin-midpoint vs CF-rung probe at 41.
 
 ## Extensions at a glance
 
@@ -105,9 +120,29 @@ repack/harmonic_energy.py      packing energy E_rows; phase-peak scan
 repack/harmonic_mra.py         Law C as 2–3 multiresolution scales
 repack/harmonic_orbit.py       {Qα} orbits, complements, multi-D interaction
 repack/harmonic_multi.py       phase cloud, triples, 3-mode tax, pad tracker
+repack/process_language_probes.py  seed/amplify/harmonize bridge probes
+repack/architecture_phase_design.py  size-design prior + global budget tests
+repack/geometry_lab.py            reshape / fiber-pad / associator lab
+repack/organizing_principles.py   twin/complement/frame operator probes
 HARMONIC.md                    harmonic geometry note
+COLLATZ_BRIDGE.md              Collatz↔packing exploratory bridge
+ARCHITECTURE_PHASE.md          Phase 5 architecture phase-design results
+GEOMETRY_LAB.md                surviving low-cost geometry moves
+PACKING_STACK.md               stack measurement + failure analysis
+ORGANIZING_PRINCIPLES.md       tested operators (twin, complement, frames)
+PACKING_PIPELINE.md            practical three-ledger packer measurement
+PACKET_SEAM.md                 0→1 packet/seam applicability + tags
+BETTER_DENSITY.md              hybrid vs flat; BitNet −1.36 MB
+LARGE_SCALE.md                 synthetic 7B–70B density (same 61/306)
+CHANGE_AT_41.md                exploratory 41 twin/CF probe
 CHECKPOINT_PROBE.md            real-checkpoint evaluation
 EXTENSIONS.md / SCALE_PROBE.md evaluation notes
+repack/architecture_prior.py   surplus sizes on align grid
+repack/change_at_41.py         CF-rung vs twin-midpoint probe at 41
+repack/ledger_packer.py        three-ledger decision + BitNet/nest + --hybrid
+repack/packet_seam_probe.py    pattern/recursion/nesting/hierarchy probe
+repack/better_density.py       hybrid/cascade/rem-oracle BitNet probe
+repack/large_scale_probe.py    synthetic 7B/13B/70B density suites
 ```
 
 ## Reproducing

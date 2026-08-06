@@ -195,11 +195,17 @@ def multi_mode_pad(
 ) -> Dict[str, Any]:
     """Propose minimal pads (L_i' in [L_i, L_i+max_pad]) improving complementarity.
 
-    target='pairwise_complement': minimize sum over pairs of dist(φi+φj, 1)
-    target='max_surplus': maximize sum of φi (push all toward 1)
+    target='pairwise_complement' (alias 'harmonize'): minimize sum over pairs
+      of dist(φi+φj, 1)
+    target='max_surplus' (alias 'amplify_surplus'): maximize sum of φi
     """
     dims = [int(d) for d in dims]
     k = len(dims)
+    # Process-language aliases (COLLATZ_BRIDGE.md) — same objectives
+    if target == "harmonize":
+        target = "pairwise_complement"
+    elif target == "amplify_surplus":
+        target = "max_surplus"
     # Greedy coordinate descent
     cur = list(dims)
     def score(vals: List[int]) -> Decimal:
@@ -312,6 +318,11 @@ def selftest() -> int:
     pad = multi_mode_pad([2560, 6912], max_pad=32)
     assert pad["total_pad"] >= 0
     assert len(pad["padded"]) == 2
+    # Process-language aliases
+    assert multi_mode_pad([41, 19], max_pad=4, target="harmonize")["padded"] == \
+        multi_mode_pad([41, 19], max_pad=4, target="pairwise_complement")["padded"]
+    assert multi_mode_pad([41, 19], max_pad=4, target="amplify_surplus")["padded"] == \
+        multi_mode_pad([41, 19], max_pad=4, target="max_surplus")["padded"]
     print("HARMONIC_MULTI PASS")
     return 0
 

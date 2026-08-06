@@ -1,0 +1,157 @@
+{
+  "stance": "Practical three-ledger packer. Measure bytes; diagnose non-wins. Odd rungs \u2192 sheets ok at design time; even 306 \u2192 frame only. Optional --hybrid: 306-prefix without exact gate (61/306 effect).",
+  "design_time_surplus_align64": [
+    576,
+    1600,
+    2624,
+    3648
+  ],
+  "odd_rungs_sheet_ok": [
+    5,
+    19,
+    41,
+    53,
+    665,
+    15601
+  ],
+  "even_frame_only": [
+    306
+  ],
+  "allow_hybrid": true,
+  "bitnet": {
+    "path": "/Users/dcharb/packing/ternary-packing-ladder/repack/data/bitnet/model.safetensors",
+    "n_unique_shapes": 4,
+    "per_unique": [
+      {
+        "shape": [
+          640,
+          2560
+        ],
+        "n_tensors": 60,
+        "decision": {
+          "ledger": "hybrid_306_485",
+          "bytes": 326610,
+          "shape": [
+            640,
+            2560
+          ],
+          "reason": "hybrid:flat_stream:blocks=5354:rem=76",
+          "path": "hybrid"
+        },
+        "candidates": {
+          "flat_5_8": 327680,
+          "fiber41_original": 358400,
+          "fiber41_reshaped": 358400,
+          "hybrid_306": 326610
+        },
+        "oracle_min_bytes": 326610,
+        "frames_eligible": false,
+        "weighted_delta_vs_flat58": -64200,
+        "weighted_delta_vs_fiber41": -1907400
+      },
+      {
+        "shape": [
+          2560,
+          2560
+        ],
+        "n_tensors": 60,
+        "decision": {
+          "ledger": "hybrid_306_485",
+          "bytes": 1306437,
+          "shape": [
+            2560,
+            2560
+          ],
+          "reason": "hybrid:flat_stream:blocks=21416:rem=304",
+          "path": "hybrid"
+        },
+        "candidates": {
+          "flat_5_8": 1310720,
+          "fiber41_original": 1438720,
+          "fiber41_reshaped": 1433600,
+          "hybrid_306": 1306437
+        },
+        "oracle_min_bytes": 1306437,
+        "frames_eligible": false,
+        "weighted_delta_vs_flat58": -256980,
+        "weighted_delta_vs_fiber41": -7936980
+      },
+      {
+        "shape": [
+          2560,
+          6912
+        ],
+        "n_tensors": 30,
+        "decision": {
+          "ledger": "hybrid_306_485",
+          "bytes": 3527379,
+          "shape": [
+            2560,
+            6912
+          ],
+          "reason": "hybrid:flat_stream:blocks=57825:rem=270",
+          "path": "hybrid"
+        },
+        "candidates": {
+          "flat_5_8": 3538944,
+          "fiber41_original": 3883520,
+          "fiber41_reshaped": 3883520,
+          "hybrid_306": 3527379
+        },
+        "oracle_min_bytes": 3527379,
+        "frames_eligible": false,
+        "weighted_delta_vs_flat58": -346950,
+        "weighted_delta_vs_fiber41": -10684230
+      },
+      {
+        "shape": [
+          6912,
+          2560
+        ],
+        "n_tensors": 60,
+        "decision": {
+          "ledger": "hybrid_306_485",
+          "bytes": 3527379,
+          "shape": [
+            6912,
+            2560
+          ],
+          "reason": "hybrid:flat_stream:blocks=57825:rem=270",
+          "path": "hybrid"
+        },
+        "candidates": {
+          "flat_5_8": 3538944,
+          "fiber41_original": 3883520,
+          "fiber41_reshaped": 3883520,
+          "hybrid_306": 3527379
+        },
+        "oracle_min_bytes": 3527379,
+        "frames_eligible": false,
+        "weighted_delta_vs_flat58": -693900,
+        "weighted_delta_vs_fiber41": -21368460
+      }
+    ],
+    "totals": {
+      "n_tensors": 210,
+      "trits": 2084044800,
+      "bytes_selected": 415446930,
+      "bytes_flat58": 416808960,
+      "bytes_fiber41_orig": 457344000,
+      "bytes_oracle": 415446930,
+      "bytes_shipped_u8": 521011200
+    },
+    "path_counts": {
+      "hybrid": 210
+    },
+    "delta_selected_vs_flat58": -1362030,
+    "delta_selected_vs_fiber41": -41897070,
+    "delta_selected_vs_oracle": 0,
+    "delta_selected_vs_u8": -105564270,
+    "verdict": "beats_flat58",
+    "failure_analysis": [
+      "Hybrid 306-prefix used on 210 tensors (known 61/306 density; not a new geometric effect)."
+    ],
+    "elapsed_s": 0.002205371856689453,
+    "allow_hybrid": true
+  }
+}
