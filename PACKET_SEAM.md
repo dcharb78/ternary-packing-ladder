@@ -19,7 +19,9 @@ The **0.33%** is real, but it is **exactly** the known rung-block effect:
 
 Not a new discovery from seam/packet language or twin centers — the ordinary
 frame-ledger advantage whenever a 306-block (or hybrid 306-prefix + remainder)
-is available.
+is available. (Overall static frontier later moved to **665-flat**, then
+probe **1277-flat** — see [`DIMENSIONS.md`](DIMENSIONS.md); this note
+explains the 306 gap only.)
 
 | Approach | True density gain | Notes |
 |----------|------------------:|-------|

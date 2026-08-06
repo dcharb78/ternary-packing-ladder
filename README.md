@@ -4,6 +4,13 @@
 certified constants, exact laws, and a measured demonstration on a public 2B
 model.**
 
+**Current static density ladder (BitNet-2B):** flat `5_8` → hybrid306
+(`61/306`) → **shipped frontier 665-flat (`132/665`, `--hybrid665`)** → probe
+**1277-flat (`253/1277`, −0.66 MB vs 665; not wired)** — map:
+[`DIMENSIONS.md`](DIMENSIONS.md) · board: [`FARTHER.md`](FARTHER.md) ·
+665 measurement: [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md). Do **not**
+collapse the multi-track program into “just use 1277.”
+
 Ternary weights carry log₂3 ≈ 1.58496 bits each. This repository shows that
 the only block sizes approaching that floor are the continued-fraction
 convergent denominators of log₂3 (the *rungs*: 5→8, 41→65, 306→485,
@@ -19,48 +26,24 @@ fused-kernel performance.
 
 ## The notes
 
-- [`TERNARY_PACKING_LADDER.md`](TERNARY_PACKING_LADDER.md) — the main note:
-  the ladder, the three laws, measured decode Paretos, the training
-  experiment, the streaming coder, and the BitNet demonstration.
-- [`METHOD_COMPARISON.md`](METHOD_COMPARISON.md) — companion: an honest
-  side-by-side with the vendor-class approach (engines, ~1.6–1.7 bpw block
-  formats), framing the two as complements.
-- [`EXTENSIONS.md`](EXTENSIONS.md) — Kronecker / tax-graph / multi-linear
-  extensions (Phase 1–2): hierarchical D3 decode, Law B frame catalog,
-  tensor-axis tax forms, measured verdicts.
-- [`SCALE_PROBE.md`](SCALE_PROBE.md) — targeted LLM-shape probes (axis
-  choice, Kronecker factors, tax-0 tiling grammar) and creative connections.
-  Not a blind larger flat stream.
-- [`CHECKPOINT_PROBE.md`](CHECKPOINT_PROBE.md) — same levers on the real
-  BitNet b1.58 2B-4T payload (axis, pad-to-tax0, structure scan).
-- [`DIMENSIONS.md`](DIMENSIONS.md) — **multi-track map** (static packing,
-  circle/phase, triskelion, sphere-and-cube, multi-scale, training/scaling);
-  keeps dimensions separate; shipped frontier = 665-flat (not “only 306”);
-  farther candidate = 1277-flat ([`FARTHER.md`](FARTHER.md)).
-- [`HARMONIC.md`](HARMONIC.md) — log-domain / fractional-part geometry of the
-  tax (`{Q log₂ 3}`); additive ledgers as the flat chart. Primary tax path
-  uses the circle; energy + Law-C MRA probes included.
-- [`COLLATZ_BRIDGE.md`](COLLATZ_BRIDGE.md) — exploratory Collatz↔packing map;
-  process language as hypothesis; falsified imports; probe entrypoint.
-- [`ARCHITECTURE_PHASE.md`](ARCHITECTURE_PHASE.md) — Phase 5 size-design prior
-  tests (surplus pad vs harmonize; global budget; ½ ≠ low tax).
-- [`GEOMETRY_LAB.md`](GEOMETRY_LAB.md) — deeper geometry kept only if it
-  yields cheap moves (reshape, fiber-pad, flat-vs-nested).
-- [`PACKING_STACK.md`](PACKING_STACK.md) — stack measurement + failure analysis;
-  [`ORGANIZING_PRINCIPLES.md`](ORGANIZING_PRINCIPLES.md) — tested operators
-  (twin, complement, frame ledger);
-  [`PACKING_PIPELINE.md`](PACKING_PIPELINE.md) — three-ledger packer + BitNet
-  byte measurement + nesting test;
-  [`PACKET_SEAM.md`](PACKET_SEAM.md) — 0→1 packet/seam applicability probe;
-  [`BETTER_DENSITY.md`](BETTER_DENSITY.md) — hybrid-306 vs flat (BitNet −1.36 MB;
-  superseded as frontier by 665-flat);
-  [`LARGE_SCALE.md`](LARGE_SCALE.md) — synthetic 7B–70B: 61/306 law (+ 665 in
-  pattern-of-patterns);
-  [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md) — Law B / multi-rung
-  composition (665-flat beats hybrid 306);
-  [`FARTHER.md`](FARTHER.md) — board past 665 (1277-flat −0.66 MB; entropy);
-  [`DIMENSIONS.md`](DIMENSIONS.md) — six-dimension map + Lean/UFRF skeleton.
-- [`CHANGE_AT_41.md`](CHANGE_AT_41.md) — twin-midpoint vs CF-rung probe at 41.
+| Note | Role |
+|------|------|
+| [`TERNARY_PACKING_LADDER.md`](TERNARY_PACKING_LADDER.md) | Main note: ladder, three laws, decode Paretos, training, streaming, BitNet demo |
+| [`METHOD_COMPARISON.md`](METHOD_COMPARISON.md) | Honest side-by-side with vendor-class (~1.6–1.7 bpw) approaches |
+| [`DIMENSIONS.md`](DIMENSIONS.md) | **Multi-track map** (static / circle / triskelion / sphere-cube / multi-scale / training) |
+| [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md) | Law B composition: **665-flat** beats hybrid 306 (shipped optional frontier) |
+| [`FARTHER.md`](FARTHER.md) | Board past 665: **1277-flat** geometric win (−0.66 MB); entropy parallel track |
+| [`BETTER_DENSITY.md`](BETTER_DENSITY.md) | Hybrid-306 vs flat (BitNet −1.36 MB; superseded as frontier by 665) |
+| [`PACKING_PIPELINE.md`](PACKING_PIPELINE.md) | Three-ledger packer + BitNet bytes; `--hybrid` / `--hybrid665` |
+| [`LARGE_SCALE.md`](LARGE_SCALE.md) | Synthetic 7B–70B: 61/306 law (+ 665 in pattern-of-patterns) |
+| [`PACKET_SEAM.md`](PACKET_SEAM.md) | 0→1 packet/seam applicability; 0.33% = classic rung-block gap |
+| [`HARMONIC.md`](HARMONIC.md) | `{Q log₂ 3}` circle; additive ledgers as flat chart |
+| [`NEXT_PROBES.md`](NEXT_PROBES.md) | Dynamical / multi-scale / base-p cadence after 665 |
+| [`BASE_P.md`](BASE_P.md) | Same geometric machine for odd primes \(p\) |
+| [`ORGANIZING_PRINCIPLES.md`](ORGANIZING_PRINCIPLES.md) | Tested operators (twin, complement, frame ledger) |
+| [`EXTENSIONS.md`](EXTENSIONS.md) | Kronecker / tax-graph / multi-linear (Phase 1–2) |
+| [`SCALE_PROBE.md`](SCALE_PROBE.md) / [`CHECKPOINT_PROBE.md`](CHECKPOINT_PROBE.md) | LLM-shape and real BitNet axis/pad probes |
+| [`COLLATZ_BRIDGE.md`](COLLATZ_BRIDGE.md) · [`ARCHITECTURE_PHASE.md`](ARCHITECTURE_PHASE.md) · [`GEOMETRY_LAB.md`](GEOMETRY_LAB.md) · [`PACKING_STACK.md`](PACKING_STACK.md) · [`CHANGE_AT_41.md`](CHANGE_AT_41.md) | Exploratory / lab notes |
 
 ## Extensions at a glance
 
@@ -108,79 +91,68 @@ lean/Certificates.lean         standalone kernel certificates (Lean 4, no deps)
 bench/ternary_pack_bench.rs    block-format decode Pareto (+ D3 hierarchical)
 bench/stream_codec_bench*.rs   stream / frame-parallel benches
 repack/pack_ladder.py          container formats + exact round-trip selftests
+repack/ledger_packer.py        three-ledger packer; --hybrid / --hybrid665
 repack/adaptive_entropy.py     per-tensor static range coder
 repack/repack_bitnet.py        BitNet b1.58 2B repack (checkpoint not included)
 repack/train_arms.py           preregistered training experiment (MLX)
+repack/better_density.py       hybrid/cascade/rem-oracle BitNet probe
+repack/pattern_of_patterns.py  Law B composition / 665-flat probe
+repack/farther_probes.py       farther board; 1277 / entropy (probe-only)
+repack/large_scale_probe.py    synthetic 7B/13B/70B density suites
+repack/packet_seam_probe.py    pattern/recursion/nesting/hierarchy probe
 repack/tax_graph.py            Law B tax-graph enumerator
 repack/frame_formats.py        486- and 665-frame pack/unpack
 repack/hierarchical_digits.py  Law C nested / Kronecker digit unpack
-repack/recursive_pack.py       recursive P_n blocked composition
-repack/collatz_schedule.py     Collatz-adaptive frame schedule
-repack/pre_transform_probe.py  structured Hadamard→ternary probe
-repack/tax_tensor.py           multi-linear tax form on mode sizes
-repack/mode_pack.py            mode-wise pack + phase offsets
-repack/kronecker_tensor_pack.py Kronecker-factor pack ledgers
-repack/tensor_hierarchical.py  per-row hierarchical decode
-repack/mode_schedule.py        per-mode phase + axis choice
-repack/scale_probe.py          targeted LLM-shape axis/Kronecker/tax0 probe
-repack/pad_to_tax0.py          pad mode length to tax-0 frame multiples
-repack/checkpoint_axis_probe.py real BitNet axis/pad/structure probe
 repack/harmonic_tax.py         fractional-part / harmonic tax dictionary
 repack/harmonic_energy.py      packing energy E_rows; phase-peak scan
 repack/harmonic_mra.py         Law C as 2–3 multiresolution scales
 repack/harmonic_orbit.py       {Qα} orbits, complements, multi-D interaction
 repack/harmonic_multi.py       phase cloud, triples, 3-mode tax, pad tracker
-repack/process_language_probes.py  seed/amplify/harmonize bridge probes
-repack/architecture_phase_design.py  size-design prior + global budget tests
-repack/geometry_lab.py            reshape / fiber-pad / associator lab
-repack/organizing_principles.py   twin/complement/frame operator probes
-HARMONIC.md                    harmonic geometry note
-COLLATZ_BRIDGE.md              Collatz↔packing exploratory bridge
-ARCHITECTURE_PHASE.md          Phase 5 architecture phase-design results
-GEOMETRY_LAB.md                surviving low-cost geometry moves
-PACKING_STACK.md               stack measurement + failure analysis
-ORGANIZING_PRINCIPLES.md       tested operators (twin, complement, frames)
-PACKING_PIPELINE.md            practical three-ledger packer measurement
-PACKET_SEAM.md                 0→1 packet/seam applicability + tags
-BETTER_DENSITY.md              hybrid-306 vs flat; BitNet −1.36 MB
-LARGE_SCALE.md                 synthetic 7B–70B density (61/306 law)
-PATTERN_OF_PATTERNS.md         665-flat vs hybrid 306 (shipped frontier)
-FARTHER.md                     board past 665; 1277-flat geometric win
-DIMENSIONS.md                  multi-track dimension map (do not flatten)
-CHANGE_AT_41.md                exploratory 41 twin/CF probe
-CHECKPOINT_PROBE.md            real-checkpoint evaluation
-EXTENSIONS.md / SCALE_PROBE.md evaluation notes
-repack/architecture_prior.py   surplus sizes on align grid
-repack/change_at_41.py         CF-rung vs twin-midpoint probe at 41
-repack/ledger_packer.py        ledgers + BitNet/nest + --hybrid/--hybrid665
-repack/packet_seam_probe.py    pattern/recursion/nesting/hierarchy probe
-repack/better_density.py       hybrid/cascade/rem-oracle BitNet probe
-repack/large_scale_probe.py    synthetic 7B/13B/70B density suites
-repack/pattern_of_patterns.py  Law B composition / 665-flat probe
-repack/farther_probes.py       farther board; 1277 / entropy / tiles
+repack/next_probes.py          dynamical / multi-scale / base-p cadence
+repack/base_p_ladder.py        base-p CF loci + naïve-vs-block
+repack/checkpoint_axis_probe.py real BitNet axis/pad/structure probe
+repack/scale_probe.py          targeted LLM-shape axis/Kronecker/tax0 probe
+… plus geometry / Collatz / architecture / organizing-principles labs
 ```
 
 ## Reproducing
 
 - **Certificates**: `lean Certificates.lean` under any recent Lean 4
   toolchain (seconds; no packages).
+- **Formats**: `python3 repack/pack_ladder.py selftest` (numpy only).
+- **Practical packer** (default three-ledger; optional hybrids):
+
+```bash
+PYTHONPATH=repack python3 repack/ledger_packer.py selftest
+PYTHONPATH=repack python3 repack/ledger_packer.py bitnet              # default
+PYTHONPATH=repack python3 repack/ledger_packer.py bitnet --hybrid     # 61/306
+PYTHONPATH=repack python3 repack/ledger_packer.py bitnet --hybrid665  # 132/665
+```
+
+  1277-flat is **probe-only** in `farther_probes.py` (no `--hybrid1277` yet).
+- **Density ladder probes**:
+
+```bash
+PYTHONPATH=repack python3 repack/better_density.py selftest
+PYTHONPATH=repack python3 repack/pattern_of_patterns.py selftest
+PYTHONPATH=repack python3 repack/farther_probes.py selftest
+```
+
 - **Benchmarks**: `rustc -O -C target-cpu=native bench/<file>.rs && ./<bin>`
   (std only). Look for the **D3** row in `ternary_pack_bench`.
-- **Formats**: `python3 repack/pack_ladder.py selftest` (numpy only).
 - **Extensions**: from `repack/`,
   `python3 tax_graph.py catalog && python3 tax_graph.py selftest` and
   likewise `hierarchical_digits.py`, `frame_formats.py`, `tax_tensor.py`,
   `mode_pack.py`, `kronecker_tensor_pack.py`, `tensor_hierarchical.py`,
   `mode_schedule.py`, `recursive_pack.py`, `collatz_schedule.py`,
   `pre_transform_probe.py`.
-- **Scale probe**: `python3 repack/scale_probe.py run`
-- **Pad-to-tax0**: `python3 repack/pad_to_tax0.py run`
-- **Checkpoint probe**: download BitNet `model.safetensors` into
-  `repack/data/bitnet/`, then
+- **Scale / pad / checkpoint**: `python3 repack/scale_probe.py run`;
+  `python3 repack/pad_to_tax0.py run`; download BitNet `model.safetensors`
+  into `repack/data/bitnet/`, then
   `python3 repack/checkpoint_axis_probe.py --rt-sample 5`
-- **Harmonic dictionary**: `python3 repack/harmonic_tax.py selftest` /
-  `run`; also `harmonic_energy.py`, `harmonic_mra.py`, `harmonic_orbit.py`,
-  `harmonic_multi.py` (BitNet phase cloud + triples + pad tracker)
+- **Harmonic**: `python3 repack/harmonic_tax.py selftest` / `run`; also
+  `harmonic_energy.py`, `harmonic_mra.py`, `harmonic_orbit.py`,
+  `harmonic_multi.py`
 - **BitNet repack**: download `microsoft/bitnet-b1.58-2B-4T`'s
   `model.safetensors` (~1.18 GB) into `repack/data/bitnet/`, then
   `python3 repack/repack_bitnet.py`. Every tensor is round-tripped exactly

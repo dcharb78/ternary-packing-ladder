@@ -83,9 +83,10 @@ Density lever at even quantum 306 is **`fmt_306_485`**, not chiral 486-frame.
 Nested Law C decode ≫ 5_8 decode time → keep never-nested for inference;
 allow 306_485 for size-critical archive when length ∣ 306.
 
-> **Ledger choice is an operator.** Flat 5_8, fiber-41, and rung-blocks are
-> different symbols. Even 306 is where the **rung-block** lives — consistent
-> with it not being a typed sheet.
+> **Ledger choice is an operator.** Flat 5_8, fiber-41, rung-blocks (306),
+> and Law-B-sum flats (665; probe 1277) are different symbols. Even 306 is
+> where the classic **rung-block** lives — consistent with it not being a
+> typed sheet. Fiber-41 is a control, not the density winner.
 
 ## O6 — Twin pairs as rectangles
 
@@ -103,14 +104,16 @@ is for greenfield widths, not retrofit.
 ## Revised stack (operators that survived)
 
 ```text
-1. Pick ledger: flat 5_8 | fiber-41 | fmt_306_485 (when length ∣ 306)
+1. Pick ledger: flat 5_8 | fiber-41 (control) | fmt_306_485 | fmt_665_1055
+   (optional hybrids: --hybrid / --hybrid665; 1277 = probe-only)
 2. Reshape (aspect≤16), score by bytes of chosen ledger
 3. Axis → flat pack (never nested for decode; never always-pad)
 4. Odd rungs ↔ typed sheets (design-time catalog)
 5. Even 306 ↔ rung-block only (not twin sheets)
 ```
 
-See practical measurement: [`PACKING_PIPELINE.md`](PACKING_PIPELINE.md).
+See practical measurement: [`PACKING_PIPELINE.md`](PACKING_PIPELINE.md) ·
+map: [`DIMENSIONS.md`](DIMENSIONS.md).
 
 ## Run
 

@@ -103,15 +103,17 @@ See [`PACKET_SEAM.md`](PACKET_SEAM.md) and the multi-track map
 
 - Three-ledger pipeline remains the main practical tool; optional hybrid
   prefixes extend it without changing the default.
-- **Static packing density frontier:** flat Law-B-sum `fmt_665_1055`
+- **Shipped static density frontier:** flat Law-B-sum `fmt_665_1055`
   (**132/665**) via `--hybrid665` — **not** “freeze at 0.33%/306.”
+- **Probe geometric candidate:** flat **1277** (665+2×306, **253/1277**)
+  beats 665 by ~**−0.66 MB** on BitNet ([`FARTHER.md`](FARTHER.md));
+  not wired (`theory_bytes_flat_Q` lives in `farther_probes.py` only).
 - Hybrid 306 (`61/306` ≈ 0.33% vs 0.2 baseline; **−1 byte per 306 trits**)
-  remains a valid prior lever (`--hybrid`) but is no longer the best measured
-  fixed-width option.
+  remains a valid prior lever (`--hybrid`) but is below 665 (and 1277).
 - The 61/306 gap is the classic rung-block effect — **not** a new seam/twin
   discovery. Chiral frames / fiber-41 remain inferior for density.
 - Close the **static** dimension after docs + one larger absolute measure;
-  do **not** collapse the other five dimensions into “just use 665.”
+  do **not** collapse the other five dimensions into “just use 665/1277.”
 - No live-model padding, no theory re-opening.
 
 **Measured follow-up** ([`BETTER_DENSITY.md`](BETTER_DENSITY.md)): on BitNet,
@@ -128,20 +130,26 @@ Law B sum as **flat** `fmt_665_1055` (132 B/665) beats hybrid 306
 (BitNet **−3.26 MB** vs flat, **−1.89 MB** vs hybrid 306). Chiral 486/665
 frames lose bytes. Optional `--hybrid665`.
 
+**Farther** ([`FARTHER.md`](FARTHER.md)): flat 1277 continues the same
+Law-B-sum-as-flat pattern (−0.66 MB vs 665). Leave probe-only unless promoting
+with a clean optional flag + RT tests.
+
 ## Suggestions (next, still low-cost)
 
-1. **Optional `--hybrid665`** — current static density frontier (~−3.26 MB on BitNet).
-2. **Optional `--hybrid`** — 306-prefix + rem (~1.36 MB; still valid, below 665).
-3. **Length-align at train time** — multiples of 665 (or 306) so flat rung-blocks fire without flags.
-4. **GEMM-tile ∩ 306/665** — only if designing new widths anyway.
-5. **Real >2B ternary ckpt** — re-run `ledger_packer.py bitnet --ckpt … --hybrid665` when available (closes static absolute measure).
-6. **Dynamical / multi-scale probes** — see cadence in [`DIMENSIONS.md`](DIMENSIONS.md); do not reopen characters / Stokes / packet theory unless a length-aligned model or fused decode changes the Pareto story.
+1. **`--hybrid665`** — shipped static density frontier (~−3.26 MB on BitNet).
+2. **`--hybrid`** — 306-prefix + rem (~1.36 MB; still valid, below 665).
+3. **Optional `--hybrid1277`** — only if promoting the farther probe (tiny wire + selftest).
+4. **Length-align at train time** — multiples of 665 (or 306) so flat rung-blocks fire without flags.
+5. **GEMM-tile ∩ 306/665** — only if designing new widths anyway.
+6. **Real >2B ternary ckpt** — re-run `ledger_packer.py bitnet --ckpt … --hybrid665` when available (closes static absolute measure).
+7. **Dynamical / multi-scale probes** — see cadence in [`DIMENSIONS.md`](DIMENSIONS.md); do not reopen characters / Stokes / packet theory unless a length-aligned model or fused decode changes the Pareto story.
 
 ## Run
 
 ```bash
-python3 repack/ledger_packer.py selftest
-python3 repack/ledger_packer.py all --nest-repeats 40
-python3 repack/ledger_packer.py pack --m 1 --n 306
+PYTHONPATH=repack python3 repack/ledger_packer.py selftest
+PYTHONPATH=repack python3 repack/ledger_packer.py all --nest-repeats 40
+PYTHONPATH=repack python3 repack/ledger_packer.py pack --m 1 --n 306
+PYTHONPATH=repack python3 repack/ledger_packer.py bitnet --hybrid665
 python3 repack/architecture_prior.py run --align 64   # design-time list only
 ```

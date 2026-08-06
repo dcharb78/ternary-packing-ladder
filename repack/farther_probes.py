@@ -8,6 +8,10 @@ digit nesting, pad-to-align, seam/twin predictors, dynamical nulls).
 Does NOT reopen fiber-41 / characters / Stokes as density levers.
 Does NOT claim a win unless measured bytes beat hybrid665 on ternary weights.
 
+Probe-only: theory_bytes_flat_Q / flat-1277 BitNet absolute are NOT wired into
+pack_ladder or ledger_packer (no --hybrid1277). Promote only with a clean
+optional flag + RT selftests; until then treat as FARTHER.md measurement.
+
 Probes implemented (cheap):
   1. Mixed-ledger portfolio (global budget + decode complexity score)
   2. Activation / KV / runtime shapes (synthetic) vs 665

@@ -17,8 +17,9 @@ It only amplifies the known **61/306 ≈ 0.33%** hybrid / rung-block gap
 
 **Static density frontier update:** flat `fmt_665_1055` beats hybrid 306 at
 these same scales (see [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md);
-map: [`DIMENSIONS.md`](DIMENSIONS.md)). This note remains the 306-amplification
-measurement; it is not “freeze forever at 0.33%.”
+map: [`DIMENSIONS.md`](DIMENSIONS.md); probe past 665: [`FARTHER.md`](FARTHER.md)).
+This note remains the 306-amplification measurement; it is not
+“freeze forever at 0.33%.”
 
 ## Suites measured
 

@@ -68,9 +68,10 @@ beat simple hybrid 306 on BitNet-2B.
 **Superseded as overall static frontier:** flat Law-B-sum blocks
 `fmt_665_1055` (132/665) beat hybrid 306 — see
 [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md) and the multi-track map
-[`DIMENSIONS.md`](DIMENSIONS.md). Do not read this note as “freeze at
+[`DIMENSIONS.md`](DIMENSIONS.md). Probe past 665: flat **1277**
+([`FARTHER.md`](FARTHER.md)). Do not read this note as “freeze at
 0.33%/306”; close static packing after docs + a larger absolute measure, with
-665-flat as the current best measured lever.
+665-flat as the shipped best measured lever.
 
 **At 7B–70B synthetic scale** ([`LARGE_SCALE.md`](LARGE_SCALE.md)): same 306
 law — hybrid Δ scales ~linearly (−4 / −8 / −51 MB); no new 306-phenomenon.

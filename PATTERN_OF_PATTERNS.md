@@ -5,7 +5,8 @@
 **Multi-track context:** this result updates the **static packing** frontier
 only. See [`DIMENSIONS.md`](DIMENSIONS.md) for circle / triskelion /
 sphere-and-cube / multi-scale / training tracks — do not collapse them into
-“just use 665.”
+“just use 665.” Farther geometric candidate past 665: flat **1277**
+([`FARTHER.md`](FARTHER.md); probe-only).
 
 Code: [`repack/pattern_of_patterns.py`](repack/pattern_of_patterns.py)  
 Results: [`repack/pattern_of_patterns_results.json`](repack/pattern_of_patterns_results.json)
@@ -91,6 +92,9 @@ Fiber-41 still loses badly at every scale.
   (132 B/block; opt-in, not in default `FIXED_FORMATS`).
 - Flag: `ledger_packer.py … --hybrid665` (optional; default unchanged).
 - Prefer F over chiral `fmt_665_frame` for size.
+- Next Law-B-sum flat **1277** (253 B/block) is measured in
+  [`farther_probes.py`](repack/farther_probes.py) only — **no** `--hybrid1277`
+  unless promoted.
 
 ```bash
 PYTHONPATH=repack python3 repack/pattern_of_patterns.py selftest

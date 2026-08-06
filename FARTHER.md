@@ -155,8 +155,11 @@ One convergent flat block round-trip for p=5.
 3. **Bookkeeping:** shared rem codebook — ignore for frontier (~KB).
 
 Static packing frontier update candidate: **1277-flat ≥ 665-flat ≥ hybrid 306 ≥ 5_8**.
-Optional packer flag not implemented in this pass (probe-only); wire
-`theory_bytes_1277_*` / `--hybrid1277` when promoting.
+
+**Code hygiene:** `theory_bytes_flat_Q` (and the 1277 BitNet absolute) live
+**only** in [`repack/farther_probes.py`](repack/farther_probes.py) — probe-only,
+not in `pack_ladder` / `ledger_packer`. Prefer documenting that way unless
+wiring a clean optional `--hybrid1277` (mirror `--hybrid665`) with RT selftests.
 
 ---
 

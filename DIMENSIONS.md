@@ -352,12 +352,13 @@ circle + static ledgers; must not swallow the dynamical tracks.
   points on the circle are centers.
 - **Multi-scale** lifts the same questions to a hierarchy of circles.
 - **Static packing** is the engineering projection onto final byte counts
-  (current frontier: **665-flat**; prior: hybrid 306).
+  (shipped frontier: **665-flat**; probe candidate: **1277-flat**; prior:
+  hybrid 306).
 - **Training/scaling** asks whether the structure can act before freeze.
 
-Do **not** collapse the program into “just use 665.” That closes (or nearly
-closes) only the static track. Dynamical, dual-packing, and multi-scale
-questions remain open on their own legs.
+Do **not** collapse the program into “just use 665” or “just use 1277.”
+That closes (or nearly closes) only the static track. Dynamical,
+dual-packing, and multi-scale questions remain open on their own legs.
 
 ```text
                     multi-scale (many circles)
@@ -436,4 +437,4 @@ with it.
 
 Closing the static dimension means: document, measure once at larger absolute
 scale, then **stop draining attention** into further static density hunting —
-not that 665 answers the other five dimensions.
+not that 665 (or probe 1277) answers the other five dimensions.

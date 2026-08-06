@@ -81,8 +81,8 @@ Three loci = right geometric dynamical image for every \(p\); extra training reg
 
 | Track | Actionable now? |
 |-------|-----------------|
-| Ternary static | **No** further hunting — frontier = **665-flat** (−3.26 MB vs flat on BitNet-2B) |
+| Ternary static | Shipped frontier = **665-flat** (−3.26 MB vs flat). Later farther board found probe **1277-flat** (−0.66 MB vs 665; [`FARTHER.md`](FARTHER.md)) — document, do not reopen a density hunt |
 | Dynamical / multi-scale on BitNet | **No new lever** — multi-scale `null` (665 wins all 210); reshape micro-hit only under hybrid306; snap 640→612 restates ×306 prior |
 | Base-p | **Only** as greenfield non-ternary codec (p=5 block **643**, p=7 block **571**); else conceptual map |
 
-**Stop** on ternary packing attention drain. Three loci remain the right geometric image for every \(p\) (`applies_as_language`); training needing more regimes stays `speculative`. Do not reopen fiber-41 / characters / Stokes.
+**Stop** draining attention into further static density hunting (1277 is already measured as probe-only). Three loci remain the right geometric image for every \(p\) (`applies_as_language`); training needing more regimes stays `speculative`. Do not reopen fiber-41 / characters / Stokes.
