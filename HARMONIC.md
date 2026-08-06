@@ -38,6 +38,33 @@ form `3^{MN}`. Same integers; theory stays on the circle. Additive
 - **Law C nesting** `41=8·5+1`, `306=7·41+19` = parent-alphabet expansion at
   successive surplus scales (harmonic multiresolution sketch).
 
+## Precise decimals as circle coordinates
+
+The values are not merely “near 0/1.” **Distance and side** control
+multi-dimensional interaction under `m · {n·α}`:
+
+| Q | `{Qα}` | Side | Orbit behaviour |
+|---|--------|------|-----------------|
+| 5 | 0.9248 | →1 from below | tax_rows=0 for m=1..13; residual drifts down |
+| 41 | 0.9835 | →1 from below | tax_rows=0 for m=1..60; slow drift from 1 |
+| 306 | 0.9985 | →1 from below | tax_rows=0 for hundreds of m |
+| 19 | 0.1143 | mid | tax grows ~m−1 until overflow at m=9 |
+| 53 | 0.0030 | →0 | floor stays 0; tax = m−1 (hungry) |
+| 665 | 6.3e-5 | →0 | extreme deficit |
+
+**Complementary phases** (φ+ψ≈1) explain Law B cancellations:
+
+- `53+306` → sum ≈ **1.0015** (665 = 2×306+53 sits on this pair)
+- `41+19` → sum ≈ 1.098 (486-frame grammar)
+- `306+665` → sum ≈ 0.999
+
+Axis choice: one orientation multiplies the large φ, the other the small —
+`⌊m·φ_n⌋` vs `⌊n·φ_m⌋` differ; that is the holonomy.
+
+```bash
+python3 repack/harmonic_orbit.py run   # orbits + complements + BitNet
+```
+
 ## Unseen connections (checklist)
 
 1. **Collatz / stream schedule** `C_i = bits(i) = ⌊i·α⌋+1` — same circle object;
