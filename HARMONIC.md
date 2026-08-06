@@ -65,6 +65,60 @@ Axis choice: one orientation multiplies the large φ, the other the small —
 python3 repack/harmonic_orbit.py run   # orbits + complements + BitNet
 ```
 
+## Multidimensional regime (phase cloud, triples, pad tracker)
+
+```bash
+python3 repack/harmonic_multi.py   # needs BitNet ckpt for cloud; else --skip-ckpt
+```
+
+### 1. BitNet-2B phase cloud
+
+Only **three** unique mode lengths: `640, 2560, 6912` (210 tensors).
+
+| shape | count | `{mα}+{nα}` dist to 1 | notes |
+|-------|------:|----------------------:|-------|
+| 2560×2560 | 60 | **≈0.008** | accidental self-complement (`{2560α}≈0.504`) |
+| 640×2560 | 60 | ≈0.120 | mid + half |
+| 6912×2560 | 90 | ≈0.235 | both mid |
+
+So **60/210 tensors are already near-complementary** without padding — the
+square projections sit at φ≈½. That is an architectural accident with
+harmonic consequences, not a packing format.
+
+Accidental mode-pair complements among unique lengths are weak except
+self-pairs at 2560.
+
+### 2. Triples and 3-mode fiber tax
+
+3-mode tax (circle, no `3^{mnp}`):
+
+`tax_orient_i = tax_rows(d_i, ∏_{j≠i} d_j) = d_i − 1 − ⌊d_i · {(∏_{j≠i} d_j)·α}⌋`
+
+Best of three orientations. Triple search finds low pairwise-sum scores
+(e.g. `[306,665,1024]`); closed chains with all three pairs ≈1 force
+phases ≈½ (consistent with the 2560 self-complement story).
+
+### 3. Multi-mode pad tracker
+
+Greedy pads toward pairwise φᵢ+φⱼ≈1:
+
+| dims | padded | total pad | score→ |
+|------|--------|----------:|--------|
+| 2560×6912 | 2598×6912 | 38 | 0.235→0.007 |
+| 640×2560 | 659×2560 | 19 | 0.120→0.006 |
+| 306×53×41 | 312×59×47 | 18 | ~1.00→0.03 |
+
+Small pads can move whole rectangles onto near-complement configurations —
+the multi-D analogue of surplus-phase pad.
+
+### Still open
+
+- Global phase budget / simultaneous surplus limits across a full net
+- Dynamic phases under MoE / sparsity
+- Multi-D Beatty partitions as tilings
+- Character/cohomology obstruction for impossible zero-tax tuples
+- Coupled hierarchical decode contraction orders
+
 ## Unseen connections (checklist)
 
 1. **Collatz / stream schedule** `C_i = bits(i) = ⌊i·α⌋+1` — same circle object;

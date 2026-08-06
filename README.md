@@ -104,6 +104,7 @@ repack/harmonic_tax.py         fractional-part / harmonic tax dictionary
 repack/harmonic_energy.py      packing energy E_rows; phase-peak scan
 repack/harmonic_mra.py         Law C as 2–3 multiresolution scales
 repack/harmonic_orbit.py       {Qα} orbits, complements, multi-D interaction
+repack/harmonic_multi.py       phase cloud, triples, 3-mode tax, pad tracker
 HARMONIC.md                    harmonic geometry note
 CHECKPOINT_PROBE.md            real-checkpoint evaluation
 EXTENSIONS.md / SCALE_PROBE.md evaluation notes
@@ -128,7 +129,8 @@ EXTENSIONS.md / SCALE_PROBE.md evaluation notes
   `repack/data/bitnet/`, then
   `python3 repack/checkpoint_axis_probe.py --rt-sample 5`
 - **Harmonic dictionary**: `python3 repack/harmonic_tax.py selftest` /
-  `run`; also `harmonic_energy.py`, `harmonic_mra.py`, `harmonic_orbit.py`
+  `run`; also `harmonic_energy.py`, `harmonic_mra.py`, `harmonic_orbit.py`,
+  `harmonic_multi.py` (BitNet phase cloud + triples + pad tracker)
 - **BitNet repack**: download `microsoft/bitnet-b1.58-2B-4T`'s
   `model.safetensors` (~1.18 GB) into `repack/data/bitnet/`, then
   `python3 repack/repack_bitnet.py`. Every tensor is round-tripped exactly
