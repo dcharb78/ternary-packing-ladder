@@ -51,6 +51,7 @@ from pack_ladder import (
     theory_bytes_306_485,
     theory_bytes_41_65,
     theory_bytes_5_8,
+    theory_bytes_665_1055,
     unpack_306_485,
     unpack_41_65,
     unpack_5_8,
@@ -205,16 +206,55 @@ def evaluate_hybrid_306(m: int, n: int) -> Dict[str, Any]:
     }
 
 
+def evaluate_hybrid_665(m: int, n: int) -> Dict[str, Any]:
+    """665-prefix + rem (theory_bytes_665_1055) — Law B sum as flat rung-block.
+
+    Beats hybrid 306 on BitNet (~−1.9 MB extra). Distinct from chiral
+    fmt_665_frame (133 B @ 665 vs flat 132 B).
+    """
+    options = []
+    mn = m * n
+    for label, length, mult in (
+        ("flat_stream", mn, 1),
+        ("row_fibers", n, m),
+        ("col_fibers", m, n),
+    ):
+        if length < 665:
+            continue
+        options.append(
+            {
+                "layout": label,
+                "ledger": "hybrid_665_1055",
+                "fiber_len": length,
+                "n_fibers": mult,
+                "quantum": 665,
+                "full_blocks": length // 665,
+                "rem": length % 665,
+                "bytes": theory_bytes_665_1055(length) * mult,
+                "role": "law_b_sum_flat_hybrid",
+            }
+        )
+    options.sort(key=lambda o: o["bytes"])
+    return {
+        "eligible": len(options) > 0,
+        "best": options[0] if options else None,
+        "all": options[:12],
+    }
+
+
 def pack_tensor(
     m: int,
     n: int,
     cons: Optional[DeployConstraints] = None,
     allow_hybrid: bool = False,
+    allow_hybrid_665: bool = False,
 ) -> Dict[str, Any]:
     """Single deterministic three-ledger decision for shape (m, n).
 
     allow_hybrid: if True, also consider theory_bytes_306_485 on best layout
     without requiring length % 306 == 0 (captures ~0.33% on BitNet-class).
+    allow_hybrid_665: if True, also consider theory_bytes_665_1055 (Law B sum
+    as flat container; beats hybrid 306 when lengths afford).
     """
     if cons is None:
         cons = DeployConstraints(max_aspect=16.0, align=64, min_dim=32)
@@ -225,6 +265,11 @@ def pack_tensor(
     # --- Branch A: frame if eligible (exact quantum) ---
     frames = evaluate_frame_options(m, n)
     hybrid = evaluate_hybrid_306(m, n) if allow_hybrid else {
+        "eligible": False,
+        "best": None,
+        "all": [],
+    }
+    hybrid665 = evaluate_hybrid_665(m, n) if allow_hybrid_665 else {
         "eligible": False,
         "best": None,
         "all": [],
@@ -247,12 +292,19 @@ def pack_tensor(
         candidates["frame_best"] = frames["best"]["bytes"]
     if hybrid["best"]:
         candidates["hybrid_306"] = hybrid["best"]["bytes"]
+    if hybrid665["best"]:
+        candidates["hybrid_665"] = hybrid665["best"]["bytes"]
 
     # Pick best among frame / hybrid that beat flat (prefer denser)
     special_best = None
     special_path = None
     special_reason = None
-    for kind, bundle in (("frame", frames), ("hybrid", hybrid)):
+    special_ledger = None
+    for kind, bundle in (
+        ("frame", frames),
+        ("hybrid", hybrid),
+        ("hybrid665", hybrid665),
+    ):
         if not bundle.get("best"):
             continue
         fb = bundle["best"]["bytes"]
@@ -260,12 +312,21 @@ def pack_tensor(
             special_best = fb
             special_path = kind
             if kind == "frame":
+                special_ledger = frames["best"]["ledger"]
                 special_reason = (
                     f"frame:{bundle['best']['layout']}"
                     f":Q={bundle['best']['quantum']}"
                     f":{bundle['best'].get('parity_rule', '')}"
                 )
+            elif kind == "hybrid665":
+                special_ledger = "hybrid_665_1055"
+                special_reason = (
+                    f"hybrid665:{bundle['best']['layout']}"
+                    f":blocks={bundle['best']['full_blocks']}"
+                    f":rem={bundle['best']['rem']}"
+                )
             else:
+                special_ledger = "hybrid_306_485"
                 special_reason = (
                     f"hybrid:{bundle['best']['layout']}"
                     f":blocks={bundle['best']['full_blocks']}"
@@ -275,14 +336,10 @@ def pack_tensor(
     # Decision tree
     if special_best is not None:
         decision = PackDecision(
-            ledger=(
-                frames["best"]["ledger"]
-                if special_path == "frame"
-                else "hybrid_306_485"
-            ),
+            ledger=special_ledger or "hybrid_306_485",
             bytes=special_best,
             shape=(m, n),
-            reason=special_reason or special_path,
+            reason=special_reason or special_path or "",
             candidates=candidates,
         )
         path = special_path
@@ -325,7 +382,9 @@ def pack_tensor(
         "reshape": rs,
         "frames": frames,
         "hybrid": hybrid,
+        "hybrid665": hybrid665,
         "allow_hybrid": allow_hybrid,
+        "allow_hybrid_665": allow_hybrid_665,
         "odd_even": {
             "odd_rungs_sheet_ok": list(ODD_RUNGS),
             "even_frame_only": list(EVEN_FRAME_LENGTHS),
@@ -343,6 +402,7 @@ def measure_bitnet(
     path: Path,
     max_tensors: Optional[int] = None,
     allow_hybrid: bool = False,
+    allow_hybrid_665: bool = False,
 ) -> Dict[str, Any]:
     shapes = load_bitnet_shapes(path)
     if max_tensors is not None:
@@ -366,7 +426,13 @@ def measure_bitnet(
     path_counts: Dict[str, int] = defaultdict(int)
 
     for (m, n), names in sorted(uniq.items()):
-        r = pack_tensor(m, n, cons, allow_hybrid=allow_hybrid)
+        r = pack_tensor(
+            m,
+            n,
+            cons,
+            allow_hybrid=allow_hybrid,
+            allow_hybrid_665=allow_hybrid_665,
+        )
         cnt = len(names)
         flat58 = r["candidates"]["flat_5_8"]
         f41 = r["candidates"]["fiber41_original"]
@@ -427,15 +493,20 @@ def _analyze_bitnet(
             f"Selected ledger does not beat flat fmt_5_8 (Δ={d58} B). "
             "Same Pareto knee as prior probes on unstructured BitNet."
         )
-    if path_counts.get("frame", 0) == 0 and path_counts.get("hybrid", 0) == 0:
+    if path_counts.get("frame", 0) == 0 and path_counts.get("hybrid", 0) == 0 and path_counts.get("hybrid665", 0) == 0:
         lines.append(
             "No tensor used frame/hybrid ledger — BitNet lengths are not "
-            "exact multiples of 306/665 (enable --hybrid for prefix path)."
+            "exact multiples of 306/665 (enable --hybrid / --hybrid665 for prefix path)."
         )
     if path_counts.get("hybrid", 0):
         lines.append(
             f"Hybrid 306-prefix used on {path_counts['hybrid']} tensors "
             "(known 61/306 density; not a new geometric effect)."
+        )
+    if path_counts.get("hybrid665", 0):
+        lines.append(
+            f"Hybrid 665-flat used on {path_counts['hybrid665']} tensors "
+            "(Law B sum as rung-block; beats hybrid 306 on bytes)."
         )
     if path_counts.get("fiber41", 0) and d58 >= 0:
         lines.append(
@@ -621,6 +692,12 @@ def selftest() -> None:
     assert r_hy["decision"]["bytes"] < r_off["decision"]["bytes"]
     h = evaluate_hybrid_306(1, 2560)
     assert h["best"]["bytes"] == theory_bytes_306_485(2560)
+    # 665-flat hybrid beats 306 hybrid on lengths that afford 665 blocks
+    r665 = pack_tensor(1, 665, allow_hybrid=True, allow_hybrid_665=True)
+    assert r665["decision"]["path"] == "hybrid665"
+    assert r665["decision"]["bytes"] == 132
+    r_both = pack_tensor(1, 2560, allow_hybrid=True, allow_hybrid_665=True)
+    assert r_both["decision"]["bytes"] <= r_hy["decision"]["bytes"]
     nt = nesting_test(lengths=(306, 665), repeats=5)
     assert nt["rows"][0]["rt_ok"].get("fmt_5_8")
     print("ledger_packer selftest OK")
@@ -643,6 +720,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         action="store_true",
         help="Allow 306-prefix hybrid without exact ÷306 (known ~0.33%% density)",
     )
+    p.add_argument(
+        "--hybrid665",
+        action="store_true",
+        help="Allow 665-flat hybrid (Law B sum as rung-block; beats --hybrid on bytes)",
+    )
     args = p.parse_args(list(argv) if argv is not None else None)
 
     if args.cmd == "selftest":
@@ -653,16 +735,23 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "stance": (
             "Practical three-ledger packer. Measure bytes; diagnose non-wins. "
             "Odd rungs → sheets ok at design time; even 306 → frame only. "
-            "Optional --hybrid: 306-prefix without exact gate (61/306 effect)."
+            "Optional --hybrid: 306-prefix (61/306). "
+            "Optional --hybrid665: 665-flat Law B sum (beats hybrid 306)."
         ),
         "design_time_surplus_align64": list(DESIGN_TIME_SURPLUS_ALIGN64),
         "odd_rungs_sheet_ok": list(ODD_RUNGS),
         "even_frame_only": list(EVEN_FRAME_LENGTHS),
         "allow_hybrid": args.hybrid,
+        "allow_hybrid_665": args.hybrid665,
     }
 
     if args.cmd in ("pack", "all"):
-        out["example_pack"] = pack_tensor(args.m, args.n, allow_hybrid=args.hybrid)
+        out["example_pack"] = pack_tensor(
+            args.m,
+            args.n,
+            allow_hybrid=args.hybrid,
+            allow_hybrid_665=args.hybrid665,
+        )
 
     if args.cmd in ("nest", "all"):
         out["nesting"] = nesting_test(repeats=args.nest_repeats)
@@ -676,9 +765,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 args.ckpt,
                 max_tensors=args.max_tensors,
                 allow_hybrid=args.hybrid,
+                allow_hybrid_665=args.hybrid665,
             )
             out["bitnet"]["elapsed_s"] = time.time() - t0
             out["bitnet"]["allow_hybrid"] = args.hybrid
+            out["bitnet"]["allow_hybrid_665"] = args.hybrid665
 
     path = Path(__file__).resolve().parent / "ledger_packer_results.json"
     summary: Dict[str, Any] = {

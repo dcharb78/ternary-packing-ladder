@@ -113,6 +113,10 @@ the multi-D analogue of surplus-phase pad.
 
 ### Still open
 
+Multi-track map (keep dimensions separate; static frontier = 665-flat):
+[`DIMENSIONS.md`](DIMENSIONS.md). Circle/phase here is the **coordinate
+system**; dynamical / multi-scale / training questions live on other tracks.
+
 - Global phase budget on a *real* full net (suite-level answer in
   [`ARCHITECTURE_PHASE.md`](ARCHITECTURE_PHASE.md): cheap simultaneous
   surplus at pad≤64 for LLM_SHAPES modes — not yet BitNet-full inventory)
@@ -140,13 +144,16 @@ the multi-D analogue of surplus-phase pad.
 - Practical three-ledger packer + BitNet measurement —
   [`PACKING_PIPELINE.md`](PACKING_PIPELINE.md);
   `python3 repack/ledger_packer.py all`
-  (`--hybrid` for 306-prefix without exact ÷306)
+  (`--hybrid` / `--hybrid665` for prefix density without exact ÷306/÷665)
 - Packet/seam framing applicability (pattern/recursion/nesting/hierarchy) —
   [`PACKET_SEAM.md`](PACKET_SEAM.md);
   `python3 repack/packet_seam_probe.py run`
-- Better density / hybrid vs flat —
+- Better density / hybrid-306 vs flat —
   [`BETTER_DENSITY.md`](BETTER_DENSITY.md);
   `python3 repack/better_density.py run`
+- Pattern of patterns / 665-flat frontier —
+  [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md);
+  `PYTHONPATH=repack python3 repack/pattern_of_patterns.py run`
 - Large-scale synthetic 7B–70B —
   [`LARGE_SCALE.md`](LARGE_SCALE.md);
   `PYTHONPATH=repack python3 repack/large_scale_probe.py run`

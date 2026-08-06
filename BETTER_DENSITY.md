@@ -7,7 +7,11 @@ Packer flag: `ledger_packer.py … --hybrid`
 ## Question
 
 Is there a fixed-width packing strategy that beats flat `fmt_5_8` on BitNet
-beyond (or within) the known **61/306 ≈ 0.33%** rung-block effect?
+beyond (or within) the known **61/306 ≈ 0.33%** rung-block effect
+(−1 **byte** per 306 trits)?
+
+*(Later: yes — flat 665 blocks; this probe scoped the 306 family only.
+See [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md) / [`DIMENSIONS.md`](DIMENSIONS.md).)*
 
 ## Strategies tested (theory bytes)
 
@@ -33,7 +37,7 @@ beyond (or within) the known **61/306 ≈ 0.33%** rung-block effect?
 - Oracle = **C** on all 210 tensors.
 - Pure all-trit 61/306 gap ≈ **1,362,121 B** → oracle captures **99.99%**.
 - Cascade / rem-oracle do **not** beat simple C/D (`beyond_simple_hybrid=false`).
-- **No new geometry** — same −1 B per full 306 in the chosen layout.
+- **No new geometry within 306** — same −1 **byte** per full 306 in the chosen layout.
 
 ## Understanding
 
@@ -56,9 +60,18 @@ python3 repack/ledger_packer.py bitnet --hybrid
 
 ## Stance
 
-We can do **slightly better** on fixed widths by lifting the exact-÷306 gate.
-We **cannot** do better than the known 0.33% density floor with cascade,
-41-blocks, or rem tricks on BitNet-2B.
+Within the **306-family** strategies tested here, lifting the exact-÷306 gate
+captures essentially the full known rung-block gap (−1 **byte** per 306 trits
+≈ 0.33% vs the 0.2 baseline). Cascade, 41-blocks, and rem tricks do **not**
+beat simple hybrid 306 on BitNet-2B.
 
-**At 7B–70B synthetic scale** ([`LARGE_SCALE.md`](LARGE_SCALE.md)): same law —
-hybrid Δ scales ~linearly (−4 / −8 / −51 MB); no new phenomenon.
+**Superseded as overall static frontier:** flat Law-B-sum blocks
+`fmt_665_1055` (132/665) beat hybrid 306 — see
+[`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md) and the multi-track map
+[`DIMENSIONS.md`](DIMENSIONS.md). Do not read this note as “freeze at
+0.33%/306”; close static packing after docs + a larger absolute measure, with
+665-flat as the current best measured lever.
+
+**At 7B–70B synthetic scale** ([`LARGE_SCALE.md`](LARGE_SCALE.md)): same 306
+law — hybrid Δ scales ~linearly (−4 / −8 / −51 MB); no new 306-phenomenon.
+(665-flat deltas are larger; measured in pattern-of-patterns.)

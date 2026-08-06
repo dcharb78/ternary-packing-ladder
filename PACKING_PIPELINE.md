@@ -96,31 +96,46 @@ The geometric work produced a **correct packer and a clear measurement**:
 
 That is practical clarification, not a new BitNet compression headline.
 
-## Updated stance (after packet/seam + density dissection)
+## Updated stance (after packet/seam + density + pattern-of-patterns)
 
-See [`PACKET_SEAM.md`](PACKET_SEAM.md). Short form:
+See [`PACKET_SEAM.md`](PACKET_SEAM.md) and the multi-track map
+[`DIMENSIONS.md`](DIMENSIONS.md). Short form:
 
-- Three-ledger pipeline remains the main practical tool.
-- The ~0.33% (61/306) is the **classic rung-block** option — design-time ×306
-  or optional hybrid prefix — **not** a new seam/twin discovery.
+- Three-ledger pipeline remains the main practical tool; optional hybrid
+  prefixes extend it without changing the default.
+- **Static packing density frontier:** flat Law-B-sum `fmt_665_1055`
+  (**132/665**) via `--hybrid665` — **not** “freeze at 0.33%/306.”
+- Hybrid 306 (`61/306` ≈ 0.33% vs 0.2 baseline; **−1 byte per 306 trits**)
+  remains a valid prior lever (`--hybrid`) but is no longer the best measured
+  fixed-width option.
+- The 61/306 gap is the classic rung-block effect — **not** a new seam/twin
+  discovery. Chiral frames / fiber-41 remain inferior for density.
+- Close the **static** dimension after docs + one larger absolute measure;
+  do **not** collapse the other five dimensions into “just use 665.”
 - No live-model padding, no theory re-opening.
 
 **Measured follow-up** ([`BETTER_DENSITY.md`](BETTER_DENSITY.md)): on BitNet,
 lifting the exact-÷306 gate (`--hybrid`) saves **−1.36 MB** (= 99.99% of the
-pure 61/306 gap). Cascade / 41 / rem tricks do not beat that. Default packer
-unchanged; use `--hybrid` when you want the known density without redesign.
+pure 61/306 gap). Cascade / 41 / rem tricks do not beat that *among 306-family
+strategies*. Default packer unchanged.
 
 **Large scale** ([`LARGE_SCALE.md`](LARGE_SCALE.md)): synthetic 7B/13B/70B
-suites amplify the same ~0.33% (≈ −4 / −8 / −51 MB). No new phenomenon.
+suites amplify the 61/306 law (≈ −4 / −8 / −51 MB). No new 306-phenomenon.
 Design-time ×306 widths make the default packer take `frame` without `--hybrid`.
+
+**Pattern of patterns** ([`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md)):
+Law B sum as **flat** `fmt_665_1055` (132 B/665) beats hybrid 306
+(BitNet **−3.26 MB** vs flat, **−1.89 MB** vs hybrid 306). Chiral 486/665
+frames lose bytes. Optional `--hybrid665`.
 
 ## Suggestions (next, still low-cost)
 
-1. **Length-align at train time** — multiples of 306 so `fmt_306_485` fires (0.33% density).
-2. **Optional `--hybrid`** — 306-prefix + rem if widths cannot change (~1.36 MB on BitNet; scales at larger models).
-3. **GEMM-tile ∩ 306** — only if designing new widths anyway.
-4. **Real >2B ternary ckpt** — re-run `ledger_packer.py bitnet --ckpt … --hybrid` when available.
-5. **Do not** reopen characters / Stokes / packet theory unless a length-aligned model or fused decode changes the Pareto story.
+1. **Optional `--hybrid665`** — current static density frontier (~−3.26 MB on BitNet).
+2. **Optional `--hybrid`** — 306-prefix + rem (~1.36 MB; still valid, below 665).
+3. **Length-align at train time** — multiples of 665 (or 306) so flat rung-blocks fire without flags.
+4. **GEMM-tile ∩ 306/665** — only if designing new widths anyway.
+5. **Real >2B ternary ckpt** — re-run `ledger_packer.py bitnet --ckpt … --hybrid665` when available (closes static absolute measure).
+6. **Dynamical / multi-scale probes** — see cadence in [`DIMENSIONS.md`](DIMENSIONS.md); do not reopen characters / Stokes / packet theory unless a length-aligned model or fused decode changes the Pareto story.
 
 ## Run
 

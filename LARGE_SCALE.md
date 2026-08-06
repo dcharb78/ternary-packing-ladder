@@ -10,9 +10,15 @@ Related: [`BETTER_DENSITY.md`](BETTER_DENSITY.md), [`PACKING_PIPELINE.md`](PACKI
 
 ## Verdict
 
-**Scale does not expose a new packing phenomenon.** It only amplifies the known
-**61/306 ≈ 0.33%** hybrid / rung-block gap. Fiber-41, cascade, and rem-oracle
-still lose to (or tie) simple `theory_bytes_306_485` hybrid at 7B–70B.
+**Scale does not expose a new packing phenomenon** within the 306-family.
+It only amplifies the known **61/306 ≈ 0.33%** hybrid / rung-block gap
+(−1 **byte** per 306 trits). Fiber-41, cascade, and rem-oracle still lose to
+(or tie) simple `theory_bytes_306_485` hybrid at 7B–70B.
+
+**Static density frontier update:** flat `fmt_665_1055` beats hybrid 306 at
+these same scales (see [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md);
+map: [`DIMENSIONS.md`](DIMENSIONS.md)). This note remains the 306-amplification
+measurement; it is not “freeze forever at 0.33%.”
 
 ## Suites measured
 

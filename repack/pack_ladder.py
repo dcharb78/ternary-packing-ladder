@@ -128,18 +128,23 @@ FMT_2BIT = "fmt_2bit"
 FMT_5_8 = "fmt_5_8"
 FMT_41_65 = "fmt_41_65"
 FMT_306_485 = "fmt_306_485"
+FMT_665_1055 = "fmt_665_1055"
 FMT_STREAM = "fmt_stream"
 
 # Fixed-size container formats (measured size == theory size).
+# fmt_665_1055 is opt-in (Law B sum as flat rung-block); not in default FIXED_FORMATS.
 FIXED_FORMATS: Tuple[str, ...] = (FMT_2BIT, FMT_5_8, FMT_41_65, FMT_306_485)
-ALL_FORMATS: Tuple[str, ...] = FIXED_FORMATS + (FMT_STREAM,)
+ALL_FORMATS: Tuple[str, ...] = FIXED_FORMATS + (FMT_665_1055, FMT_STREAM)
 
 # Full-block sizes (bytes) for the big-int formats.
-# 3^41 needs 65 bits -> 9 bytes; 3^306 needs 485 bits -> 61 bytes.
+# 3^41 needs 65 bits -> 9 bytes; 3^306 needs 485 bits -> 61 bytes;
+# 3^665 needs 1055 bits -> 132 bytes (flat container of Law B 2×306+53).
 BLOCK_41 = 41
 BYTES_41 = 9
 BLOCK_306 = 306
 BYTES_306 = 61
+BLOCK_665 = 665
+BYTES_665 = 132
 
 
 # ---------------------------------------------------------------------------
@@ -187,11 +192,21 @@ def theory_bytes_306_485(n: int) -> int:
     return full * BYTES_306 + container_bytes_for_r_trits(rem)
 
 
+def theory_bytes_665_1055(n: int) -> int:
+    """Flat Law-B-sum blocks (665 trits → 132 B) + flat bigint rem.
+
+    Distinct from chiral ``fmt_665_frame`` (2×306+53 parts → 133 B @ 665).
+    """
+    full, rem = divmod(n, BLOCK_665)
+    return full * BYTES_665 + container_bytes_for_r_trits(rem)
+
+
 THEORY: Dict[str, Callable[[int], int]] = {
     FMT_2BIT: theory_bytes_2bit,
     FMT_5_8: theory_bytes_5_8,
     FMT_41_65: theory_bytes_41_65,
     FMT_306_485: theory_bytes_306_485,
+    FMT_665_1055: theory_bytes_665_1055,
 }
 
 
@@ -406,6 +421,14 @@ def pack_306_485(trits: np.ndarray) -> bytes:
 
 def unpack_306_485(data: bytes, n: int) -> np.ndarray:
     return _unpack_bigint_blocks(data, n, BLOCK_306, BYTES_306, FMT_306_485)
+
+
+def pack_665_1055(trits: np.ndarray) -> bytes:
+    return _pack_bigint_blocks(trits, BLOCK_665, BYTES_665)
+
+
+def unpack_665_1055(data: bytes, n: int) -> np.ndarray:
+    return _unpack_bigint_blocks(data, n, BLOCK_665, BYTES_665, FMT_665_1055)
 
 
 # ---------------------------------------------------------------------------
@@ -672,6 +695,7 @@ PACKERS: Dict[str, Callable[[np.ndarray], bytes]] = {
     FMT_5_8: pack_5_8,
     FMT_41_65: pack_41_65,
     FMT_306_485: pack_306_485,
+    FMT_665_1055: pack_665_1055,
     FMT_STREAM: stream_pack,
 }
 
@@ -680,6 +704,7 @@ UNPACKERS: Dict[str, Callable[[bytes, int], np.ndarray]] = {
     FMT_5_8: unpack_5_8,
     FMT_41_65: unpack_41_65,
     FMT_306_485: unpack_306_485,
+    FMT_665_1055: unpack_665_1055,
     FMT_STREAM: stream_unpack,
 }
 
@@ -814,6 +839,14 @@ def cmd_selftest() -> int:
         f"got {container_bytes_for_r_trits(BLOCK_306)} "
         f"(P={container_bits_for_r_trits(BLOCK_306)})"
     )
+    assert container_bytes_for_r_trits(BLOCK_665) == BYTES_665, (
+        f"3^{BLOCK_665} should pack into {BYTES_665} bytes, "
+        f"got {container_bytes_for_r_trits(BLOCK_665)} "
+        f"(P={container_bits_for_r_trits(BLOCK_665)})"
+    )
+    # Flat 665 beats chiral 665-frame bytes at one full block (132 vs 133).
+    assert theory_bytes_665_1055(BLOCK_665) == BYTES_665
+    assert theory_bytes_665_1055(BLOCK_665) < theory_bytes_5_8(BLOCK_665)
 
     # -------------------------------------------------------------------
     # fmt_stream: round-trip, SLACK, SCHEDULE

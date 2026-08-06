@@ -33,6 +33,9 @@ fused-kernel performance.
   Not a blind larger flat stream.
 - [`CHECKPOINT_PROBE.md`](CHECKPOINT_PROBE.md) — same levers on the real
   BitNet b1.58 2B-4T payload (axis, pad-to-tax0, structure scan).
+- [`DIMENSIONS.md`](DIMENSIONS.md) — **multi-track map** (static packing,
+  circle/phase, triskelion, sphere-and-cube, multi-scale, training/scaling);
+  keeps dimensions separate; static frontier = 665-flat (not “only 306”).
 - [`HARMONIC.md`](HARMONIC.md) — log-domain / fractional-part geometry of the
   tax (`{Q log₂ 3}`); additive ledgers as the flat chart. Primary tax path
   uses the circle; energy + Law-C MRA probes included.
@@ -48,8 +51,13 @@ fused-kernel performance.
   [`PACKING_PIPELINE.md`](PACKING_PIPELINE.md) — three-ledger packer + BitNet
   byte measurement + nesting test;
   [`PACKET_SEAM.md`](PACKET_SEAM.md) — 0→1 packet/seam applicability probe;
-  [`BETTER_DENSITY.md`](BETTER_DENSITY.md) — hybrid vs flat (BitNet −1.36 MB);
-  [`LARGE_SCALE.md`](LARGE_SCALE.md) — synthetic 7B–70B: same 61/306 law.
+  [`BETTER_DENSITY.md`](BETTER_DENSITY.md) — hybrid-306 vs flat (BitNet −1.36 MB;
+  superseded as frontier by 665-flat);
+  [`LARGE_SCALE.md`](LARGE_SCALE.md) — synthetic 7B–70B: 61/306 law (+ 665 in
+  pattern-of-patterns);
+  [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md) — Law B / multi-rung
+  composition (665-flat beats hybrid 306);
+  [`DIMENSIONS.md`](DIMENSIONS.md) — six-dimension map + Lean/UFRF skeleton.
 - [`CHANGE_AT_41.md`](CHANGE_AT_41.md) — twin-midpoint vs CF-rung probe at 41.
 
 ## Extensions at a glance
@@ -132,17 +140,20 @@ PACKING_STACK.md               stack measurement + failure analysis
 ORGANIZING_PRINCIPLES.md       tested operators (twin, complement, frames)
 PACKING_PIPELINE.md            practical three-ledger packer measurement
 PACKET_SEAM.md                 0→1 packet/seam applicability + tags
-BETTER_DENSITY.md              hybrid vs flat; BitNet −1.36 MB
-LARGE_SCALE.md                 synthetic 7B–70B density (same 61/306)
+BETTER_DENSITY.md              hybrid-306 vs flat; BitNet −1.36 MB
+LARGE_SCALE.md                 synthetic 7B–70B density (61/306 law)
+PATTERN_OF_PATTERNS.md         665-flat vs hybrid 306 (current frontier)
+DIMENSIONS.md                  multi-track dimension map (do not flatten)
 CHANGE_AT_41.md                exploratory 41 twin/CF probe
 CHECKPOINT_PROBE.md            real-checkpoint evaluation
 EXTENSIONS.md / SCALE_PROBE.md evaluation notes
 repack/architecture_prior.py   surplus sizes on align grid
 repack/change_at_41.py         CF-rung vs twin-midpoint probe at 41
-repack/ledger_packer.py        three-ledger decision + BitNet/nest + --hybrid
+repack/ledger_packer.py        ledgers + BitNet/nest + --hybrid/--hybrid665
 repack/packet_seam_probe.py    pattern/recursion/nesting/hierarchy probe
 repack/better_density.py       hybrid/cascade/rem-oracle BitNet probe
 repack/large_scale_probe.py    synthetic 7B/13B/70B density suites
+repack/pattern_of_patterns.py  Law B composition / 665-flat probe
 ```
 
 ## Reproducing
