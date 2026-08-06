@@ -53,9 +53,17 @@ LLM_SHAPES: Tuple[Tuple[str, int, int], ...] = (
 
 
 def axis_bits(m: int, n: int) -> Dict[str, int]:
-    """Exact row-vs-col container bit totals (one flat container per fiber)."""
-    br = m * bits(n)
-    bc = n * bits(m)
+    """Exact row-vs-col container bit totals (one flat container per fiber).
+
+    Uses circle bits floor(Q·α)+1 — same as (3^Q).bit_length(), no 3^{MN}.
+    Holonomy = tax_rows - tax_cols on the torus.
+    """
+    from harmonic_tax import bits_from_alpha, tax_cols_harmonic, tax_rows_harmonic
+
+    br = m * bits_from_alpha(n)
+    bc = n * bits_from_alpha(m)
+    hol = tax_rows_harmonic(m, n) - tax_cols_harmonic(m, n)
+    assert hol == br - bc
     return {
         "m": m,
         "n": n,

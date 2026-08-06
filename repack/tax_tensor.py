@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """Multi-linear packing tax form (Phase 2) — exact integers.
 
-The 1-D Law B tax is the rank-1 slice of a form on mode block sizes:
+The 1-D Law B tax is the rank-1 slice of a form on mode block sizes.
+Primary evaluation uses the harmonic chart (α = log₂ 3):
 
-  tax_rows(q0, q1) = q0 * bits(q1) - bits(q0 * q1)   # q0 rows of length q1
-  tax_cols(q0, q1) = q1 * bits(q0) - bits(q0 * q1)   # q1 cols of length q0
+  tax_rows(q0, q1) = q0 − 1 − ⌊q0 · {q1 · α}⌋
+  tax_cols(q0, q1) = q1 − 1 − ⌊q1 · {q0 · α}⌋
 
-Nested layouts (row containers inside a mode-1 assembly, etc.) are reported
-explicitly. Enumerating (q0, q1) with tax_rows == 0 recovers repeated-part
-assemblies from tax_graph as the rank-1 slice.
+These match the additive identities
+  q0·bits(q1) − bits(q0·q1)  and  q1·bits(q0) − bits(q0·q1)
+without forming 3^{q0·q1}. Additive ledgers remain available for cross-checks
+on small areas.
 """
 
 from __future__ import annotations
@@ -19,6 +21,11 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Dict, List, Sequence, Tuple
 
+from harmonic_tax import (
+    bits_from_alpha,
+    tax_cols_harmonic,
+    tax_rows_harmonic,
+)
 from tax_graph import (
     DEFAULT_ATOMS,
     bits,
@@ -52,17 +59,16 @@ MODE_SIZES: Tuple[int, ...] = tuple(
 
 
 def tax_rows(q0: int, q1: int) -> int:
-    """Tax of packing q0 independent row-containers of length q1 vs flat q0*q1."""
-    if q0 <= 0 or q1 <= 0:
-        return 0
-    return q0 * bits(q1) - bits(q0 * q1)
+    """Tax of packing q0 independent row-containers of length q1 vs flat q0*q1.
+
+    Computed on the circle via {q1·α}; equal to q0*bits(q1) - bits(q0*q1).
+    """
+    return tax_rows_harmonic(q0, q1)
 
 
 def tax_cols(q0: int, q1: int) -> int:
     """Tax of packing q1 independent col-containers of length q0 vs flat q0*q1."""
-    if q0 <= 0 or q1 <= 0:
-        return 0
-    return q1 * bits(q0) - bits(q0 * q1)
+    return tax_cols_harmonic(q0, q1)
 
 
 def tax_nested_rows_in_cols(q0: int, q1: int, g1: int) -> int:
@@ -71,26 +77,45 @@ def tax_nested_rows_in_cols(q0: int, q1: int, g1: int) -> int:
     For exact full tiles require q1 % g1 == 0. Tax vs flat q0*q1:
       packed = q0 * ( (q1/g1) * bits(g1) )
       flat   = bits(q0 * q1)
+    Uses circle bits for mode sizes; flat via harmonic tax_rows identity when
+    nesting is uniform g1-blocks: packed-flat = q0*n1*bits(g1) - bits(q0*q1).
     """
     if q0 <= 0 or q1 <= 0 or g1 <= 0 or q1 % g1 != 0:
         raise ValueError("tax_nested_rows_in_cols requires q1 divisible by g1")
     n1 = q1 // g1
-    packed = q0 * n1 * bits(g1)
-    return packed - bits(q0 * q1)
+    # bits(q0*q1) = bits(q0 * n1 * g1). Prefer avoiding huge pow when possible:
+    # tax = q0*n1*bits(g1) - bits(q0*q1) = n1 * tax_rows(q0, g1) + correction?
+    # Safer: use additive only when area modest; else express via rows of (n1*g1).
+    area = q0 * q1
+    if area <= 20_000:
+        packed = q0 * n1 * bits(g1)
+        return packed - bits(area)
+    # Large: pack as q0 rows of length q1, each row itself n1 blocks of g1
+    # row tax vs flat q1: tax_rows(n1, g1) per row, then tax_rows(q0, q1) outer
+    # packed bits = q0 * n1 * bits(g1)
+    # flat bits = bits(q0*q1) = q0*bits(q1) - tax_rows(q0,q1)
+    #            = q0*(n1*bits(g1) - tax_rows(n1,g1)) - tax_rows(q0,q1)
+    # tax_nested = packed - flat = q0*tax_rows(n1,g1) + tax_rows(q0,q1)
+    return q0 * tax_rows(n1, g1) + tax_rows(q0, q1)
 
 
 def tax_form(q0: int, q1: int) -> Dict[str, int]:
-    """Evaluate the multi-linear tax form at (q0, q1)."""
+    """Evaluate the multi-linear tax form at (q0, q1) on the circle."""
+    tr = tax_rows(q0, q1)
+    tc = tax_cols(q0, q1)
+    # flat_bits via identity: bits(q0*q1) = q0*bits(q1) - tax_rows
+    b1 = bits_from_alpha(q1)
+    flat = q0 * b1 - tr
     return {
         "q0": q0,
         "q1": q1,
         "area": q0 * q1,
-        "flat_bits": bits(q0 * q1),
-        "tax_rows": tax_rows(q0, q1),
-        "tax_cols": tax_cols(q0, q1),
-        "best_axis_tax": min(tax_rows(q0, q1), tax_cols(q0, q1)),
-        "bits_q0": bits(q0),
-        "bits_q1": bits(q1),
+        "flat_bits": flat,
+        "tax_rows": tr,
+        "tax_cols": tc,
+        "best_axis_tax": min(tr, tc),
+        "bits_q0": bits_from_alpha(q0),
+        "bits_q1": b1,
     }
 
 

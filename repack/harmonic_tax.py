@@ -47,9 +47,13 @@ def frac_Q_alpha(Q: int) -> Decimal:
 
 
 def bits_from_alpha(Q: int) -> int:
-    """floor(Q·α)+1 — must match bits(Q)."""
+    """floor(Q·α)+1 — must match bits(Q). Precision scales with Q."""
     if Q <= 0:
         return 0
+    # Need enough digits for Q·α integer part + fractional accuracy.
+    need = max(80, Q.bit_length() + 64)
+    if getcontext().prec < need:
+        getcontext().prec = need
     return floor_dec(Decimal(Q) * ALPHA) + 1
 
 

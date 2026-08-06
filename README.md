@@ -34,7 +34,8 @@ fused-kernel performance.
 - [`CHECKPOINT_PROBE.md`](CHECKPOINT_PROBE.md) — same levers on the real
   BitNet b1.58 2B-4T payload (axis, pad-to-tax0, structure scan).
 - [`HARMONIC.md`](HARMONIC.md) — log-domain / fractional-part geometry of the
-  tax (`{Q log₂ 3}`); additive ledgers as the flat chart.
+  tax (`{Q log₂ 3}`); additive ledgers as the flat chart. Primary tax path
+  uses the circle; energy + Law-C MRA probes included.
 
 ## Extensions at a glance
 
@@ -100,6 +101,8 @@ repack/scale_probe.py          targeted LLM-shape axis/Kronecker/tax0 probe
 repack/pad_to_tax0.py          pad mode length to tax-0 frame multiples
 repack/checkpoint_axis_probe.py real BitNet axis/pad/structure probe
 repack/harmonic_tax.py         fractional-part / harmonic tax dictionary
+repack/harmonic_energy.py      packing energy E_rows; phase-peak scan
+repack/harmonic_mra.py         Law C as 2–3 multiresolution scales
 HARMONIC.md                    harmonic geometry note
 CHECKPOINT_PROBE.md            real-checkpoint evaluation
 EXTENSIONS.md / SCALE_PROBE.md evaluation notes
@@ -124,7 +127,7 @@ EXTENSIONS.md / SCALE_PROBE.md evaluation notes
   `repack/data/bitnet/`, then
   `python3 repack/checkpoint_axis_probe.py --rt-sample 5`
 - **Harmonic dictionary**: `python3 repack/harmonic_tax.py selftest` /
-  `run`
+  `run`; also `harmonic_energy.py`, `harmonic_mra.py`
 - **BitNet repack**: download `microsoft/bitnet-b1.58-2B-4T`'s
   `model.safetensors` (~1.18 GB) into `repack/data/bitnet/`, then
   `python3 repack/repack_bitnet.py`. Every tensor is round-tripped exactly

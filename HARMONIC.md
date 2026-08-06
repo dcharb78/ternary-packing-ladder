@@ -1,76 +1,69 @@
 # Harmonic geometry of the packing tax
 
 *Additive block taxes are a flat chart of a log-domain / circle phenomenon.
-Verified identities below; code: `repack/harmonic_tax.py`.*
+Primary code path: `{Q·α}` via `repack/harmonic_tax.py` (wired into
+`tax_tensor`, `scale_probe.axis_bits`, pad design).*
 
-## The discomfort
+## Review in context (what we learned)
 
-Law B and the multi-linear tax form are **correct** and give exact integer
-wins — but they count in additive trits/bits while the obstruction is a
-**ratio** (powers of 3 vs 2). Continued fractions already live in the log
-domain; tensor packing then fell back to additive row/column counts and
-padding. That chart mismatch is what felt geometrically forced.
+| Layer | Finding |
+|-------|---------|
+| 1-D ladder | Only CF rungs of α=log₂3 approach the trit floor; Laws A/B/C exact |
+| Tax graph | Zero-tax assemblies are systematic; 665 + novel deficit cancellations |
+| D3 / frames | Hierarchical nesting helps modestly; 486-frame remains speed knee |
+| Multi-linear | `tax_rows`/`tax_cols` = torus holonomy; axis choice is free |
+| BitNet-2B | Axis ~169 KB; pad-to-tax0 ~26 MB vs fiber-41; still loses to `(5,8)`; no Kronecker tiles |
+| **Harmonic** | Additive tax = flat chart of `{Q·α}` on the circle |
 
 ## Exact dictionary (α = log₂ 3)
 
-Verified against `(3^Q).bit_length()` and `tax_rows = m·bits(n)−bits(m·n)`
-on dense grids and large mode lengths:
-
-| Additive chart | Harmonic chart |
-|----------------|----------------|
+| Additive chart | Harmonic chart (primary) |
+|----------------|--------------------------|
 | `bits(Q)` | `⌊Q·α⌋ + 1` |
 | `tax_rows(m,n)` | `m − 1 − ⌊m·{n·α}⌋` |
 | `tax_cols(m,n)` | `n − 1 − ⌊n·{m·α}⌋` |
 | zero-tax rows | `{n·α} ≥ 1 − 1/m` |
-| axis holonomy | `tax_rows − tax_cols = m·bits(n) − n·bits(m)` |
+| axis holonomy | `m·bits(n) − n·bits(m)` (= tax_rows − tax_cols) |
 
-Raw torus 2-form before flooring: `τ(m,n) = m{n·α} − n{m·α}` (related; the
-**tax** itself is the floored form above).
+**Practical consequence:** layout/tax passes use `{Q·α}` (Decimal) and never
+form `3^{MN}`. Same integers; theory stays on the circle. Additive
+`(3^Q).bit_length()` remains the ledger cross-check for modest Q.
 
-## Law B, reread
+## Law B / energy / MRA (verified)
 
-| Q | `{Q·α}` (approx) | class | max m with `tax_rows=0` |
-|---|------------------|-------|-------------------------|
-| 5 | 0.925 | surplus near 1 | 13 |
-| 41 | 0.983 | surplus near 1 | 49+ |
-| 306 | 0.999 | surplus near 1 | 49+ |
-| 19 | 0.114 | mid | 1 |
-| 53 | 0.003 | deficit near 0 | 1 |
-| 665 | ~0 | deficit near 0 | 1 |
+- **Surplus rungs** `{5,41,306}·α → 0.925, 0.983, 0.999` — phase maxima near 1;
+  distance to 1 shrinks up the ladder (MRA scales).
+- **Energy** `E_rows = tax_rows`: minima are exactly `m = 1..max_m` with tax 0;
+  phase-peak scan recovers rungs 5, 41, 306.
+- **Law C nesting** `41=8·5+1`, `306=7·41+19` = parent-alphabet expansion at
+  successive surplus scales (harmonic multiresolution sketch).
 
-**Surplus rungs** are points whose fractional part sits just below 1 — almost
-spilled into the next power of two. **Strong deficits** (53, 665) sit near 0;
-19 is a mid-phase remainder that still participates in Law B assemblies.
-Chiral tax and zero-tax assemblies are statements about how these circle
-points add when you take `m` copies (`⌊m·{n·α}⌋`).
+## Unseen connections (checklist)
 
-## Axis choice, reread
+1. **Collatz / stream schedule** `C_i = bits(i) = ⌊i·α⌋+1` — same circle object;
+   “descending” tracks how `{i·α}` moves, not a separate gadget.
+2. **Tax graph search** = hunting Q with high `{Q·α}` and compositions whose
+   floored masses cancel (energy minima).
+3. **Pad design** = move L toward surplus phase (`pad_toward_surplus_phase`);
+   e.g. 2560→2583 (+23) lifts `{·α}` 0.50→0.96 and `max_m` tax0 2→23.
+4. **Stream vs block tension** unchanged: blocks follow holonomy; streams hate
+   per-fiber slack — orthogonal to the chart vs geometry question.
+5. **Beatty sequence** `⌊(n+1)α⌋−⌊n·α⌋` is the per-trit bit increment; rungs
+   are where the Beatty discrepancy is minimal (phase near 1).
+6. **Characters (open):** tax as nontriviality of a map `⟨2,3⟩→S¹` — next
+   algebraic probe; energy/MRA are the concrete stand-ins shipped here.
+7. **Factor tree = decode tree** still the structure win when Kronecker exists;
+   harmonic chart does not create factors in dense BitNet.
 
-Prefer the axis with smaller floored mass of the other mode’s phase:
+## What is not claimed
 
-- `tax_rows` small when `{n·α}` is large (column length is “surplus-like”)
-- On BitNet `6912×2560`, harmonic holonomy matches the integer probe
-  (`prefer cols` when packing the short fiber), without ever forming `3^{MN}`.
-
-## What this does *not* claim
-
-- A new packing format that beats `(5,8)` on unstructured BitNet (still no).
-- That `τ` alone replaces the floored tax (floors are essential; τ is the
-  pre-quantum geometry).
-- Full 2-adic/3-adic character theory or a Dirichlet energy whose critical
-  points are all zero-tax frames — those are the **next** harmonic probes.
-
-## Possible next probes
-
-1. **Energy:** define `E({φ_i}) = Σ ⌊m_i φ_j⌋`-style Dirichlet form on the
-   torus whose minima recover the tax-0 catalog.
-2. **Wavelet / CF recurrence:** write hierarchical digit decode as
-   multiresolution on the 2–3 scale (Law C as harmonic MRA).
-3. **Characters:** tax as failure of a homomorphism `⟨2,3⟩ → S¹` to be trivial.
-4. Keep additive ledgers for engineering; use `{Q·α}` for design (choose mode
-   lengths with surplus phase, pad toward high `{L·α}`).
+- Beating `(5,8)` on unstructured BitNet via harmonic language alone.
+- That raw `τ=m{nα}−n{mα}` replaces floored tax (floors are the quantization).
 
 ```bash
-python3 repack/harmonic_tax.py selftest
-python3 repack/harmonic_tax.py run
+python3 repack/harmonic_tax.py selftest   # dictionary
+python3 repack/harmonic_energy.py run     # E minima + phase peaks
+python3 repack/harmonic_mra.py run        # Law C scales
+python3 repack/tax_tensor.py selftest     # wired to circle
+python3 repack/pad_to_tax0.py selftest    # surplus-phase pad
 ```

@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Dict, List, Sequence, Tuple
 
 from frame_formats import theory_bytes_frame
+from harmonic_tax import frac_Q_alpha, max_zero_tax_m
 from pack_ladder import theory_bytes_41_65, theory_bytes_5_8
 from scale_probe import LLM_SHAPES
 from tax_graph import bits, build_catalog, split_tax
@@ -53,6 +54,30 @@ def nearest_pad(L: int, frame_q: int) -> Tuple[int, int]:
     return L2, L2 - L
 
 
+def pad_toward_surplus_phase(L: int, max_pad: int = 64) -> Dict:
+    """Harmonic design: among L..L+max_pad, pick L' maximizing {L'·α}.
+
+    Surplus-like lengths unlock more zero-tax row multiplicities
+    (tax_rows(m,L')=0 for larger m). Exact circle coordinate; no 3^L'.
+    """
+    best_L = L
+    best_f = frac_Q_alpha(L)
+    for Lp in range(L, L + max_pad + 1):
+        f = frac_Q_alpha(Lp)
+        if f > best_f:
+            best_f = f
+            best_L = Lp
+    return {
+        "L": L,
+        "L_prime": best_L,
+        "pad_trits": best_L - L,
+        "frac_L": format(frac_Q_alpha(L), "f"),
+        "frac_Lp": format(best_f, "f"),
+        "max_m_zero_tax_L": max_zero_tax_m(L),
+        "max_m_zero_tax_Lp": max_zero_tax_m(best_L),
+    }
+
+
 def evaluate_length(L: int, frames: Sequence[Tuple[int, ...]], max_pad: int = 512) -> Dict:
     """Best pad-to-tax0 option for a 1-D mode length L (as fiber length)."""
     base_5 = theory_bytes_5_8(L)
@@ -79,6 +104,7 @@ def evaluate_length(L: int, frames: Sequence[Tuple[int, ...]], max_pad: int = 51
                 "delta_vs_5_8": framed - base_5,
                 "delta_vs_41_65": framed - base_41,
                 "tax": split_tax(parts),
+                "frac_Lp_alpha": format(frac_Q_alpha(Lp), "f"),
             }
         )
     # Prefer smallest pad among those that beat 41_65, else smallest pad overall
@@ -89,14 +115,17 @@ def evaluate_length(L: int, frames: Sequence[Tuple[int, ...]], max_pad: int = 51
         best = min(candidates, key=lambda c: (c["pad_trits"], c["delta_vs_41_65"]))
     else:
         best = None
+    phase = pad_toward_surplus_phase(L)
     return {
         "L": L,
         "bytes_5_8": base_5,
         "bytes_41_65": base_41,
+        "frac_L_alpha": format(frac_Q_alpha(L), "f"),
         "n_candidates": len(candidates),
         "n_beat_41_65": len(wins),
         "best": best,
         "top_wins": sorted(wins, key=lambda c: c["delta_vs_41_65"])[:5],
+        "surplus_phase_pad": phase,
     }
 
 
@@ -122,14 +151,25 @@ def run() -> Dict:
             }
         )
     n_win = sum(1 for v in per_L.values() if v["n_beat_41_65"] > 0)
+    phase_gains = [
+        {
+            "L": int(L),
+            **v["surplus_phase_pad"],
+        }
+        for L, v in per_L.items()
+        if v["surplus_phase_pad"]["max_m_zero_tax_Lp"]
+        > v["surplus_phase_pad"]["max_m_zero_tax_L"]
+    ]
     return {
         "hypothesis": (
             "Padding a mode length to a tax-0 frame multiple can unlock denser "
-            "tiling; measure pad cost vs fmt_41_65 on the unpadded length."
+            "tiling; harmonic surplus-phase pads maximize {L'·α} in a budget."
         ),
         "n_tax0_frames": len(frames),
         "n_lengths": len(lengths),
         "n_lengths_with_win_vs_41_65": n_win,
+        "n_lengths_phase_gain": len(phase_gains),
+        "phase_gains_preview": phase_gains[:16],
         "per_length": per_L,
         "matrices": matrices,
     }
@@ -143,7 +183,9 @@ def selftest() -> int:
     assert nearest_pad(60, 60) == (60, 0)
     r = evaluate_length(59, frames, max_pad=64)
     assert r["best"] is not None
-    print(f"PAD_TO_TAX0 unit OK frames={len(frames)}")
+    sp = pad_toward_surplus_phase(2560, max_pad=32)
+    assert sp["L_prime"] >= 2560
+    print(f"PAD_TO_TAX0 unit OK frames={len(frames)} phase_pad_2560={sp}")
     return 0
 
 
