@@ -18,7 +18,8 @@ Related measurements:
 [`COLLATZ_BRIDGE.md`](COLLATZ_BRIDGE.md) ·
 [`ORGANIZING_PRINCIPLES.md`](ORGANIZING_PRINCIPLES.md) ·
 [`NEXT_PROBES.md`](NEXT_PROBES.md) ·
-[`BASE_P.md`](BASE_P.md)
+[`BASE_P.md`](BASE_P.md) ·
+[`FARTHER.md`](FARTHER.md)
 
 ### Latest probe results
 
@@ -27,9 +28,17 @@ Dynamical / multi-scale / base-p cadence run:
 [`repack/next_probes_results.json`](repack/next_probes_results.json) ·
 [`BASE_P.md`](BASE_P.md) (\(p=3,5,7,11\) locus + naïve-vs-block).
 
-**Measured stop signal (ternary):** static leftovers closed (665-flat −3.26/−1.89 MB;
-no >2B real ckpt); dynamical/multi-scale null as *new* levers (micro reshape /
-×306 snap only). **Base-p:** same three loci for every \(p\); p=5 “0” seeds =
+**Farther board** ([`FARTHER.md`](FARTHER.md) ·
+[`repack/farther_probes.py`](repack/farther_probes.py)): many underexplored
+angles after 665. **Geometric win:** flat Law-B-sum **1277** (=665+2×306,
+253 B/block) beats hybrid665 on BitNet (**−0.66 MB**). Entropy adaptive also
+beats 665 when p(0) elevates (different family). Most other ideas null /
+micro. See scoreboard in FARTHER.
+
+**Measured stop signal (ternary):** static leftovers closed at 665 for the
+*prior* frontier; farther scan lifts geometric candidate to **1277-flat**
+(probe-only; packer flag not wired yet). Dynamical/multi-scale null as *new*
+levers. **Base-p:** same three loci for every \(p\); p=5 “0” seeds =
 deficit-near-0 (CF **146**, **4004**, …); theory flat-block beats naïve
 (p=5 Q=**643**, p=7 Q=**571**) — codec interest only, not a ternary lever.
 
@@ -81,8 +90,12 @@ measurement. Do not keep hunting static density as the main program.
 | flat `fmt_5_8` | 1/5 | 0.200000 | 0 | +1.36 MB |
 | hybrid / `fmt_306_485` | **61/306** | 0.199346 | **−1.36 MB** | 0 |
 | **flat `fmt_665_1055`** | **132/665** | **0.198496** | **−3.26 MB** | **−1.89 MB** |
+| **flat 1277** (665+2×306) | **253/1277** | **0.198121** | **−3.92 MB** | **−0.66 MB vs 665** |
 | chiral 665-frame | 133/665 | ≈0.200 | −0.09 MB | loses |
 | 486-frame / fiber-41 | — | worse | big losses | loses |
+
+Farther geometric candidate (probe-only): see [`FARTHER.md`](FARTHER.md).
+665 remains the shipped optional frontier (`--hybrid665`); 1277 not wired yet.
 
 Sources: [`BETTER_DENSITY.md`](BETTER_DENSITY.md),
 [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md),
@@ -108,6 +121,7 @@ design forces the quantum.
 | Claim | Tag |
 |-------|-----|
 | 665-flat beats hybrid 306 and flat `5_8` on BitNet + synthetics | `measured` / `applies_operationally` |
+| Flat 1277 (665+2×306) beats 665 on BitNet (farther probe) | `measured` (probe-only; see [`FARTHER.md`](FARTHER.md)) |
 | Hybrid 306 ≈ −1 **byte**/306 ≈ 0.33% vs 0.2 baseline | `measured` / `applies_operationally` |
 | Chiral 486/665 frames denser than flat sum | `does_not_apply` |
 | Fiber-41 as primary density lever on BitNet | `does_not_apply` |
@@ -413,9 +427,11 @@ with it.
 
 | Priority | Lever | Flag / prior |
 |----------|-------|----------------|
-| **Current density frontier** | flat Law-B-sum blocks 132/665 | `--hybrid665` / `fmt_665_1055` |
+| **Farther geometric candidate** | flat Law-B-sum 253/1277 | probe-only ([`FARTHER.md`](FARTHER.md)); not wired |
+| **Shipped density frontier** | flat Law-B-sum blocks 132/665 | `--hybrid665` / `fmt_665_1055` |
 | Prior frontier | rung-block 61/306 | `--hybrid` / `fmt_306_485` |
 | Default on stock BitNet | flat `fmt_5_8` | no flag (no ×306/×665 modes) |
+| Parallel (entropy family) | adaptive when p(0)↑ | [`FARTHER.md`](FARTHER.md) C |
 | Inferior for density | chiral frames, fiber-41 | controls only |
 
 Closing the static dimension means: document, measure once at larger absolute

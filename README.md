@@ -35,7 +35,8 @@ fused-kernel performance.
   BitNet b1.58 2B-4T payload (axis, pad-to-tax0, structure scan).
 - [`DIMENSIONS.md`](DIMENSIONS.md) — **multi-track map** (static packing,
   circle/phase, triskelion, sphere-and-cube, multi-scale, training/scaling);
-  keeps dimensions separate; static frontier = 665-flat (not “only 306”).
+  keeps dimensions separate; shipped frontier = 665-flat (not “only 306”);
+  farther candidate = 1277-flat ([`FARTHER.md`](FARTHER.md)).
 - [`HARMONIC.md`](HARMONIC.md) — log-domain / fractional-part geometry of the
   tax (`{Q log₂ 3}`); additive ledgers as the flat chart. Primary tax path
   uses the circle; energy + Law-C MRA probes included.
@@ -57,6 +58,7 @@ fused-kernel performance.
   pattern-of-patterns);
   [`PATTERN_OF_PATTERNS.md`](PATTERN_OF_PATTERNS.md) — Law B / multi-rung
   composition (665-flat beats hybrid 306);
+  [`FARTHER.md`](FARTHER.md) — board past 665 (1277-flat −0.66 MB; entropy);
   [`DIMENSIONS.md`](DIMENSIONS.md) — six-dimension map + Lean/UFRF skeleton.
 - [`CHANGE_AT_41.md`](CHANGE_AT_41.md) — twin-midpoint vs CF-rung probe at 41.
 
@@ -142,7 +144,8 @@ PACKING_PIPELINE.md            practical three-ledger packer measurement
 PACKET_SEAM.md                 0→1 packet/seam applicability + tags
 BETTER_DENSITY.md              hybrid-306 vs flat; BitNet −1.36 MB
 LARGE_SCALE.md                 synthetic 7B–70B density (61/306 law)
-PATTERN_OF_PATTERNS.md         665-flat vs hybrid 306 (current frontier)
+PATTERN_OF_PATTERNS.md         665-flat vs hybrid 306 (shipped frontier)
+FARTHER.md                     board past 665; 1277-flat geometric win
 DIMENSIONS.md                  multi-track dimension map (do not flatten)
 CHANGE_AT_41.md                exploratory 41 twin/CF probe
 CHECKPOINT_PROBE.md            real-checkpoint evaluation
@@ -154,6 +157,7 @@ repack/packet_seam_probe.py    pattern/recursion/nesting/hierarchy probe
 repack/better_density.py       hybrid/cascade/rem-oracle BitNet probe
 repack/large_scale_probe.py    synthetic 7B/13B/70B density suites
 repack/pattern_of_patterns.py  Law B composition / 665-flat probe
+repack/farther_probes.py       farther board; 1277 / entropy / tiles
 ```
 
 ## Reproducing

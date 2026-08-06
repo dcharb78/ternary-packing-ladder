@@ -1,0 +1,1535 @@
+{
+  "stance": "Explore farther from 665-flat frontier without collapsing dimensions. Tag honestly. Nothing here reopens fiber-41/chiral/nesting as density.",
+  "elapsed_s": 12.941,
+  "ckpt": "/Users/dcharb/packing/ternary-packing-ladder/repack/data/bitnet/model.safetensors",
+  "ckpt_exists": true,
+  "n_bitnet_shapes": 210,
+  "any_probe_beats_665_on_ternary_weights": true,
+  "geometric_flat_beats_665": true,
+  "board_summary": [
+    {
+      "section": "mixed_ledger_portfolio",
+      "tag": "measured",
+      "verdict": "null as density win past 665 \u2014 portfolio cannot beat all-665 on bytes when 665 wins every shape; \u03bb>0 only trades bytes for simpler decode.",
+      "beats_665": false
+    },
+    {
+      "section": "activation_kv_runtime",
+      "tag": "measured",
+      "verdict": "measured: 665-flat still wins synthetic act/KV shapes on theory bytes",
+      "beats_665": false
+    },
+    {
+      "section": "nonuniform_trit_entropy",
+      "tag": "measured",
+      "verdict": "measured: adaptive entropy beats 665 on sampled BitNet (\u0394\u2248-0.553 MB on sample) \u2014 non-uniform p(0); decode/complexity Pareto, not a new geometric container",
+      "beats_665": true
+    },
+    {
+      "section": "tile_intersect_665_306",
+      "tag": "measured",
+      "verdict": "null as density past 665; measured design-time prior: prefer multiples of 665 that are also mult of 16/64 when redesigning widths",
+      "beats_665": false
+    },
+    {
+      "section": "shared_remainder_dictionary",
+      "tag": "measured",
+      "verdict": "measured micro-win: shared rem saves 12954 B vs inline rem (-0.0130 MB vs hybrid665 total) \u2014 not a frontier shift",
+      "beats_665": true
+    },
+    {
+      "section": "streaming_chunk_rung",
+      "tag": "measured",
+      "verdict": "measured: I/O trit-chunks at 665 match flat 665 (no new density); misaligned chunks only add waste \u2014 null as a beat-665 lever",
+      "beats_665": false
+    },
+    {
+      "section": "next_flat_after_665",
+      "tag": "measured",
+      "verdict": "measured: flat Q=1277 (665+2\u00d7306) beats 665 by -0.6603 MB on BitNet",
+      "beats_665": true
+    },
+    {
+      "section": "base5_mini_codec",
+      "tag": "measured",
+      "verdict": "measured: base-5 mini codec RT ok on small CF blocks; theory 643 beats na\u00efve \u2014 pattern transfer confirmed; does not beat ternary 665",
+      "beats_665": false
+    },
+    {
+      "section": "inverse_dual_bit_to_trit",
+      "tag": "measured",
+      "verdict": "null / false_id: packing bits into trits expands \u2014 never beats raw bytes",
+      "beats_665": false
+    },
+    {
+      "section": "blind_spots",
+      "tag": "measured",
+      "verdict": "null: rem-phase and dual-radix scales are not density levers past 665",
+      "beats_665": false
+    },
+    {
+      "section": "llm_weight_shape_control",
+      "tag": "measured",
+      "verdict": null,
+      "beats_665": false
+    }
+  ],
+  "probes": {
+    "mixed_ledger_portfolio": {
+      "section": "mixed_ledger_portfolio",
+      "tag": "measured",
+      "n_tensors": 210,
+      "n_unique_shapes": 4,
+      "totals": {
+        "flat58": 416808960,
+        "all_hybrid306": 415446930,
+        "all_hybrid665": 413552640,
+        "per_tensor_best_bytes": 413552640,
+        "portfolio_lambda2_bytes": 413552640
+      },
+      "delta_MB": {
+        "best_vs_665": 0.0,
+        "best_vs_flat": -3.25632,
+        "port_l2_vs_665": 0.0
+      },
+      "best_counts": {
+        "hybrid665": 210
+      },
+      "portfolio_lambda2_counts": {
+        "hybrid665": 210
+      },
+      "lambda_sweep": [
+        {
+          "lambda": 0.0,
+          "total_bytes": 413552640,
+          "delta_vs_all665": 0,
+          "delta_vs_best_bytes": 0,
+          "counts": {
+            "hybrid665": 210
+          }
+        },
+        {
+          "lambda": 0.5,
+          "total_bytes": 413552640,
+          "delta_vs_all665": 0,
+          "delta_vs_best_bytes": 0,
+          "counts": {
+            "hybrid665": 210
+          }
+        },
+        {
+          "lambda": 2.0,
+          "total_bytes": 413552640,
+          "delta_vs_all665": 0,
+          "delta_vs_best_bytes": 0,
+          "counts": {
+            "hybrid665": 210
+          }
+        },
+        {
+          "lambda": 10.0,
+          "total_bytes": 413552640,
+          "delta_vs_all665": 0,
+          "delta_vs_best_bytes": 0,
+          "counts": {
+            "hybrid665": 210
+          }
+        }
+      ],
+      "beats_665_flat_on_ternary_weights": false,
+      "note": "On BitNet, hybrid665 already wins every tensor on pure bytes, so per-tensor best == all-665. Complexity \u03bb only flips to cheaper ledgers when \u03bb is large enough to buy decode simplicity.",
+      "verdict": "null as density win past 665 \u2014 portfolio cannot beat all-665 on bytes when 665 wins every shape; \u03bb>0 only trades bytes for simpler decode."
+    },
+    "activation_kv_runtime": {
+      "section": "activation_kv_runtime",
+      "tag": "measured",
+      "note": "Synthetic activation/KV shapes \u2014 theory bytes as if ternary. Real activations are usually float/int8; this asks whether 665 geometry still wins *if* those buffers were ternary.",
+      "n_shapes": 8,
+      "win_counts": {
+        "hybrid665": 8
+      },
+      "totals": {
+        "flat58": 55810461,
+        "hybrid306": 55627062,
+        "hybrid665": 55390027
+      },
+      "delta_665_vs_flat_MB": -0.4204,
+      "delta_665_vs_306_MB": -0.237,
+      "beats_665_flat": false,
+      "665_still_wins": true,
+      "rows": [
+        {
+          "name": "act_b8_s2k_h4k",
+          "m": 16384,
+          "n": 4096,
+          "trits": 67108864,
+          "bytes": {
+            "flat58": 13421773,
+            "hybrid306": 13377536,
+            "hybrid665": 13320858
+          },
+          "winner": "hybrid665",
+          "delta_665_vs_flat": -100915,
+          "delta_665_vs_306": -56678
+        },
+        {
+          "name": "act_b1_s4k_h2k",
+          "m": 4096,
+          "n": 2560,
+          "trits": 10485760,
+          "bytes": {
+            "flat58": 2097152,
+            "hybrid306": 2090299,
+            "hybrid665": 2080768
+          },
+          "winner": "hybrid665",
+          "delta_665_vs_flat": -16384,
+          "delta_665_vs_306": -9531
+        },
+        {
+          "name": "kv_b8_s2k_h1k",
+          "m": 16384,
+          "n": 1024,
+          "trits": 16777216,
+          "bytes": {
+            "flat58": 3355444,
+            "hybrid306": 3344384,
+            "hybrid665": 3330215
+          },
+          "winner": "hybrid665",
+          "delta_665_vs_flat": -25229,
+          "delta_665_vs_306": -14169
+        },
+        {
+          "name": "kv_b1_s8k_h512",
+          "m": 8192,
+          "n": 512,
+          "trits": 4194304,
+          "bytes": {
+            "flat58": 838861,
+            "hybrid306": 835584,
+            "hybrid665": 832554
+          },
+          "winner": "hybrid665",
+          "delta_665_vs_flat": -6307,
+          "delta_665_vs_306": -3030
+        },
+        {
+          "name": "mlp_act_b4_s1k",
+          "m": 4096,
+          "n": 11008,
+          "trits": 45088768,
+          "bytes": {
+            "flat58": 9017754,
+            "hybrid306": 8988284,
+            "hybrid665": 8949760
+          },
+          "winner": "hybrid665",
+          "delta_665_vs_flat": -67994,
+          "delta_665_vs_306": -38524
+        },
+        {
+          "name": "attn_scores_b4_h32_s1k",
+          "m": 128,
+          "n": 1048576,
+          "trits": 134217728,
+          "bytes": {
+            "flat58": 26843546,
+            "hybrid306": 26755822,
+            "hybrid665": 26641715
+          },
+          "winner": "hybrid665",
+          "delta_665_vs_flat": -201831,
+          "delta_665_vs_306": -114107
+        },
+        {
+          "name": "layernorm_stats",
+          "m": 32,
+          "n": 4096,
+          "trits": 131072,
+          "bytes": {
+            "flat58": 26215,
+            "hybrid306": 26129,
+            "hybrid665": 26018
+          },
+          "winner": "hybrid665",
+          "delta_665_vs_flat": -197,
+          "delta_665_vs_306": -111
+        },
+        {
+          "name": "rope_cache",
+          "m": 8192,
+          "n": 128,
+          "trits": 1048576,
+          "bytes": {
+            "flat58": 209716,
+            "hybrid306": 209024,
+            "hybrid665": 208139
+          },
+          "winner": "hybrid665",
+          "delta_665_vs_flat": -1577,
+          "delta_665_vs_306": -885
+        }
+      ],
+      "verdict": "measured: 665-flat still wins synthetic act/KV shapes on theory bytes"
+    },
+    "nonuniform_trit_entropy": {
+      "section": "nonuniform_trit_entropy",
+      "tag": "measured",
+      "n_sampled_tensors": 12,
+      "mean_H_bits": 1.548858,
+      "mean_p0": 0.430656,
+      "uniform_H": 1.584963,
+      "n_adaptive_est_beats_665": 12,
+      "n_bound_beats_665": 12,
+      "totals_sampled": {
+        "hybrid665": 22765143,
+        "adaptive_est": 22211794,
+        "adaptive_bound": 22211662
+      },
+      "delta_adapt_vs_665_MB": -0.5533,
+      "delta_bound_vs_665_MB": -0.5535,
+      "beats_665_flat_on_ternary_weights": true,
+      "rows": [
+        {
+          "name": "0.mlp.down_proj.weight",
+          "m": 2560,
+          "n_cols": 6912,
+          "n_trits": 17694720,
+          "p_m1": 0.3088738335503472,
+          "p_0": 0.38213625307436344,
+          "p_p1": 0.30898991337528936,
+          "H_bits": 1.577401,
+          "log2_3": 1.584963,
+          "b_flat58": 3538944,
+          "b_hybrid665": 3512336,
+          "b_adaptive_bound": 3488960,
+          "b_adaptive_est": 3488863,
+          "sample_n": 2000000,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -23473
+        },
+        {
+          "name": "10.self_attn.k_proj.weight",
+          "m": 640,
+          "n_cols": 2560,
+          "n_trits": 1638400,
+          "p_m1": 0.2598028564453125,
+          "p_0": 0.4796881103515625,
+          "p_p1": 0.260509033203125,
+          "H_bits": 1.51912,
+          "log2_3": 1.584963,
+          "b_flat58": 327680,
+          "b_hybrid665": 325217,
+          "b_adaptive_bound": 311118,
+          "b_adaptive_est": 311132,
+          "sample_n": 1638400,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -14085
+        },
+        {
+          "name": "12.self_attn.v_proj.weight",
+          "m": 640,
+          "n_cols": 2560,
+          "n_trits": 1638400,
+          "p_m1": 0.3159893798828125,
+          "p_0": 0.369169921875,
+          "p_p1": 0.3148406982421875,
+          "H_bits": 1.580861,
+          "log2_3": 1.584963,
+          "b_flat58": 327680,
+          "b_hybrid665": 325217,
+          "b_adaptive_bound": 323763,
+          "b_adaptive_est": 323777,
+          "sample_n": 1638400,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -1440
+        },
+        {
+          "name": "15.mlp.up_proj.weight",
+          "m": 6912,
+          "n_cols": 2560,
+          "n_trits": 17694720,
+          "p_m1": 0.2985859623661748,
+          "p_0": 0.4030654342086227,
+          "p_p1": 0.29834860342520253,
+          "H_bits": 1.56965,
+          "log2_3": 1.584963,
+          "b_flat58": 3538944,
+          "b_hybrid665": 3512336,
+          "b_adaptive_bound": 3471817,
+          "b_adaptive_est": 3472070,
+          "sample_n": 2000000,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -40266
+        },
+        {
+          "name": "17.self_attn.q_proj.weight",
+          "m": 2560,
+          "n_cols": 2560,
+          "n_trits": 6553600,
+          "p_m1": 0.25339202880859374,
+          "p_0": 0.493240966796875,
+          "p_p1": 0.25336700439453125,
+          "H_bits": 1.506627,
+          "log2_3": 1.584963,
+          "b_flat58": 1310720,
+          "b_hybrid665": 1300865,
+          "b_adaptive_bound": 1234232,
+          "b_adaptive_est": 1234419,
+          "sample_n": 2000000,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -66446
+        },
+        {
+          "name": "2.mlp.gate_proj.weight",
+          "m": 6912,
+          "n_cols": 2560,
+          "n_trits": 17694720,
+          "p_m1": 0.24247187861689815,
+          "p_0": 0.5144436306423611,
+          "p_p1": 0.24308449074074073,
+          "H_bits": 1.484954,
+          "log2_3": 1.584963,
+          "b_flat58": 3538944,
+          "b_hybrid665": 3512336,
+          "b_adaptive_bound": 3284483,
+          "b_adaptive_est": 3284170,
+          "sample_n": 2000000,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -228166
+        },
+        {
+          "name": "21.self_attn.o_proj.weight",
+          "m": 2560,
+          "n_cols": 2560,
+          "n_trits": 6553600,
+          "p_m1": 0.28848846435546877,
+          "p_0": 0.4231158447265625,
+          "p_p1": 0.28839569091796874,
+          "H_bits": 1.55976,
+          "log2_3": 1.584963,
+          "b_flat58": 1310720,
+          "b_hybrid665": 1300865,
+          "b_adaptive_bound": 1277758,
+          "b_adaptive_est": 1277620,
+          "sample_n": 2000000,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -23245
+        },
+        {
+          "name": "24.mlp.down_proj.weight",
+          "m": 2560,
+          "n_cols": 6912,
+          "n_trits": 17694720,
+          "p_m1": 0.30550214979383683,
+          "p_0": 0.38878134268301506,
+          "p_p1": 0.30571650752314816,
+          "H_bits": 1.575227,
+          "log2_3": 1.584963,
+          "b_flat58": 3538944,
+          "b_hybrid665": 3512336,
+          "b_adaptive_bound": 3484153,
+          "b_adaptive_est": 3483908,
+          "sample_n": 2000000,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -28428
+        },
+        {
+          "name": "26.self_attn.k_proj.weight",
+          "m": 640,
+          "n_cols": 2560,
+          "n_trits": 1638400,
+          "p_m1": 0.280556640625,
+          "p_0": 0.4394110107421875,
+          "p_p1": 0.2800323486328125,
+          "H_bits": 1.54997,
+          "log2_3": 1.584963,
+          "b_flat58": 327680,
+          "b_hybrid665": 325217,
+          "b_adaptive_bound": 317436,
+          "b_adaptive_est": 317450,
+          "sample_n": 1638400,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -7767
+        },
+        {
+          "name": "28.self_attn.v_proj.weight",
+          "m": 640,
+          "n_cols": 2560,
+          "n_trits": 1638400,
+          "p_m1": 0.3124847412109375,
+          "p_0": 0.375810546875,
+          "p_p1": 0.3117047119140625,
+          "H_bits": 1.579218,
+          "log2_3": 1.584963,
+          "b_flat58": 327680,
+          "b_hybrid665": 325217,
+          "b_adaptive_bound": 323426,
+          "b_adaptive_est": 323440,
+          "sample_n": 1638400,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -1777
+        },
+        {
+          "name": "4.mlp.up_proj.weight",
+          "m": 6912,
+          "n_cols": 2560,
+          "n_trits": 17694720,
+          "p_m1": 0.28608839246961804,
+          "p_0": 0.42778020788122106,
+          "p_p1": 0.2861313996491609,
+          "H_bits": 1.557118,
+          "log2_3": 1.584963,
+          "b_flat58": 3538944,
+          "b_hybrid665": 3512336,
+          "b_adaptive_bound": 3444098,
+          "b_adaptive_est": 3444591,
+          "sample_n": 2000000,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -67745
+        },
+        {
+          "name": "6.self_attn.q_proj.weight",
+          "m": 2560,
+          "n_cols": 2560,
+          "n_trits": 6553600,
+          "p_m1": 0.26425674438476565,
+          "p_0": 0.4712232971191406,
+          "p_p1": 0.2645199584960938,
+          "H_bits": 1.526386,
+          "log2_3": 1.584963,
+          "b_flat58": 1310720,
+          "b_hybrid665": 1300865,
+          "b_adaptive_bound": 1250418,
+          "b_adaptive_est": 1250354,
+          "sample_n": 2000000,
+          "adaptive_beats_665": true,
+          "bound_beats_665": true,
+          "delta_adapt_est_vs_665": -50511
+        }
+      ],
+      "note": "Adaptive uses per-tensor empirical static range coder (+12 B header). Sampled tensors scaled to full length when subsampled. BitNet p(0)\u22480.43 > 1/3 \u21d2 H < log\u20823 \u21d2 entropy coding beats any uniform-ternary geometric ledger (including 665). Different family: variable-rate + counts header; not a fixed-width Law-B flat.",
+      "verdict": "measured: adaptive entropy beats 665 on sampled BitNet (\u0394\u2248-0.553 MB on sample) \u2014 non-uniform p(0); decode/complexity Pareto, not a new geometric container"
+    },
+    "tile_intersect_665_306": {
+      "section": "tile_intersect_665_306",
+      "tag": "measured",
+      "n_tiles": 45,
+      "top_joint": [
+        {
+          "tile": 640,
+          "b_flat58": 128,
+          "b_hybrid306": 128,
+          "b_hybrid665": 127,
+          "B_per_trit_665": 0.1984375,
+          "rem_665": 640,
+          "rem_306": 28,
+          "pow2": false,
+          "mult16": true,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.7625,
+          "exact_665": false,
+          "exact_306": false
+        },
+        {
+          "tile": 1280,
+          "b_flat58": 256,
+          "b_hybrid306": 256,
+          "b_hybrid665": 254,
+          "B_per_trit_665": 0.1984375,
+          "rem_665": 615,
+          "rem_306": 56,
+          "pow2": false,
+          "mult16": true,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.7625,
+          "exact_665": false,
+          "exact_306": false
+        },
+        {
+          "tile": 1920,
+          "b_flat58": 384,
+          "b_hybrid306": 383,
+          "b_hybrid665": 381,
+          "B_per_trit_665": 0.1984375,
+          "rem_665": 590,
+          "rem_306": 84,
+          "pow2": false,
+          "mult16": true,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.7625,
+          "exact_665": false,
+          "exact_306": false
+        },
+        {
+          "tile": 2560,
+          "b_flat58": 512,
+          "b_hybrid306": 511,
+          "b_hybrid665": 508,
+          "B_per_trit_665": 0.1984375,
+          "rem_665": 565,
+          "rem_306": 112,
+          "pow2": false,
+          "mult16": true,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.7625,
+          "exact_665": false,
+          "exact_306": false
+        },
+        {
+          "tile": 3200,
+          "b_flat58": 640,
+          "b_hybrid306": 638,
+          "b_hybrid665": 635,
+          "B_per_trit_665": 0.1984375,
+          "rem_665": 540,
+          "rem_306": 140,
+          "pow2": false,
+          "mult16": true,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.7625,
+          "exact_665": false,
+          "exact_306": false
+        },
+        {
+          "tile": 665,
+          "b_flat58": 133,
+          "b_hybrid306": 133,
+          "b_hybrid665": 132,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 53,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 1330,
+          "b_flat58": 266,
+          "b_hybrid306": 266,
+          "b_hybrid665": 264,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 106,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 1995,
+          "b_flat58": 399,
+          "b_hybrid306": 398,
+          "b_hybrid665": 396,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 159,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 2660,
+          "b_flat58": 532,
+          "b_hybrid306": 531,
+          "b_hybrid665": 528,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 212,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 3325,
+          "b_flat58": 665,
+          "b_hybrid306": 663,
+          "b_hybrid665": 660,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 265,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 3990,
+          "b_flat58": 798,
+          "b_hybrid306": 796,
+          "b_hybrid665": 792,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 12,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 4655,
+          "b_flat58": 931,
+          "b_hybrid306": 928,
+          "b_hybrid665": 924,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 65,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        }
+      ],
+      "exact_665_tiles": [
+        {
+          "tile": 665,
+          "b_flat58": 133,
+          "b_hybrid306": 133,
+          "b_hybrid665": 132,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 53,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 1330,
+          "b_flat58": 266,
+          "b_hybrid306": 266,
+          "b_hybrid665": 264,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 106,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 1995,
+          "b_flat58": 399,
+          "b_hybrid306": 398,
+          "b_hybrid665": 396,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 159,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 2660,
+          "b_flat58": 532,
+          "b_hybrid306": 531,
+          "b_hybrid665": 528,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 212,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 3325,
+          "b_flat58": 665,
+          "b_hybrid306": 663,
+          "b_hybrid665": 660,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 265,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 3990,
+          "b_flat58": 798,
+          "b_hybrid306": 796,
+          "b_hybrid665": 792,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 12,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 4655,
+          "b_flat58": 931,
+          "b_hybrid306": 928,
+          "b_hybrid665": 924,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 65,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        },
+        {
+          "tile": 5320,
+          "b_flat58": 1064,
+          "b_hybrid306": 1061,
+          "b_hybrid665": 1056,
+          "B_per_trit_665": 0.19849624,
+          "rem_665": 0,
+          "rem_306": 118,
+          "pow2": false,
+          "mult16": false,
+          "mult5": true,
+          "align_score": 0.35,
+          "joint_score": 198.821241,
+          "exact_665": true,
+          "exact_306": false
+        }
+      ],
+      "pure_665": {
+        "tile": 665,
+        "b_flat58": 133,
+        "b_hybrid306": 133,
+        "b_hybrid665": 132,
+        "B_per_trit_665": 0.19849624,
+        "rem_665": 0,
+        "rem_306": 53,
+        "pow2": false,
+        "mult16": false,
+        "mult5": true,
+        "align_score": 0.35,
+        "joint_score": 198.821241,
+        "exact_665": true,
+        "exact_306": false
+      },
+      "best_joint_vs_pure665": {
+        "best_tile": 640,
+        "best_joint_score": 198.7625,
+        "pure665_joint_score": 198.821241,
+        "best_denser_than_665": true
+      },
+      "beats_665_flat_on_ternary_weights": false,
+      "note": "Joint score mixes B/trit with hardware alignment. Exact \u00d7665 always densest packing; pow2 tiles win alignment but lose density. No tile beats 665 density \u2014 only softens the design-time tradeoff.",
+      "verdict": "null as density past 665; measured design-time prior: prefer multiples of 665 that are also mult of 16/64 when redesigning widths"
+    },
+    "shared_remainder_dictionary": {
+      "section": "shared_remainder_dictionary",
+      "tag": "measured",
+      "n_tensors": 210,
+      "n_unique_rems": 3,
+      "n_nonzero_unique_rems": 3,
+      "rem_histogram_top": [
+        [
+          400,
+          90
+        ],
+        [
+          505,
+          60
+        ],
+        [
+          25,
+          60
+        ]
+      ],
+      "rem_bytes_naive_inline": 13560,
+      "shared_codebook_bytes": 186,
+      "shared_index_bytes": 420,
+      "shared_total_rem_cost": 606,
+      "savings_vs_inline_rem_B": 12954,
+      "tot_hybrid665": 413675160,
+      "tot_with_shared_rem": 413662206,
+      "delta_vs_665_B": -12954,
+      "beats_665_flat_on_ternary_weights": true,
+      "note": "Shared rem codebook only wins when many tensors share the same nonzero rem. On BitNet only 3 rem classes appear \u2014 tiny absolute save (~KB), bookkeeping not a new geometry. Tag as micro-win.",
+      "verdict": "measured micro-win: shared rem saves 12954 B vs inline rem (-0.0130 MB vs hybrid665 total) \u2014 not a frontier shift"
+    },
+    "streaming_chunk_rung": {
+      "section": "streaming_chunk_rung",
+      "tag": "measured",
+      "summary_by_chunk": {
+        "4096": {
+          "mean_waste": 1996.67,
+          "max_waste": 4144,
+          "zero_waste_count": 0
+        },
+        "65536": {
+          "mean_waste": 45.33,
+          "max_waste": 94,
+          "zero_waste_count": 1
+        },
+        "1048576": {
+          "mean_waste": 4.5,
+          "max_waste": 9,
+          "zero_waste_count": 2
+        },
+        "665": {
+          "mean_waste": 0.0,
+          "max_waste": 0,
+          "zero_waste_count": 6
+        },
+        "306": {
+          "mean_waste": 7248.0,
+          "max_waste": 15043,
+          "zero_waste_count": 0
+        },
+        "135168": {
+          "mean_waste": 41.33,
+          "max_waste": 86,
+          "zero_waste_count": 2
+        }
+      },
+      "sample_rows": [
+        {
+          "L": 6553600,
+          "chunk_trits": 4096,
+          "n_full_chunks": 1600,
+          "rem": 0,
+          "packed_flat_665_stream": 1300865,
+          "packed_chunked": 1302400,
+          "fragmentation_waste_B": 1535,
+          "waste_pct": 0.118
+        },
+        {
+          "L": 6553600,
+          "chunk_trits": 65536,
+          "n_full_chunks": 100,
+          "rem": 0,
+          "packed_flat_665_stream": 1300865,
+          "packed_chunked": 1300900,
+          "fragmentation_waste_B": 35,
+          "waste_pct": 0.0027
+        },
+        {
+          "L": 6553600,
+          "chunk_trits": 1048576,
+          "n_full_chunks": 6,
+          "rem": 262144,
+          "packed_flat_665_stream": 1300865,
+          "packed_chunked": 1300869,
+          "fragmentation_waste_B": 4,
+          "waste_pct": 0.0003
+        },
+        {
+          "L": 6553600,
+          "chunk_trits": 665,
+          "n_full_chunks": 9855,
+          "rem": 25,
+          "packed_flat_665_stream": 1300865,
+          "packed_chunked": 1300865,
+          "fragmentation_waste_B": 0,
+          "waste_pct": 0.0
+        },
+        {
+          "L": 6553600,
+          "chunk_trits": 306,
+          "n_full_chunks": 21416,
+          "rem": 304,
+          "packed_flat_665_stream": 1300865,
+          "packed_chunked": 1306437,
+          "fragmentation_waste_B": 5572,
+          "waste_pct": 0.4283
+        },
+        {
+          "L": 6553600,
+          "chunk_trits": 135168,
+          "n_full_chunks": 48,
+          "rem": 65536,
+          "packed_flat_665_stream": 1300865,
+          "packed_chunked": 1300897,
+          "fragmentation_waste_B": 32,
+          "waste_pct": 0.0025
+        }
+      ],
+      "beats_665_flat_on_ternary_weights": false,
+      "note": "Chunking a stream into independent packs always \u2265 flat 665 stream. Chunk=665 gives zero *extra* waste vs one flat 665 stream when L is arbitrary (same as theory_bytes_665_1055). Arbitrary byte I/O chunks can force rem-heavy fragmentation if misaligned.",
+      "verdict": "measured: I/O trit-chunks at 665 match flat 665 (no new density); misaligned chunks only add waste \u2014 null as a beat-665 lever"
+    },
+    "next_flat_after_665": {
+      "section": "next_flat_after_665",
+      "tag": "measured",
+      "bps_665": 0.19849624060150375,
+      "n_candidates": 152,
+      "n_denser_than_665": 62,
+      "n_practical_denser": 21,
+      "top_denser": [
+        {
+          "Q": 3937,
+          "bytes": 780,
+          "B_per_trit": 0.1981204,
+          "beats_665_density": true,
+          "delta_bps": -0.00037584,
+          "practical": false,
+          "phi": 0.9973653391918864
+        },
+        {
+          "Q": 1277,
+          "bytes": 253,
+          "B_per_trit": 0.1981206,
+          "beats_665_density": true,
+          "delta_bps": -0.00037565,
+          "practical": true,
+          "phi": 0.9971134209164437
+        },
+        {
+          "Q": 2554,
+          "bytes": 506,
+          "B_per_trit": 0.1981206,
+          "beats_665_density": true,
+          "delta_bps": -0.00037565,
+          "practical": false,
+          "phi": 0.9942268418328875
+        },
+        {
+          "Q": 3831,
+          "bytes": 759,
+          "B_per_trit": 0.1981206,
+          "beats_665_density": true,
+          "delta_bps": -0.00037565,
+          "practical": false,
+          "phi": 0.9913402627493312
+        },
+        {
+          "Q": 3725,
+          "bytes": 738,
+          "B_per_trit": 0.19812081,
+          "beats_665_density": true,
+          "delta_bps": -0.00037544,
+          "practical": false,
+          "phi": 0.985315186306776
+        },
+        {
+          "Q": 2448,
+          "bytes": 485,
+          "B_per_trit": 0.19812092,
+          "beats_665_density": true,
+          "delta_bps": -0.00037533,
+          "practical": false,
+          "phi": 0.9882017653903322
+        },
+        {
+          "Q": 1171,
+          "bytes": 232,
+          "B_per_trit": 0.19812126,
+          "beats_665_density": true,
+          "delta_bps": -0.00037498,
+          "practical": true,
+          "phi": 0.9910883444738885
+        },
+        {
+          "Q": 2342,
+          "bytes": 464,
+          "B_per_trit": 0.19812126,
+          "beats_665_density": true,
+          "delta_bps": -0.00037498,
+          "practical": false,
+          "phi": 0.982176688947777
+        },
+        {
+          "Q": 1065,
+          "bytes": 211,
+          "B_per_trit": 0.19812207,
+          "beats_665_density": true,
+          "delta_bps": -0.00037417,
+          "practical": true,
+          "phi": 0.9850632680313333
+        },
+        {
+          "Q": 959,
+          "bytes": 190,
+          "B_per_trit": 0.19812304,
+          "beats_665_density": true,
+          "delta_bps": -0.0003732,
+          "practical": true,
+          "phi": 0.979038191588778
+        }
+      ],
+      "practical_denser": [
+        {
+          "Q": 1277,
+          "bytes": 253,
+          "B_per_trit": 0.1981206,
+          "beats_665_density": true,
+          "delta_bps": -0.00037565,
+          "practical": true,
+          "phi": 0.9971134209164437
+        },
+        {
+          "Q": 1171,
+          "bytes": 232,
+          "B_per_trit": 0.19812126,
+          "beats_665_density": true,
+          "delta_bps": -0.00037498,
+          "practical": true,
+          "phi": 0.9910883444738885
+        },
+        {
+          "Q": 1065,
+          "bytes": 211,
+          "B_per_trit": 0.19812207,
+          "beats_665_density": true,
+          "delta_bps": -0.00037417,
+          "practical": true,
+          "phi": 0.9850632680313333
+        },
+        {
+          "Q": 959,
+          "bytes": 190,
+          "B_per_trit": 0.19812304,
+          "beats_665_density": true,
+          "delta_bps": -0.0003732,
+          "practical": true,
+          "phi": 0.979038191588778
+        },
+        {
+          "Q": 747,
+          "bytes": 148,
+          "B_per_trit": 0.19812584,
+          "beats_665_density": true,
+          "delta_bps": -0.0003704,
+          "practical": true,
+          "phi": 0.9669880387036676
+        },
+        {
+          "Q": 429,
+          "bytes": 85,
+          "B_per_trit": 0.1981352,
+          "beats_665_density": true,
+          "delta_bps": -0.00036104,
+          "practical": true,
+          "phi": 0.9489128093760019
+        },
+        {
+          "Q": 1983,
+          "bytes": 393,
+          "B_per_trit": 0.19818457,
+          "beats_665_density": true,
+          "delta_bps": -0.00031167,
+          "practical": true,
+          "phi": 0.9806389300527079
+        },
+        {
+          "Q": 111,
+          "bytes": 22,
+          "B_per_trit": 0.1981982,
+          "beats_665_density": true,
+          "delta_bps": -0.00029804,
+          "practical": true,
+          "phi": 0.9308375800483362
+        },
+        {
+          "Q": 1942,
+          "bytes": 385,
+          "B_per_trit": 0.19824923,
+          "beats_665_density": true,
+          "delta_bps": -0.00024701,
+          "practical": true,
+          "phi": 0.9971764004853044
+        },
+        {
+          "Q": 918,
+          "bytes": 182,
+          "B_per_trit": 0.19825708,
+          "beats_665_density": true,
+          "delta_bps": -0.00023916,
+          "practical": true,
+          "phi": 0.9955756620213746
+        }
+      ],
+      "bitnet_best_practical": {
+        "Q": 1277,
+        "block_bytes": 253,
+        "assembly_hint": "665+2\u00d7306",
+        "n_tensors": 210,
+        "tot_flat58": 416808960,
+        "tot_hybrid665": 413552640,
+        "tot_hybrid1277": 412892310,
+        "delta_vs_665_MB": -0.6603,
+        "delta_vs_flat_MB": -3.9167,
+        "n_tensors_new_beats_665": 210,
+        "tag": "measured"
+      },
+      "beats_665_operational": true,
+      "beats_665_flat_on_ternary_weights": true,
+      "note": "Law-B-sum flat 1277 (=665+2\u00d7306) at 253 B/block is denser than 132/665 and still practical. 15601 remains denser but huge. Same pattern as 665: flat container of a sum, not chiral parts.",
+      "verdict": "measured: flat Q=1277 (665+2\u00d7306) beats 665 by -0.6603 MB on BitNet"
+    },
+    "base5_mini_codec": {
+      "section": "base5_mini_codec",
+      "tag": "measured",
+      "rt_small_blocks": [
+        {
+          "block_Q": 3,
+          "n": 16,
+          "rt_ok": true,
+          "packed_B": 6,
+          "theory_block_B": 6,
+          "theory_naive_B": 6,
+          "beats_naive": false
+        },
+        {
+          "block_Q": 28,
+          "n": 91,
+          "rt_ok": true,
+          "packed_B": 30,
+          "theory_block_B": 30,
+          "theory_naive_B": 31,
+          "beats_naive": true
+        },
+        {
+          "block_Q": 59,
+          "n": 184,
+          "rt_ok": true,
+          "packed_B": 57,
+          "theory_block_B": 57,
+          "theory_naive_B": 62,
+          "beats_naive": true
+        }
+      ],
+      "all_rt_ok": true,
+      "theory_Q643": {
+        "Q": 643,
+        "bytes": 187,
+        "B_per_sym": 0.290824,
+        "naive_k": 3,
+        "naive_Bps": 0.333333,
+        "beats_naive": true
+      },
+      "beats_665_flat_on_ternary_weights": false,
+      "note": "Pattern transfer works: p=5 flat blocks round-trip. Q=643 is the natural large surplus flat (theory). Not a ternary BitNet lever.",
+      "verdict": "measured: base-5 mini codec RT ok on small CF blocks; theory 643 beats na\u00efve \u2014 pattern transfer confirmed; does not beat ternary 665"
+    },
+    "inverse_dual_bit_to_trit": {
+      "section": "inverse_dual_bit_to_trit",
+      "tag": "measured",
+      "rows": [
+        {
+          "n_bits": 64,
+          "raw_bytes": 8,
+          "n_trits_needed": 41,
+          "trit_pack_5_8": 9,
+          "trit_pack_665": 9,
+          "665_beats_raw": false,
+          "expansion_vs_raw": 1.125
+        },
+        {
+          "n_bits": 128,
+          "raw_bytes": 16,
+          "n_trits_needed": 81,
+          "trit_pack_5_8": 17,
+          "trit_pack_665": 17,
+          "665_beats_raw": false,
+          "expansion_vs_raw": 1.0625
+        },
+        {
+          "n_bits": 256,
+          "raw_bytes": 32,
+          "n_trits_needed": 162,
+          "trit_pack_5_8": 33,
+          "trit_pack_665": 33,
+          "665_beats_raw": false,
+          "expansion_vs_raw": 1.0312
+        },
+        {
+          "n_bits": 512,
+          "raw_bytes": 64,
+          "n_trits_needed": 324,
+          "trit_pack_5_8": 65,
+          "trit_pack_665": 65,
+          "665_beats_raw": false,
+          "expansion_vs_raw": 1.0156
+        },
+        {
+          "n_bits": 1024,
+          "raw_bytes": 128,
+          "n_trits_needed": 647,
+          "trit_pack_5_8": 130,
+          "trit_pack_665": 129,
+          "665_beats_raw": false,
+          "expansion_vs_raw": 1.0078
+        },
+        {
+          "n_bits": 4096,
+          "raw_bytes": 512,
+          "n_trits_needed": 2585,
+          "trit_pack_5_8": 517,
+          "trit_pack_665": 513,
+          "665_beats_raw": false,
+          "expansion_vs_raw": 1.002
+        },
+        {
+          "n_bits": 65536,
+          "raw_bytes": 8192,
+          "n_trits_needed": 41349,
+          "trit_pack_5_8": 8270,
+          "trit_pack_665": 8208,
+          "665_beats_raw": false,
+          "expansion_vs_raw": 1.002
+        }
+      ],
+      "any_665_beats_raw_bits": false,
+      "beats_665_flat_on_ternary_weights": false,
+      "note": "Information theory: log2(3)>1 so trit-coding a bitstring expands. No byte win for metadata/scales via 2\u21923 packing.",
+      "verdict": "null / false_id: packing bits into trits expands \u2014 never beats raw bytes"
+    },
+    "blind_spots": {
+      "section": "blind_spots",
+      "tag": "measured",
+      "rem_phase": {
+        "n": 50,
+        "n_unique_rem": 3,
+        "tag": "applies_as_language",
+        "note": "rem phase is a coordinate rename of rem size; does not predict bytes beyond container_bytes(rem).",
+        "sample": [
+          {
+            "rem": 400,
+            "phi_rem": 0.9850002884624726,
+            "L": 17694720
+          },
+          {
+            "rem": 400,
+            "phi_rem": 0.9850002884624726,
+            "L": 17694720
+          },
+          {
+            "rem": 400,
+            "phi_rem": 0.9850002884624726,
+            "L": 17694720
+          },
+          {
+            "rem": 505,
+            "phi_rem": 0.4060628641838716,
+            "L": 1638400
+          },
+          {
+            "rem": 25,
+            "phi_rem": 0.6240625180289046,
+            "L": 6553600
+          },
+          {
+            "rem": 25,
+            "phi_rem": 0.6240625180289046,
+            "L": 6553600
+          },
+          {
+            "rem": 505,
+            "phi_rem": 0.4060628641838716,
+            "L": 1638400
+          },
+          {
+            "rem": 400,
+            "phi_rem": 0.9850002884624726,
+            "L": 17694720
+          }
+        ]
+      },
+      "dual_radix_scales": {
+        "float16_raw_B": 2,
+        "float16_as_trits_665": 3,
+        "float32_raw_B": 4,
+        "uint8_scale_raw_B": 1,
+        "tag": "null",
+        "note": "Dual-radix for scales expands; keep scales in binary."
+      },
+      "beats_665_flat_on_ternary_weights": false,
+      "verdict": "null: rem-phase and dual-radix scales are not density levers past 665"
+    },
+    "llm_weight_shape_control": {
+      "section": "llm_weight_shape_control",
+      "tag": "measured",
+      "win_counts": {
+        "hybrid665": 11
+      },
+      "rows": [
+        {
+          "name": "llama7b_attn_q",
+          "m": 4096,
+          "n": 4096,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 3355444,
+            "hybrid306": 3344478,
+            "hybrid665": 3330215
+          }
+        },
+        {
+          "name": "llama7b_mlp_up",
+          "m": 11008,
+          "n": 4096,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 9017754,
+            "hybrid306": 8988284,
+            "hybrid665": 8949760
+          }
+        },
+        {
+          "name": "llama7b_mlp_down",
+          "m": 4096,
+          "n": 11008,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 9017754,
+            "hybrid306": 8988284,
+            "hybrid665": 8949760
+          }
+        },
+        {
+          "name": "llama13b_attn_q",
+          "m": 5120,
+          "n": 5120,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 5242880,
+            "hybrid306": 5225747,
+            "hybrid665": 5203460
+          }
+        },
+        {
+          "name": "llama13b_mlp_up",
+          "m": 13824,
+          "n": 5120,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 14155776,
+            "hybrid306": 14109516,
+            "hybrid665": 14049280
+          }
+        },
+        {
+          "name": "llama34b_attn_q",
+          "m": 8192,
+          "n": 8192,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 13421773,
+            "hybrid306": 13377536,
+            "hybrid665": 13320858
+          }
+        },
+        {
+          "name": "llama34b_mlp_up",
+          "m": 22016,
+          "n": 8192,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 36071015,
+            "hybrid306": 35952128,
+            "hybrid665": 35799804
+          }
+        },
+        {
+          "name": "bitnet2b_like_q",
+          "m": 2560,
+          "n": 2560,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 1310720,
+            "hybrid306": 1306437,
+            "hybrid665": 1300480
+          }
+        },
+        {
+          "name": "bitnet2b_like_mlp",
+          "m": 6912,
+          "n": 2560,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 3538944,
+            "hybrid306": 3527379,
+            "hybrid665": 3511296
+          }
+        },
+        {
+          "name": "head_proj_slice",
+          "m": 128,
+          "n": 4096,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 104858,
+            "hybrid306": 104515,
+            "hybrid665": 104070
+          }
+        },
+        {
+          "name": "kv_group_rect",
+          "m": 1024,
+          "n": 4096,
+          "winner": "hybrid665",
+          "bytes": {
+            "flat58": 838861,
+            "hybrid306": 836120,
+            "hybrid665": 832554
+          }
+        }
+      ],
+      "665_dominates": true
+    }
+  },
+  "global_verdict": "Geometric: flat 1277 (665+2\u00d7306, 253 B/block) beats 665-flat on BitNet (~\u22120.66 MB) \u2014 same Law-B-sum-as-flat pattern. Entropy: adaptive beats 665 when p(0) elevates (different family). Shared-rem: micro-KB win only. Portfolio/tiles/streaming/inverse/base-5: null or non-ternary transfer."
+}
